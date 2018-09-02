@@ -1,0 +1,11 @@
+title : Wall-E - From Space From Earth
+description: 'New Start For New Journey'
+
+markdown: kramdown
+highlighter: rouge
+logo: false
+paginate: 15
+baseurl: /
+plugins: [jekyll-gist]
+permalink: /:year/:month/:title.html
+# excerpt_separator: '<!-- more -->'

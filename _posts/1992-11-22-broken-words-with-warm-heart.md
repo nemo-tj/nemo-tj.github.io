@@ -6,6 +6,10 @@ tags: [Think and Want]
 ---
 
 
+8. I'm so eager to see you again, but I wouldn't ask to see you, not because I'm proud. In fact, in front of you, I cede all my pride, yet only if you asked to see me, our meeting would be meaningful to me. -- Simone de Beauvoir.GL
+
+7. 只求你别忘了.
+
 6. 对不起，我是一个选择生活的人。当然，我很享受这种惬意的小白领生活。不过，内心里，那种热情并未褪去。我知道，或迟或晚，那一天终会来临。我只是在等待一个时机，等待一个声音，等待一个相信。我会的。
 
 5. 长期有耐心。

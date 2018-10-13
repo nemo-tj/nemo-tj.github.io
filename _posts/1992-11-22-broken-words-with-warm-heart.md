@@ -5,6 +5,7 @@ modified: 2018-08-28
 tags: [Think and Want]
 ---
 
+9. 想想看，三国里,各路诸侯里，各个都是隔岸观火，道貌岸然的老江湖，心狠手辣。倒是吕布这个小伙子，与众不同，“我有赤兔马，我有方天画戟”，一个字：“干” 。真诚率直，敢爱敢干。是个可爱又可气的大男孩。他要是稍微再聪明一点，多忍耐一点，三国里，一定会留下更多属于他的精彩。。讲真，这样的人是不该有这样的下场的，但是也只是不该。如此的性格，注定悲剧。一如当下的社会里，亦是容不得这样阳光、果敢，优秀又可爱的大男孩。不过还是很欣赏，要是...，就好了。
 
 8. I'm so eager to see you again, but I wouldn't ask to see you, not because I'm proud. In fact, in front of you, I cede all my pride, yet only if you asked to see me, our meeting would be meaningful to me. -- Simone de Beauvoir.GL
 

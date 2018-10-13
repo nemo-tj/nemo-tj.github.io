@@ -3,14 +3,14 @@
   <channel>
     <title>Wall-E - From Space From Earth</title>
     <description>New Start For New Journey</description>
-    <link>http://localhost:4000//</link>
-    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 12 Oct 2018 13:55:09 +0800</pubDate>
-    <lastBuildDate>Fri, 12 Oct 2018 13:55:09 +0800</lastBuildDate>
+    <link>//</link>
+    <atom:link href="//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 13 Oct 2018 17:35:00 +0800</pubDate>
+    <lastBuildDate>Sat, 13 Oct 2018 17:35:00 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
-        <title>我心里住的那个人，好像还是他</title>
+        <title>我心里住的那个人，好像还是他(转)</title>
         <description>&lt;p&gt;2006年的深冬，我和唐耀拽着青春的尾巴，谈了一场众望所归的恋爱。后来我才想起来问自己，喜欢他吗？好像没有。他喜欢我吗？不清楚。哦，似乎连表白这样重要的环节，用的也是省略号。当然，这并不重要，重要的是我们有在一起的必要性。&lt;/p&gt;
 
 &lt;p&gt;百度贴吧里说，要想在人海中，遇到那个和自己同年同月同日生的人，理论上的概率大约为四万分之一。我和唐耀，刚好存在于这样的概率里。如果不发生点什么，还好意思说青春无悔吗？班上同学看我俩的眼神，个个都写着“在一起”。你知道的，那个年纪，喜欢这件事，众人一起哄，总是容易弄假成真。所以，我和唐耀没有经过任何铺垫，就很自然地被划归同一小组做实验，分在同一天做值日，也很自然地被打上了属于对方的标签。&lt;/p&gt;
@@ -55,8 +55,8 @@
 
 </description>
         <pubDate>Fri, 12 Oct 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/10/see-you-again.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/10/see-you-again.html</guid>
+        <link>//2018/10/see-you-again.html</link>
+        <guid isPermaLink="true">//2018/10/see-you-again.html</guid>
         
         <category>warm and beautiful</category>
         
@@ -74,8 +74,8 @@
 &lt;p&gt;愿你们永远不忘心心相遇，能相知美好，永远保有相爱能相守的幸福；愿你们一直记得偷偷喜欢时的忐忑，也记得被灼热目光灼红的脸颊；愿你们享受昼夜厨房与爱，也能比肩穿行山川湖海；愿你们在晨曦中亲吻，在月光下相拥；愿你们拥有阳光味道的衬衣和漂亮的碎花裙子，愿你们是彼此冬日的手套，夏日的汽水，努力奋斗的动力，日复一日的梦想；愿你们的生活没有命运，只有选择，无论艰困，只有勇气和决心，不忘初心，方得始终，衷心祝福新婚快乐幸福美满！&lt;/p&gt;
 </description>
         <pubDate>Tue, 09 Oct 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/10/best-wishes-to-you.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/10/best-wishes-to-you.html</guid>
+        <link>//2018/10/best-wishes-to-you.html</link>
+        <guid isPermaLink="true">//2018/10/best-wishes-to-you.html</guid>
         
         
       </item>
@@ -87,8 +87,8 @@
 &lt;p&gt;You are the principle you devote to.&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 Aug 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/08/say-hello-world.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/08/say-hello-world.html</guid>
+        <link>//2018/08/say-hello-world.html</link>
+        <guid isPermaLink="true">//2018/08/say-hello-world.html</guid>
         
         <category>Hello World</category>
         
@@ -110,8 +110,8 @@
 &lt;div xmlns:cc=&quot;http://creativecommons.org/ns#&quot; xmlns:dct=&quot;http://purl.org/dc/terms/&quot; about=&quot;http://subtlepatterns.com&quot; class=&quot;notice&quot;&gt;Background images from &lt;span property=&quot;dct:title&quot;&gt;Subtle Patterns&lt;/span&gt; (&lt;a rel=&quot;cc:attributionURL&quot; property=&quot;cc:attributionName&quot; href=&quot;http://subtlepatterns.com&quot;&gt;Subtle Patterns&lt;/a&gt;) / &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;&gt;CC BY-SA 3.0&lt;/a&gt;&lt;/div&gt;
 </description>
         <pubDate>Sat, 26 Oct 2013 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2013/10/background-image.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2013/10/background-image.html</guid>
+        <link>//2013/10/background-image.html</link>
+        <guid isPermaLink="true">//2013/10/background-image.html</guid>
         
         <category>sample post</category>
         
@@ -209,8 +209,8 @@
 &lt;/div&gt;
 </description>
         <pubDate>Fri, 16 Aug 2013 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2013/08/code-highlighting-post.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2013/08/code-highlighting-post.html</guid>
+        <link>//2013/08/code-highlighting-post.html</link>
+        <guid isPermaLink="true">//2013/08/code-highlighting-post.html</guid>
         
         <category>sample post</category>
         
@@ -230,8 +230,8 @@
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;iframe&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;560&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;315&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;//www.youtube.com/embed/SU3kYxJmWuQ&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;frameborder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
         <pubDate>Tue, 25 Jun 2013 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2013/06/video-post.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2013/06/video-post.html</guid>
+        <link>//2013/06/video-post.html</link>
+        <guid isPermaLink="true">//2013/06/video-post.html</guid>
         
         <category>sample post</category>
         
@@ -284,8 +284,8 @@
 &lt;p&gt;Aliquip enim artisan dolor post-ironic. Pug tote bag Marfa, deserunt pour-over Portland wolf eu odio intelligentsia american apparel ugh ea. Sunt viral et, 3 wolf moon gastropub pug id. Id fashion axe est typewriter, mlkshk Portland art party aute brunch. Sint pork belly Cosby sweater, deep v mumblecore kitsch american apparel. Try-hard direct trade tumblr sint skateboard. Adipisicing bitters excepteur biodiesel, pickled gastropub aute veniam.&lt;/p&gt;
 </description>
         <pubDate>Wed, 22 May 2013 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2013/05/readability-post.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2013/05/readability-post.html</guid>
+        <link>//2013/05/readability-post.html</link>
+        <guid isPermaLink="true">//2013/05/readability-post.html</guid>
         
         <category>sample post</category>
         
@@ -316,8 +316,8 @@ Te mea everti platonem sententiae, ius te cibo partem suavitate, at qui quidam u
 &lt;p&gt;
 Et modo dolorem referrentur usu. Exerci lobortis id mei, mel putant everti te. Qui error detraxit te, in vis ignota eripuit scripserit. Ut labore patrioque dissentiet has, feugiat propriae invidunt est ei, mei nostrud volutpat rationibus ei. Mea at graeci tritani, sint mediocrem vituperata no nec. Eu pri mazim vitae ocurreret, iudico graeco consectetuer mel cu, quo dico maiorum ei.&lt;/p&gt;</description>
         <pubDate>Wed, 17 Apr 2013 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2013/04/Lorem-Ipsum-(copy-7).html</link>
-        <guid isPermaLink="true">http://localhost:4000//2013/04/Lorem-Ipsum-(copy-7).html</guid>
+        <link>//2013/04/Lorem-Ipsum-(copy-7).html</link>
+        <guid isPermaLink="true">//2013/04/Lorem-Ipsum-(copy-7).html</guid>
         
         
       </item>
@@ -342,7 +342,7 @@ Et modo dolorem referrentur usu. Exerci lobortis id mei, mel putant everti te. Q
 
 &lt;p&gt;Lorem ipsum dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/strong&gt;. Nullam dignissim convallis est. Quisque aliquam.&lt;/p&gt;
 
-&lt;p class=&quot;image-right&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/3953273590_704e3899d5_m.jpg&quot; alt=&quot;Smithsonian Image&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;image-right&quot;&gt;&lt;img src=&quot;/images/3953273590_704e3899d5_m.jpg&quot; alt=&quot;Smithsonian Image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;This is emphasized&lt;/em&gt;. Donec faucibus. Nunc iaculis suscipit dui. 53 = 125. Water is H&lt;sub&gt;2&lt;/sub&gt;O. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. The New York Times &lt;cite&gt;(That’s a citation)&lt;/cite&gt;. &lt;u&gt;Underline&lt;/u&gt;. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.&lt;/p&gt;
 
@@ -451,8 +451,8 @@ Et modo dolorem referrentur usu. Exerci lobortis id mei, mel putant everti te. Q
 &lt;a href=&quot;/&quot; class=&quot;ui negative button&quot;&gt;Negative Button&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 10 Mar 2013 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2013/03/sample-post.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2013/03/sample-post.html</guid>
+        <link>//2013/03/sample-post.html</link>
+        <guid isPermaLink="true">//2013/03/sample-post.html</guid>
         
         <category>sample post</category>
         
@@ -490,8 +490,8 @@ Et modo dolorem referrentur usu. Exerci lobortis id mei, mel putant everti te. Q
 
 </description>
         <pubDate>Sun, 22 Nov 1992 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//1992/11/broken-words-with-warm-heart.html</link>
-        <guid isPermaLink="true">http://localhost:4000//1992/11/broken-words-with-warm-heart.html</guid>
+        <link>//1992/11/broken-words-with-warm-heart.html</link>
+        <guid isPermaLink="true">//1992/11/broken-words-with-warm-heart.html</guid>
         
         <category>Think and Want</category>
         

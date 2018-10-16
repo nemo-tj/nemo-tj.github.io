@@ -3,10 +3,10 @@
   <channel>
     <title>Wall-E - From Space From Earth</title>
     <description>New Start For New Journey</description>
-    <link>//</link>
-    <atom:link href="//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 Oct 2018 12:55:15 +0800</pubDate>
-    <lastBuildDate>Tue, 16 Oct 2018 12:55:15 +0800</lastBuildDate>
+    <link>http://localhost:4000//</link>
+    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 16 Oct 2018 13:48:26 +0800</pubDate>
+    <lastBuildDate>Tue, 16 Oct 2018 13:48:26 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -55,8 +55,8 @@
 
 </description>
         <pubDate>Fri, 12 Oct 2018 00:00:00 +0800</pubDate>
-        <link>//2018/10/see-you-again.html</link>
-        <guid isPermaLink="true">//2018/10/see-you-again.html</guid>
+        <link>http://localhost:4000//2018/10/see-you-again.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2018/10/see-you-again.html</guid>
         
         <category>warm and beautiful</category>
         
@@ -64,7 +64,7 @@
       </item>
     
       <item>
-        <title>Best Wishes To You</title>
+        <title>新婚致辞</title>
         <description>&lt;p&gt;又是秋天，阳光炙热，闪耀已旧，万物生长,繁茂故我，而你们的故事也终于开始写了，书写新的篇章。我很开心，由衷地为你们感到高兴。太多美好的故事开始于这个季节，萌芽滋长，零转回来，又在这个季节恣意盛放，升华结果。&lt;/p&gt;
 
 &lt;p&gt;青春是追逐奔跑，不知疲倦，是清风摇曳荷花，蜻蜓画出涟漪，青春太好，好到怎么过都觉得是挥霍。回头一望,都要生活,只可辜负。生活是理解扶持,砥砺前行;是眼中万物，兜兜转转,都是彼此;是岁岁年年，朝朝暮暮，也要心心念念。一生太长，长到都不知道怎么过完，却望着并肩白首，不负此生。&lt;/p&gt;
@@ -74,8 +74,8 @@
 &lt;p&gt;愿你们永远不忘心心相遇，能相知美好，永远保有相爱能相守的幸福；愿你们一直记得偷偷喜欢时的忐忑，也记得被灼热目光灼红的脸颊；愿你们享受昼夜厨房与爱，也能比肩穿行山川湖海；愿你们在晨曦中亲吻，在月光下相拥；愿你们拥有阳光味道的衬衣和漂亮的碎花裙子，愿你们是彼此冬日的手套，夏日的汽水，努力奋斗的动力，日复一日的梦想；愿你们的生活没有命运，只有选择，无论艰困，只有勇气和决心，不忘初心，方得始终，衷心祝福新婚快乐幸福美满！&lt;/p&gt;
 </description>
         <pubDate>Tue, 09 Oct 2018 00:00:00 +0800</pubDate>
-        <link>//2018/10/best-wishes-to-you.html</link>
-        <guid isPermaLink="true">//2018/10/best-wishes-to-you.html</guid>
+        <link>http://localhost:4000//2018/10/best-wishes-to-you.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2018/10/best-wishes-to-you.html</guid>
         
         
       </item>
@@ -87,8 +87,8 @@
 &lt;p&gt;You are the principle you devote to.&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 Aug 2018 00:00:00 +0800</pubDate>
-        <link>//2018/08/say-hello-world.html</link>
-        <guid isPermaLink="true">//2018/08/say-hello-world.html</guid>
+        <link>http://localhost:4000//2018/08/say-hello-world.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2018/08/say-hello-world.html</guid>
         
         <category>Hello World</category>
         
@@ -110,8 +110,8 @@
 &lt;div xmlns:cc=&quot;http://creativecommons.org/ns#&quot; xmlns:dct=&quot;http://purl.org/dc/terms/&quot; about=&quot;http://subtlepatterns.com&quot; class=&quot;notice&quot;&gt;Background images from &lt;span property=&quot;dct:title&quot;&gt;Subtle Patterns&lt;/span&gt; (&lt;a rel=&quot;cc:attributionURL&quot; property=&quot;cc:attributionName&quot; href=&quot;http://subtlepatterns.com&quot;&gt;Subtle Patterns&lt;/a&gt;) / &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;&gt;CC BY-SA 3.0&lt;/a&gt;&lt;/div&gt;
 </description>
         <pubDate>Sat, 26 Oct 2013 00:00:00 +0800</pubDate>
-        <link>//2013/10/background-image.html</link>
-        <guid isPermaLink="true">//2013/10/background-image.html</guid>
+        <link>http://localhost:4000//2013/10/background-image.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2013/10/background-image.html</guid>
         
         <category>sample post</category>
         
@@ -209,8 +209,8 @@
 &lt;/div&gt;
 </description>
         <pubDate>Fri, 16 Aug 2013 00:00:00 +0800</pubDate>
-        <link>//2013/08/code-highlighting-post.html</link>
-        <guid isPermaLink="true">//2013/08/code-highlighting-post.html</guid>
+        <link>http://localhost:4000//2013/08/code-highlighting-post.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2013/08/code-highlighting-post.html</guid>
         
         <category>sample post</category>
         
@@ -230,8 +230,8 @@
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;iframe&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;560&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;315&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;//www.youtube.com/embed/SU3kYxJmWuQ&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;frameborder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
         <pubDate>Tue, 25 Jun 2013 00:00:00 +0800</pubDate>
-        <link>//2013/06/video-post.html</link>
-        <guid isPermaLink="true">//2013/06/video-post.html</guid>
+        <link>http://localhost:4000//2013/06/video-post.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2013/06/video-post.html</guid>
         
         <category>sample post</category>
         
@@ -284,8 +284,8 @@
 &lt;p&gt;Aliquip enim artisan dolor post-ironic. Pug tote bag Marfa, deserunt pour-over Portland wolf eu odio intelligentsia american apparel ugh ea. Sunt viral et, 3 wolf moon gastropub pug id. Id fashion axe est typewriter, mlkshk Portland art party aute brunch. Sint pork belly Cosby sweater, deep v mumblecore kitsch american apparel. Try-hard direct trade tumblr sint skateboard. Adipisicing bitters excepteur biodiesel, pickled gastropub aute veniam.&lt;/p&gt;
 </description>
         <pubDate>Wed, 22 May 2013 00:00:00 +0800</pubDate>
-        <link>//2013/05/readability-post.html</link>
-        <guid isPermaLink="true">//2013/05/readability-post.html</guid>
+        <link>http://localhost:4000//2013/05/readability-post.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2013/05/readability-post.html</guid>
         
         <category>sample post</category>
         
@@ -316,8 +316,8 @@ Te mea everti platonem sententiae, ius te cibo partem suavitate, at qui quidam u
 &lt;p&gt;
 Et modo dolorem referrentur usu. Exerci lobortis id mei, mel putant everti te. Qui error detraxit te, in vis ignota eripuit scripserit. Ut labore patrioque dissentiet has, feugiat propriae invidunt est ei, mei nostrud volutpat rationibus ei. Mea at graeci tritani, sint mediocrem vituperata no nec. Eu pri mazim vitae ocurreret, iudico graeco consectetuer mel cu, quo dico maiorum ei.&lt;/p&gt;</description>
         <pubDate>Wed, 17 Apr 2013 00:00:00 +0800</pubDate>
-        <link>//2013/04/Lorem-Ipsum-(copy-7).html</link>
-        <guid isPermaLink="true">//2013/04/Lorem-Ipsum-(copy-7).html</guid>
+        <link>http://localhost:4000//2013/04/Lorem-Ipsum-(copy-7).html</link>
+        <guid isPermaLink="true">http://localhost:4000//2013/04/Lorem-Ipsum-(copy-7).html</guid>
         
         
       </item>
@@ -342,7 +342,7 @@ Et modo dolorem referrentur usu. Exerci lobortis id mei, mel putant everti te. Q
 
 &lt;p&gt;Lorem ipsum dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/strong&gt;. Nullam dignissim convallis est. Quisque aliquam.&lt;/p&gt;
 
-&lt;p class=&quot;image-right&quot;&gt;&lt;img src=&quot;/images/3953273590_704e3899d5_m.jpg&quot; alt=&quot;Smithsonian Image&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;image-right&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/3953273590_704e3899d5_m.jpg&quot; alt=&quot;Smithsonian Image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;This is emphasized&lt;/em&gt;. Donec faucibus. Nunc iaculis suscipit dui. 53 = 125. Water is H&lt;sub&gt;2&lt;/sub&gt;O. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. The New York Times &lt;cite&gt;(That’s a citation)&lt;/cite&gt;. &lt;u&gt;Underline&lt;/u&gt;. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.&lt;/p&gt;
 
@@ -451,52 +451,10 @@ Et modo dolorem referrentur usu. Exerci lobortis id mei, mel putant everti te. Q
 &lt;a href=&quot;/&quot; class=&quot;ui negative button&quot;&gt;Negative Button&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 10 Mar 2013 00:00:00 +0800</pubDate>
-        <link>//2013/03/sample-post.html</link>
-        <guid isPermaLink="true">//2013/03/sample-post.html</guid>
+        <link>http://localhost:4000//2013/03/sample-post.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2013/03/sample-post.html</guid>
         
         <category>sample post</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>心情印记</title>
-        <description>&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;想想看，三国里,各路诸侯里，各个都是隔岸观火，道貌岸然的老江湖，心狠手辣。倒是吕布这个小伙子，与众不同，“我有赤兔马，我有方天画戟”，一个字：“干” 。真诚率直，敢爱敢干。是个可爱又可气的大男孩。他要是稍微再聪明一点，多忍耐一点，三国里，一定会留下更多属于他的精彩。。讲真，这样的人是不该有这样的下场的，但是也只是不该。如此的性格，注定悲剧。一如当下的社会里，亦是容不得这样阳光、果敢，优秀又可爱的大男孩。不过还是很欣赏，要是…，就好了。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;I’m so eager to see you again, but I wouldn’t ask to see you, not because I’m proud. In fact, in front of you, I cede all my pride, yet only if you asked to see me, our meeting would be meaningful to me. – Simone de Beauvoir.GL&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;只求你别忘了.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;对不起，我是一个选择生活的人。当然，我很享受这种惬意的小白领生活。不过，内心里，那种热情并未褪去。我知道，或迟或晚，那一天终会来临。我只是在等待一个时机，等待一个声音，等待一个相信。我会的。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;长期有耐心。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;愿逐月华流照君。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;我喜欢你，不是因为你对我好，或者你很好，因为优秀和好，是无止境的。真正渴望的，永远都只是， “真实”、“同理心”、“欣赏”。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;我喜欢你，所以我让你看见我所有的好；而让你看见我所有的不好，却是我对你最真切的爱。因为好与不好的我，合在一起，就有了爱中最永恒的力量：真实。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;我内心里深深渴望着的是，爱与被爱的疯狂, 欣赏与被欣赏的的同理心。我愿你爱上我的优秀，我更期待你爱的是优秀的我。我愿努力着，优秀着；可是，我更希望，我的优秀恰好也是你心里那份基于同理心的欣赏。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Sun, 22 Nov 1992 00:00:00 +0800</pubDate>
-        <link>//1992/11/broken-words-with-warm-heart.html</link>
-        <guid isPermaLink="true">//1992/11/broken-words-with-warm-heart.html</guid>
-        
-        <category>Think and Want</category>
         
         
       </item>

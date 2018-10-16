@@ -5,8 +5,13 @@
     <description>New Start For New Journey</description>
     <link>//</link>
     <atom:link href="//feed.xml" rel="self" type="application/rss+xml"/>
+<<<<<<< HEAD
     <pubDate>Sat, 13 Oct 2018 17:33:54 +0800</pubDate>
     <lastBuildDate>Sat, 13 Oct 2018 17:33:54 +0800</lastBuildDate>
+=======
+    <pubDate>Sat, 13 Oct 2018 17:35:00 +0800</pubDate>
+    <lastBuildDate>Sat, 13 Oct 2018 17:35:00 +0800</lastBuildDate>
+>>>>>>> dev
     <generator>Jekyll v3.7.3</generator>
     
       <item>

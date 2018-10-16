@@ -3,6 +3,7 @@ layout: post
 title: 心情印记
 modified: 2018-08-28
 tags: [Think and Want]
+author: Bok
 ---
 
 11. 非淡泊无以明志。

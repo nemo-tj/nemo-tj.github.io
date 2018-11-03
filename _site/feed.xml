@@ -3,10 +3,10 @@
   <channel>
     <title>Wall-E - From Space From Earth</title>
     <description>New Start For New Journey</description>
-    <link>http://localhost:4000//</link>
-    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Oct 2018 22:43:52 +0800</pubDate>
-    <lastBuildDate>Mon, 22 Oct 2018 22:43:52 +0800</lastBuildDate>
+    <link>//</link>
+    <atom:link href="//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 03 Nov 2018 21:33:18 +0800</pubDate>
+    <lastBuildDate>Sat, 03 Nov 2018 21:33:18 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -44,8 +44,8 @@
 http://www.yinwang.org/blog-cn/2013/03/19/eliminate-problems&lt;/p&gt;
 </description>
         <pubDate>Fri, 19 Oct 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/10/problem-solver-and-problem-terminator.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/10/problem-solver-and-problem-terminator.html</guid>
+        <link>//2018/10/problem-solver-and-problem-terminator.html</link>
+        <guid isPermaLink="true">//2018/10/problem-solver-and-problem-terminator.html</guid>
         
         
       </item>
@@ -72,8 +72,8 @@ http://www.yinwang.org/blog-cn/2013/03/19/eliminate-problems&lt;/p&gt;
 &lt;p&gt;想饮一些酒，让灵魂失重，好被风吹走。&lt;/p&gt;
 </description>
         <pubDate>Tue, 16 Oct 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/10/passby.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/10/passby.html</guid>
+        <link>//2018/10/passby.html</link>
+        <guid isPermaLink="true">//2018/10/passby.html</guid>
         
         <category>poem</category>
         
@@ -96,8 +96,8 @@ http://www.yinwang.org/blog-cn/2013/03/19/eliminate-problems&lt;/p&gt;
 就要一个人笑出声来。&lt;/p&gt;
 </description>
         <pubDate>Tue, 16 Oct 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/10/friends-and-lovers.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/10/friends-and-lovers.html</guid>
+        <link>//2018/10/friends-and-lovers.html</link>
+        <guid isPermaLink="true">//2018/10/friends-and-lovers.html</guid>
         
         
       </item>
@@ -148,8 +148,8 @@ http://www.yinwang.org/blog-cn/2013/03/19/eliminate-problems&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 12 Oct 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/10/see-you-again.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/10/see-you-again.html</guid>
+        <link>//2018/10/see-you-again.html</link>
+        <guid isPermaLink="true">//2018/10/see-you-again.html</guid>
         
         <category>warm and beautiful</category>
         
@@ -167,8 +167,8 @@ http://www.yinwang.org/blog-cn/2013/03/19/eliminate-problems&lt;/p&gt;
 &lt;p&gt;愿你们永远不忘心心相遇，能相知美好，永远保有相爱能相守的幸福；愿你们一直记得偷偷喜欢时的忐忑，也记得被灼热目光灼红的脸颊；愿你们享受昼夜厨房与爱，也能比肩穿行山川湖海；愿你们在晨曦中亲吻，在月光下相拥；愿你们拥有阳光味道的衬衣和漂亮的碎花裙子，愿你们是彼此冬日的手套，夏日的汽水，努力奋斗的动力，日复一日的梦想；愿你们的生活没有命运，只有选择，无论艰困，只有勇气和决心，不忘初心，方得始终，衷心祝福新婚快乐幸福美满！&lt;/p&gt;
 </description>
         <pubDate>Tue, 09 Oct 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/10/best-wishes-to-you.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/10/best-wishes-to-you.html</guid>
+        <link>//2018/10/best-wishes-to-you.html</link>
+        <guid isPermaLink="true">//2018/10/best-wishes-to-you.html</guid>
         
         
       </item>
@@ -180,8 +180,8 @@ http://www.yinwang.org/blog-cn/2013/03/19/eliminate-problems&lt;/p&gt;
 &lt;p&gt;You are the principle you devote to.&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 Aug 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/08/say-hello-world.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/08/say-hello-world.html</guid>
+        <link>//2018/08/say-hello-world.html</link>
+        <guid isPermaLink="true">//2018/08/say-hello-world.html</guid>
         
         <category>Hello World</category>
         
@@ -193,6 +193,12 @@ http://www.yinwang.org/blog-cn/2013/03/19/eliminate-problems&lt;/p&gt;
         <description>&lt;ol&gt;
   &lt;li&gt;
     &lt;p&gt;非淡泊无以明志。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2018-11-03 : 愿健康体魄，愉悦心情，陪伴你的左右。Xai&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2018-10-25 : 这么不好的我，真的不想被你看到。接下来，可能会更加糟糕。我好像看不清，我在干什么，有期待什么了。珍，若我退去，你当安好。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;[2018-10-22] 你正在经历的是人生里重要的一课：无关对错的选择。&lt;/p&gt;
@@ -243,8 +249,8 @@ http://www.yinwang.org/blog-cn/2013/03/19/eliminate-problems&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 16 Jul 2015 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2015/07/broken-words-with-warm-heart.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2015/07/broken-words-with-warm-heart.html</guid>
+        <link>//2015/07/broken-words-with-warm-heart.html</link>
+        <guid isPermaLink="true">//2015/07/broken-words-with-warm-heart.html</guid>
         
         <category>Think and Want</category>
         
@@ -279,8 +285,8 @@ http://www.yinwang.org/blog-cn/2013/03/19/eliminate-problems&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 14 Feb 2015 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2015/02/Expectation-Of-The-Companion.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2015/02/Expectation-Of-The-Companion.html</guid>
+        <link>//2015/02/Expectation-Of-The-Companion.html</link>
+        <guid isPermaLink="true">//2015/02/Expectation-Of-The-Companion.html</guid>
         
         
       </item>
@@ -324,8 +330,8 @@ http://www.yinwang.org/blog-cn/2013/03/19/eliminate-problems&lt;/p&gt;
 &lt;p&gt;朝气蓬勃，撼动未来。&lt;/p&gt;
 </description>
         <pubDate>Fri, 15 Aug 2014 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2014/08/When-You-Go-to-University.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2014/08/When-You-Go-to-University.html</guid>
+        <link>//2014/08/When-You-Go-to-University.html</link>
+        <guid isPermaLink="true">//2014/08/When-You-Go-to-University.html</guid>
         
         
       </item>
@@ -361,8 +367,8 @@ http://www.yinwang.org/blog-cn/2013/03/19/eliminate-problems&lt;/p&gt;
 &lt;p&gt;（完）&lt;/p&gt;
 </description>
         <pubDate>Sat, 05 Jul 2014 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2014/07/Goodbye-Bachelor-Degree.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2014/07/Goodbye-Bachelor-Degree.html</guid>
+        <link>//2014/07/Goodbye-Bachelor-Degree.html</link>
+        <guid isPermaLink="true">//2014/07/Goodbye-Bachelor-Degree.html</guid>
         
         
       </item>

@@ -16,7 +16,7 @@ author: 晋戈
 4. 优化器      : $Optimizer$
 5. 评估       : $Eval$
 
-于是，机器学习的训练过程，可以看作是，$\underline{以数据作为输入，用优化器最小化损失函数，得到模型函数f，用于预估给定的x，并进行评估。}$
+机器学习任务，可以看作是，$\underline{以数据作为输入，用优化器最小化损失函数，得到模型函数f，用于预估给定的x，并进行评估。}$
 一般的，考虑到模型预估的准确和泛化，两个方面的需求，损失函数常被定义成如下形式:
 
 \begin{equation}
@@ -40,8 +40,8 @@ L(f(x),\hat{y}) = H(f(x),\hat{y}) + \phi(f(x))
 \begin{equation}
 J(\theta_{n+1}) - J(\theta_{n}) 
 = \nabla {J(\theta_{n})(\theta_{n+1} - \theta_{n})} + o(\theta)  
-= -\eta \nabla{J(\theta_{n})}\nabla{J(\theta_{n})} + o(\theta)
-= -\eta J^2(\theta_{n}) + o(\theta) \leq 0
+= -\eta \nabla{J(\theta_{n})} \cdot \nabla{J(\theta_{n})} + o(\theta)
+= -\eta \nabla J^2(\theta_{n}) + o(\theta) \leq 0
 \end{equation} 
 
 根据上面公式可以得到两个结论：

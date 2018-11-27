@@ -115,11 +115,19 @@ J(\theta_{n+1}) - J(\theta_{n})
   <li>因为梯度是当前点下降最快的方向。所以梯度下降法是一个贪心地最快优化方法。</li>
 </ul>
 
-<h3 id="学习率">学习率</h3>
+<h4 id="学习率">学习率</h4>
 
 <p>学习率，亦即步长。是梯度下降法最 trick 的地方：首先，learning_rate 不能太大，因为这个会破坏上面证明中的前提条件（中值定理的前提条件); 然后，learning_rate 不能太小，步长小，更新慢。最后，learning_rate大，除了可能会破坏中值定理的前提条件，也会带来另外的好处，跳出局部最优解。</p>
 
 <p>所以，一个合理的learning_rate 的选取，要既能够保证收敛，获得一个局部最优解；又能够在几个局部最优解中，选择到最优的那个解。</p>
+
+<h4 id="动量">动量</h4>
+
+<p>历史更新量，刻画历史更新的方向，对当下更新的影响。能加快收敛，减小震荡。</p>
+
+<h4 id="梯度">梯度</h4>
+
+<p>当前点的梯度，更新方向的基础量</p>
 
 <h3 id="梯度下降框架流程">梯度下降框架流程</h3>
 
@@ -127,13 +135,18 @@ J(\theta_{n+1}) - J(\theta_{n})
 
 <p>(1) 计算目标函数关于参数的梯度</p>
 
-<p>$g_t = \nabla_{\theta}J(\theta_t)$</p>
+<p>\begin{equation}
+g_t = \nabla_{\theta}J(\theta_t)
+\end{equation}</p>
 
-<p>(2) 根据历史梯度计算一阶和二阶动量</p>
+<p>(2) 根据历史梯度计算一阶和二阶动量
+\begin{equation}
+m_t = \phi(g_1,g_2,g_3,…,g_t)
+\end{equation}</p>
 
-<p>$m_t = \phi(g_1,g_2,g_3,…,g_t)$</p>
-
-<p>$v_t = \psi(g_1,g_2,g_3,…,g_t)$</p>
+<p>\begin{equation}
+v_t = \psi(g_1,g_2,g_3,…,g_t)
+\end{equation}</p>
 
 <p>(3) 更新模型参数
 \begin{equation}
@@ -142,15 +155,15 @@ J(\theta_{n+1}) - J(\theta_{n})
 
 <p>其中， $\epsilon$ 为平滑项，防止分母为零，通常取 1e-8。</p>
 
-<h3 id="恒定步长sgd">恒定步长(SGD)</h3>
+<h3 id="基于框架的算法实例">基于框架的算法实例</h3>
 
-<p>学习率$\eta$是固定的。</p>
+<h4 id="随机梯度下降-sgd">随机梯度下降 (SGD)</h4>
+
+<p>学习率$\eta$是固定的，不考虑动量。</p>
 
 <p>\begin{equation}
 \theta_{t} = \theta_{t-1} - \eta g_{t}
 \end{equation}</p>
-
-<h3 id="适应性步长">适应性步长</h3>
 
 <h4 id="动量-momentum-sgd-m">动量 momentum (SGD-M)</h4>
 <p>相信历史更新的方向，也很有可能是接下来的更新方向: 
@@ -185,24 +198,32 @@ m_t = \gamma m_{t-1} + \eta g_t
 \end{equation}</p>
 
 <h4 id="adagrad">Adagrad</h4>
-<p>SGD、SGD-M 和 NAG 均是以相同的学习率去更新 $\theta$ 的各个分量。而深度学习模型中往往涉及大量的参数，不同参数的更新频率往往有所区别。对于更新不频繁的参数（典型例子：更新 word embedding 中的低频词），我们希望单次步长更大，多学习一些知识；对于更新频繁的参数，我们则希望步长较小，使得学习到的参数更稳定，不至于被单个样本影响太多。</p>
+
+<p>SGD、SGD-M 和 NAG 均是以相同的学习率去更新 $\theta$ 的各个分量。而深度学习模型中往往涉及大量的参数，不同参数的更新频率往往有所区别。$\underline{区分对待不同特征的学习率}$. 对于更新不频繁的参数（典型例子：更新 word embedding 中的低频词），我们希望单次步长更大，多学习一些知识；对于更新频繁的参数，我们则希望步长较小，使得学习到的参数更稳定，不至于被单个样本影响太多。</p>
 
 <p>Adagrad[4] 算法即可达到此效果。其引入了二阶动量：</p>
 
 <p>\begin{equation}
-v_t = \text{diag}(\sum_{i=1}^t g_{i,1}^2, \sum_{i=1}^t g_{i,2}^2, \cdots, \sum_{i=1}^t g_{i,d}^2)
+v_t = \text{diag}(\sum_{s=1}^t g_{s,1}^2, \sum_{s=1}^t g_{s,2}^2, \cdots, \sum_{s=1}^t g_{s,d}^2)
 \end{equation}</p>
 
 <p>其中， $v_t \in \mathbb{R}^{d\times d} $是对角矩阵，其元素 $v_{t, ii}$ 为参数第 $i$维从初始时刻到时刻 $t$ 的梯度平方和。</p>
 
-<p>此时，可以这样理解：学习率等效为 $\eta / \sqrt{v_t + \epsilon} $。对于此前频繁更新过的参数，其二阶动量的对应分量较大，学习率就较小。这一方法在稀疏数据的场景下表现很好。</p>
+<p>\begin{equation}
+v_{t, ii} = \sum_{s=1}^t g_{s,i}^2
+\end{equation}</p>
+
+<p>\begin{equation}
+\theta_{t+1,i} = \theta_{t,i} - \frac{\eta}{\sqrt{ v_{t, ii}+ \epsilon }} \cdot g_t
+\end{equation}
+此时，可以这样理解：学习率等效为 $\eta / \sqrt{v_t + \epsilon} $。对于此前频繁更新过的参数，其二阶动量的对应分量较大，学习率就较小。这一方法在稀疏数据的场景下表现很好。</p>
 
 <h4 id="rmsprop">RMSprop</h4>
-<p>在 Adagrad 中， v_t 是单调递增的，使得学习率逐渐递减至 0，可能导致训练过程提前结束。为了改进这一缺点，可以考虑在计算二阶动量时不累积全部历史梯度，而只关注最近某一时间窗口内的下降梯度。根据此思想有了 RMSprop[5]。记 $g_t \odot g_t$ 为 $g_t^2$ ，有
+<p>在 Adagrad 中， $v_t$ 是单调递增的，使得学习率逐渐递减至 0，可能导致训练过程提前结束。为了改进这一缺点，可以考虑在计算二阶动量时不累积全部历史梯度，而只关注最近某一时间窗口内的下降梯度。根据此思想有了 RMSprop[5]。记 $g_t \odot g_t$ 为 $g_t^2$ ，有
 \begin{equation}
 v_t = \gamma v_{t-1} + (1-\gamma) \cdot \text{diag}(g_t^2)
 \end{equation}
-其二阶动量采用指数移动平均公式计算，这样即可避免二阶动量持续累积的问题。和 SGD-M 中的参数类似，\gamma 通常取 0.9 左右。</p>
+其二阶动量采用指数移动平均公式计算，这样即可避免二阶动量持续累积的问题。和 SGD-M 中的参数类似，$\gamma$ 通常取 0.9 左右。</p>
 
 <h4 id="adam">Adam</h4>
 <p>Adam[6] 可以认为是 RMSprop 和 Momentum 的结合。和 RMSprop 对二阶动量使用指数移动平均类似，Adam 中对一阶动量也是用指数移动平均计算。

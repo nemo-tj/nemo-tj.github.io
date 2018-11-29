@@ -84,7 +84,7 @@
 -->
 
     <div class="content">
-        <a class="header" href="/2018/11/Optimization-Algorithm-For-Machine-Learning.html">机器学习</a>
+        <a class="header" href="/2018/11/Optimization-Algorithm-For-Machine-Learning.html">机器学习-优化器</a>
         <div class="meta">
             <span class="date">26 Nov 2018 
              
@@ -95,7 +95,7 @@
             机器学习模型组成
 
 
-            <!-- 机器学习模型组成 一个机器学习的任务，主要包含以下几个组成部分： 数据 : $(X,y)$ 模型函数 : $f(x)$ 损失函数 : $L(f(x),\hat{y})$ 优化器 : $Optimizer$ 评估 : $Eval$ 于是，机器学习的训练过程，可以看作是，$\underline{以数据作为输入，用优化器最小化损失函数，得到模型函数f，用于预估给定的x，并进行评估。}$ 一般的，考虑到模型预估的准确和泛化，两个方面的需求，损失函数常被定义成如下形式: \begin{equation} L(f(x),\hat{y}) = H(f(x),\hat{y}) + \phi(f(x)) \end{equation} 其中，$H$, $\phi$ 分别指预测损失和结构损失，前者反映模型预测的准确性，后者是为了保证模型的泛化性能。 可以看出，模型训练的关键在于最小化损失函数。优化器的选取和对应的原理从而成为关键。... -->
+            <!-- 机器学习模型组成 一个机器学习的任务，主要包含以下几个组成部分： 数据 : $(X,y)$ 模型函数 : $\hat{y} = f(x)$ 损失函数 : $L(y,\hat{y})$ 优化器 : $Optimizer$ 评估 : $Eval$ 机器学习任务，可以看作是，$\underline{以数据作为输入，用优化器最小化损失函数，得到模型函数f，用于预估给定的x，并进行评估。}$ 一般的，考虑到模型预估的准确和泛化，两个方面的需求，损失函数常被定义成如下形式: \begin{equation} L(y,\hat{y}) = H(y,\hat{y}) + \phi(f(x)) \end{equation} 其中，$H$, $\phi$... -->
         </div>
     </div>
     <div class="extra content">

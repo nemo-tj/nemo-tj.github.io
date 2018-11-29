@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 机器学习
+title: 机器学习-优化器
 modified: 2018-11-26
 tags: [Machine Learning]
 author: 晋戈
@@ -11,8 +11,8 @@ author: 晋戈
 一个机器学习的任务，主要包含以下几个组成部分：
 
 1. 数据       : $(X,y)$
-2. 模型函数    : $f(x)$
-3. 损失函数    : $L(f(x),\hat{y})$
+2. 模型函数    : $\hat{y} = f(x)$
+3. 损失函数    : $L(y,\hat{y})$
 4. 优化器      : $Optimizer$
 5. 评估       : $Eval$
 
@@ -20,7 +20,7 @@ author: 晋戈
 一般的，考虑到模型预估的准确和泛化，两个方面的需求，损失函数常被定义成如下形式:
 
 \begin{equation}
-L(f(x),\hat{y}) = H(f(x),\hat{y}) + \phi(f(x))
+L(y,\hat{y}) = H(y,\hat{y}) + \phi(f(x))
 \end{equation}
 
 其中，$H$, $\phi$ 分别指预测损失和结构损失，前者反映模型预测的准确性，后者是为了保证模型的泛化性能。

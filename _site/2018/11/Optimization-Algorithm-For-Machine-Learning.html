@@ -65,7 +65,7 @@
             26 Nov 2018 
              
         </span>
-        <h1 class="post-title">机器学习</h1>
+        <h1 class="post-title">机器学习-优化器</h1>
     </center>
     <div class="ui divider"></div>
     <h3 id="机器学习模型组成">机器学习模型组成</h3>
@@ -74,8 +74,8 @@
 
 <ol>
   <li>数据       : $(X,y)$</li>
-  <li>模型函数    : $f(x)$</li>
-  <li>损失函数    : $L(f(x),\hat{y})$</li>
+  <li>模型函数    : $\hat{y} = f(x)$</li>
+  <li>损失函数    : $L(y,\hat{y})$</li>
   <li>优化器      : $Optimizer$</li>
   <li>评估       : $Eval$</li>
 </ol>
@@ -84,7 +84,7 @@
 一般的，考虑到模型预估的准确和泛化，两个方面的需求，损失函数常被定义成如下形式:</p>
 
 <p>\begin{equation}
-L(f(x),\hat{y}) = H(f(x),\hat{y}) + \phi(f(x))
+L(y,\hat{y}) = H(y,\hat{y}) + \phi(f(x))
 \end{equation}</p>
 
 <p>其中，$H$, $\phi$ 分别指预测损失和结构损失，前者反映模型预测的准确性，后者是为了保证模型的泛化性能。</p>

@@ -5,29 +5,29 @@
     <description>New Start For New Journey</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 26 Nov 2018 22:32:27 +0800</pubDate>
-    <lastBuildDate>Mon, 26 Nov 2018 22:32:27 +0800</lastBuildDate>
+    <pubDate>Tue, 27 Nov 2018 16:10:04 +0800</pubDate>
+    <lastBuildDate>Tue, 27 Nov 2018 16:10:04 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
-        <title>机器学习</title>
+        <title>机器学习-优化器</title>
         <description>&lt;h3 id=&quot;机器学习模型组成&quot;&gt;机器学习模型组成&lt;/h3&gt;
 
 &lt;p&gt;一个机器学习的任务，主要包含以下几个组成部分：&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;数据       : $(X,y)$&lt;/li&gt;
-  &lt;li&gt;模型函数    : $f(x)$&lt;/li&gt;
-  &lt;li&gt;损失函数    : $L(f(x),\hat{y})$&lt;/li&gt;
+  &lt;li&gt;模型函数    : $\hat{y} = f(x)$&lt;/li&gt;
+  &lt;li&gt;损失函数    : $L(y,\hat{y})$&lt;/li&gt;
   &lt;li&gt;优化器      : $Optimizer$&lt;/li&gt;
   &lt;li&gt;评估       : $Eval$&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;于是，机器学习的训练过程，可以看作是，$\underline{以数据作为输入，用优化器最小化损失函数，得到模型函数f，用于预估给定的x，并进行评估。}$
+&lt;p&gt;机器学习任务，可以看作是，$\underline{以数据作为输入，用优化器最小化损失函数，得到模型函数f，用于预估给定的x，并进行评估。}$
 一般的，考虑到模型预估的准确和泛化，两个方面的需求，损失函数常被定义成如下形式:&lt;/p&gt;
 
 &lt;p&gt;\begin{equation}
-L(f(x),\hat{y}) = H(f(x),\hat{y}) + \phi(f(x))
+L(y,\hat{y}) = H(y,\hat{y}) + \phi(f(x))
 \end{equation}&lt;/p&gt;
 
 &lt;p&gt;其中，$H$, $\phi$ 分别指预测损失和结构损失，前者反映模型预测的准确性，后者是为了保证模型的泛化性能。&lt;/p&gt;
@@ -48,8 +48,8 @@ J(\theta_{n+1}) &lt; J(\theta_{n}) %]]&gt;&lt;/script&gt;&lt;/p&gt;
 &lt;p&gt;\begin{equation}
 J(\theta_{n+1}) - J(\theta_{n}) 
 = \nabla {J(\theta_{n})(\theta_{n+1} - \theta_{n})} + o(\theta)&lt;br /&gt;
-= -\eta \nabla{J(\theta_{n})}\nabla{J(\theta_{n})} + o(\theta)
-= -\eta J^2(\theta_{n}) + o(\theta) \leq 0
+= -\eta \nabla{J(\theta_{n})} \cdot \nabla{J(\theta_{n})} + o(\theta)
+= -\eta \nabla J^2(\theta_{n}) + o(\theta) \leq 0
 \end{equation}&lt;/p&gt;
 
 &lt;p&gt;根据上面公式可以得到两个结论：&lt;/p&gt;
@@ -58,11 +58,19 @@ J(\theta_{n+1}) - J(\theta_{n})
   &lt;li&gt;因为梯度是当前点下降最快的方向。所以梯度下降法是一个贪心地最快优化方法。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;学习率&quot;&gt;学习率&lt;/h3&gt;
+&lt;h4 id=&quot;学习率&quot;&gt;学习率&lt;/h4&gt;
 
 &lt;p&gt;学习率，亦即步长。是梯度下降法最 trick 的地方：首先，learning_rate 不能太大，因为这个会破坏上面证明中的前提条件（中值定理的前提条件); 然后，learning_rate 不能太小，步长小，更新慢。最后，learning_rate大，除了可能会破坏中值定理的前提条件，也会带来另外的好处，跳出局部最优解。&lt;/p&gt;
 
 &lt;p&gt;所以，一个合理的learning_rate 的选取，要既能够保证收敛，获得一个局部最优解；又能够在几个局部最优解中，选择到最优的那个解。&lt;/p&gt;
+
+&lt;h4 id=&quot;动量&quot;&gt;动量&lt;/h4&gt;
+
+&lt;p&gt;历史更新量，刻画历史更新的方向，对当下更新的影响。能加快收敛，减小震荡。&lt;/p&gt;
+
+&lt;h4 id=&quot;梯度&quot;&gt;梯度&lt;/h4&gt;
+
+&lt;p&gt;当前点的梯度，更新方向的基础量&lt;/p&gt;
 
 &lt;h3 id=&quot;梯度下降框架流程&quot;&gt;梯度下降框架流程&lt;/h3&gt;
 
@@ -70,13 +78,18 @@ J(\theta_{n+1}) - J(\theta_{n})
 
 &lt;p&gt;(1) 计算目标函数关于参数的梯度&lt;/p&gt;
 
-&lt;p&gt;$g_t = \nabla_{\theta}J(\theta_t)$&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+g_t = \nabla_{\theta}J(\theta_t)
+\end{equation}&lt;/p&gt;
 
-&lt;p&gt;(2) 根据历史梯度计算一阶和二阶动量&lt;/p&gt;
+&lt;p&gt;(2) 根据历史梯度计算一阶和二阶动量
+\begin{equation}
+m_t = \phi(g_1,g_2,g_3,…,g_t)
+\end{equation}&lt;/p&gt;
 
-&lt;p&gt;$m_t = \phi(g_1,g_2,g_3,…,g_t)$&lt;/p&gt;
-
-&lt;p&gt;$v_t = \psi(g_1,g_2,g_3,…,g_t)$&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+v_t = \psi(g_1,g_2,g_3,…,g_t)
+\end{equation}&lt;/p&gt;
 
 &lt;p&gt;(3) 更新模型参数
 \begin{equation}
@@ -85,15 +98,15 @@ J(\theta_{n+1}) - J(\theta_{n})
 
 &lt;p&gt;其中， $\epsilon$ 为平滑项，防止分母为零，通常取 1e-8。&lt;/p&gt;
 
-&lt;h3 id=&quot;恒定步长sgd&quot;&gt;恒定步长(SGD)&lt;/h3&gt;
+&lt;h3 id=&quot;基于框架的算法实例&quot;&gt;基于框架的算法实例&lt;/h3&gt;
 
-&lt;p&gt;学习率$\eta$是固定的。&lt;/p&gt;
+&lt;h4 id=&quot;随机梯度下降-sgd&quot;&gt;随机梯度下降 (SGD)&lt;/h4&gt;
+
+&lt;p&gt;学习率$\eta$是固定的，不考虑动量。&lt;/p&gt;
 
 &lt;p&gt;\begin{equation}
 \theta_{t} = \theta_{t-1} - \eta g_{t}
 \end{equation}&lt;/p&gt;
-
-&lt;h3 id=&quot;适应性步长&quot;&gt;适应性步长&lt;/h3&gt;
 
 &lt;h4 id=&quot;动量-momentum-sgd-m&quot;&gt;动量 momentum (SGD-M)&lt;/h4&gt;
 &lt;p&gt;相信历史更新的方向，也很有可能是接下来的更新方向: 
@@ -128,24 +141,32 @@ m_t = \gamma m_{t-1} + \eta g_t
 \end{equation}&lt;/p&gt;
 
 &lt;h4 id=&quot;adagrad&quot;&gt;Adagrad&lt;/h4&gt;
-&lt;p&gt;SGD、SGD-M 和 NAG 均是以相同的学习率去更新 $\theta$ 的各个分量。而深度学习模型中往往涉及大量的参数，不同参数的更新频率往往有所区别。对于更新不频繁的参数（典型例子：更新 word embedding 中的低频词），我们希望单次步长更大，多学习一些知识；对于更新频繁的参数，我们则希望步长较小，使得学习到的参数更稳定，不至于被单个样本影响太多。&lt;/p&gt;
+
+&lt;p&gt;SGD、SGD-M 和 NAG 均是以相同的学习率去更新 $\theta$ 的各个分量。而深度学习模型中往往涉及大量的参数，不同参数的更新频率往往有所区别。$\underline{区分对待不同特征的学习率}$. 对于更新不频繁的参数（典型例子：更新 word embedding 中的低频词），我们希望单次步长更大，多学习一些知识；对于更新频繁的参数，我们则希望步长较小，使得学习到的参数更稳定，不至于被单个样本影响太多。&lt;/p&gt;
 
 &lt;p&gt;Adagrad[4] 算法即可达到此效果。其引入了二阶动量：&lt;/p&gt;
 
 &lt;p&gt;\begin{equation}
-v_t = \text{diag}(\sum_{i=1}^t g_{i,1}^2, \sum_{i=1}^t g_{i,2}^2, \cdots, \sum_{i=1}^t g_{i,d}^2)
+v_t = \text{diag}(\sum_{s=1}^t g_{s,1}^2, \sum_{s=1}^t g_{s,2}^2, \cdots, \sum_{s=1}^t g_{s,d}^2)
 \end{equation}&lt;/p&gt;
 
 &lt;p&gt;其中， $v_t \in \mathbb{R}^{d\times d} $是对角矩阵，其元素 $v_{t, ii}$ 为参数第 $i$维从初始时刻到时刻 $t$ 的梯度平方和。&lt;/p&gt;
 
-&lt;p&gt;此时，可以这样理解：学习率等效为 $\eta / \sqrt{v_t + \epsilon} $。对于此前频繁更新过的参数，其二阶动量的对应分量较大，学习率就较小。这一方法在稀疏数据的场景下表现很好。&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+v_{t, ii} = \sum_{s=1}^t g_{s,i}^2
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+\theta_{t+1,i} = \theta_{t,i} - \frac{\eta}{\sqrt{ v_{t, ii}+ \epsilon }} \cdot g_t
+\end{equation}
+此时，可以这样理解：学习率等效为 $\eta / \sqrt{v_t + \epsilon} $。对于此前频繁更新过的参数，其二阶动量的对应分量较大，学习率就较小。这一方法在稀疏数据的场景下表现很好。&lt;/p&gt;
 
 &lt;h4 id=&quot;rmsprop&quot;&gt;RMSprop&lt;/h4&gt;
-&lt;p&gt;在 Adagrad 中， v_t 是单调递增的，使得学习率逐渐递减至 0，可能导致训练过程提前结束。为了改进这一缺点，可以考虑在计算二阶动量时不累积全部历史梯度，而只关注最近某一时间窗口内的下降梯度。根据此思想有了 RMSprop[5]。记 $g_t \odot g_t$ 为 $g_t^2$ ，有
+&lt;p&gt;在 Adagrad 中， $v_t$ 是单调递增的，使得学习率逐渐递减至 0，可能导致训练过程提前结束。为了改进这一缺点，可以考虑在计算二阶动量时不累积全部历史梯度，而只关注最近某一时间窗口内的下降梯度。根据此思想有了 RMSprop[5]。记 $g_t \odot g_t$ 为 $g_t^2$ ，有
 \begin{equation}
 v_t = \gamma v_{t-1} + (1-\gamma) \cdot \text{diag}(g_t^2)
 \end{equation}
-其二阶动量采用指数移动平均公式计算，这样即可避免二阶动量持续累积的问题。和 SGD-M 中的参数类似，\gamma 通常取 0.9 左右。&lt;/p&gt;
+其二阶动量采用指数移动平均公式计算，这样即可避免二阶动量持续累积的问题。和 SGD-M 中的参数类似，$\gamma$ 通常取 0.9 左右。&lt;/p&gt;
 
 &lt;h4 id=&quot;adam&quot;&gt;Adam&lt;/h4&gt;
 &lt;p&gt;Adam[6] 可以认为是 RMSprop 和 Momentum 的结合。和 RMSprop 对二阶动量使用指数移动平均类似，Adam 中对一阶动量也是用指数移动平均计算。

@@ -32,7 +32,8 @@ layout: default
                             {{ post.title | strip_html | truncatewords: 15 }}
                             <small class="small-date">{{ post.date | date_to_string }}</small>
                         </div>
-                        {{ post.content | strip_html | truncatewords: 30 }}
+						<!-- {{ post.content | strip_html | truncatewords: 30 }} -->
+						{{ post.excerpt | strip_html | truncatewords: 30 }}
                     </div>
                 </div>
             </div>

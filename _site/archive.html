@@ -82,10 +82,10 @@
                      
                 </small>
             </a>
-            1. 在C++11中创建新线程
+            　　在每个c++应用程序中，都有一个默认的主线程，即main函数，在c++11中，我们可以通过创建std::thread类的对象来创建其他线程，每个std :: thread对象都可以与一个线程相关联，只需包含头文件&lt; thread&gt;。可以使用std :: thread对象附加一个回调，当这个新线程启动时，它将被执行。 这些回调可以为函数指针、函数对象、Lambda函数。
 
 
-            <!-- 1. 在C++11中创建新线程 　　在每个c++应用程序中，都有一个默认的主线程，即main函数，在c++11中，我们可以通过创建std::thread类的对象来创建其他线程，每个std :: thread对象都可以与一个线程相关联，只需包含头文件&lt; thread&gt;。可以使用std :: thread对象附加一个回调，当这个新线程启动时，它将被执行。 这些回调可以为函数指针、函数对象、Lambda函数。 　　线程对象可通过std::thread obj(&lt; CALLBACK&gt;)来创建，新线程将在创建新对象后立即开始，并且将与已启动的线程并行执行传递的回调。此外，任何线程可以通过在该线程的对象上调用join()函数来等待另一个线程退出。 1.1 使用函数指针创建线程： //main.cpp #include &lt;iostream&gt; #include &lt;thread&gt; void thread_function() { for (int i = 0; i &lt; 5;... -->
+            <!-- 　　在每个c++应用程序中，都有一个默认的主线程，即main函数，在c++11中，我们可以通过创建std::thread类的对象来创建其他线程，每个std :: thread对象都可以与一个线程相关联，只需包含头文件&lt; thread&gt;。可以使用std :: thread对象附加一个回调，当这个新线程启动时，它将被执行。 这些回调可以为函数指针、函数对象、Lambda函数。 　　线程对象可通过std::thread obj(&lt; CALLBACK&gt;)来创建，新线程将在创建新对象后立即开始，并且将与已启动的线程并行执行传递的回调。此外，任何线程可以通过在该线程的对象上调用join()函数来等待另一个线程退出。 1. 在C++11中创建新线程 1.1 使用函数指针创建线程： //main.cpp #include &lt;iostream&gt; #include &lt;thread&gt; void thread_function() { for (int i = 0; i &lt; 5;... -->
         </div>
     </div>
 

@@ -3,11 +3,476 @@
   <channel>
     <title>Wall-E - From Space From Earth</title>
     <description>New Start For New Journey</description>
-    <link>http://localhost:4000//</link>
-    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Jan 2019 21:53:08 +0800</pubDate>
-    <lastBuildDate>Tue, 01 Jan 2019 21:53:08 +0800</lastBuildDate>
+    <link>//</link>
+    <atom:link href="//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 05 Feb 2019 21:16:37 +0800</pubDate>
+    <lastBuildDate>Tue, 05 Feb 2019 21:16:37 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>C++11 多线程编程基础</title>
+        <description>&lt;h3 id=&quot;1-在c11中创建新线程&quot;&gt;1. 在C++11中创建新线程&lt;/h3&gt;
+
+&lt;p&gt;　　在每个c++应用程序中，都有一个默认的主线程，即main函数，在c++11中，我们可以通过创建std::thread类的对象来创建其他线程，每个std :: thread对象都可以与一个线程相关联，只需包含头文件&amp;lt; thread&amp;gt;。可以使用std :: thread对象附加一个回调，当这个新线程启动时，它将被执行。 这些回调可以为函数指针、函数对象、Lambda函数。&lt;/p&gt;
+
+&lt;p&gt;　　线程对象可通过std::thread obj(&amp;lt; CALLBACK&amp;gt;)来创建，新线程将在创建新对象后立即开始，并且将与已启动的线程并行执行传递的回调。此外，任何线程可以通过在该线程的对象上调用join()函数来等待另一个线程退出。&lt;/p&gt;
+
+&lt;h4 id=&quot;11-使用函数指针创建线程&quot;&gt;1.1 使用函数指针创建线程：&lt;/h4&gt;
+
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//main.cpp&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;thread&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;thread_function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;thread function excuting&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;thread&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threadObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;thread_function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Display from MainThread&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;threadObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Exit of Main function&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;　　&lt;/p&gt;
+&lt;h4 id=&quot;12-使用函数对象创建线程&quot;&gt;1.2 使用函数对象创建线程：&lt;/h4&gt;
+
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;thread&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DisplayThread&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Display Thread Excecuting&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;thread&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threadObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DisplayThread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()));&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Display From Main Thread &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Waiting For Thread to complete&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;threadObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Exiting from Main Thread&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;13-cmake-编译和说明&quot;&gt;1.3 cmake 编译和说明&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CmakeLists.txt&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cmake_minimum_required(VERSION 3.10)
+project(Thread_test)
+set(CMAKE_CXX_STANDARD 11)
+find_package(Threads REQUIRED)
+add_executable(Thread_test main.cpp)
+target_link_libraries(Thread_test ${CMAKE_THREAD_LIBS_INIT})
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;线程 id&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;每个std::thread对象都有一个相关联的id，
+std::thread::get_id() -&amp;gt; 成员函数中给出对应线程对象的id;&lt;/p&gt;
+
+&lt;p&gt;std::this_thread::get_id() -&amp;gt; 给出当前线程的id，如果std::thread对象没有关联的线程，get_id()将返回默认构造的std::thread::id对象：“not any thread”，std::thread::id也可以表示id。&lt;/p&gt;
+
+&lt;h3 id=&quot;2-joining和detaching-线程&quot;&gt;2. joining和detaching 线程&lt;/h3&gt;
+&lt;p&gt;　　启动了线程，你需要明确是要等待线程结束(加入式join)，还是让其自主运行(分离式detach)&lt;/p&gt;
+
+&lt;h4 id=&quot;21-一个是通过调用stdthread对象上调用join函数等待这个线程执行完毕&quot;&gt;2.1 一个是通过调用std::thread对象上调用join()函数等待这个线程执行完毕:&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;std::thread threadObj(funcPtr); 
+threadObj.join();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;例如，主线程启动10个线程，启动完毕后，main函数等待他们执行完毕，join完所有线程后，main函数继续执行：&lt;/p&gt;
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;thread&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WorkerThread&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()(){&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Worker Thread &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;this_thread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;is Excecuting&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;thread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threadList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;threadList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;thread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WorkerThread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()));&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Now wait for all the worker thread to finish i.e.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Call join() function on each of the std::thread object&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Wait for all the worker thread to finish&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;for_each&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;threadList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threadList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mem_fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;thread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Exiting from Main Thread&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;22-另一个是detach可以将线程与线程对象分离让线程作为后台线程执行当前线程也不会阻塞了&quot;&gt;2.2 另一个是detach可以将线程与线程对象分离,让线程作为后台线程执行,当前线程也不会阻塞了.&lt;/h4&gt;
+
+&lt;p&gt;但是detach之后就无法在和线程发生联系了.如果线程执行函数使用了临时变量可能会出现问题,线程调用了detach在后台运行,临时变量可能已经销毁,那么线程会访问已经被销毁的变量，需要在std::thread对象中调用std::detach()函数:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;std::thread threadObj(funcPtr)
+threadObj.detach();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;　　
+调用detach()后，std::thread对象不再与实际执行线程相关联，在线程句柄上调用detach() 和 join()要小心.&lt;/p&gt;
+
+&lt;h3 id=&quot;3-将参数传递给线程&quot;&gt;3. 将参数传递给线程&lt;/h3&gt;
+&lt;p&gt;　　要将参数传递给线程的可关联对象或函数，只需将参数传递给std::thread构造函数，默认情况下，所有的参数都将复制到新线程的内部存储中。 
+　　&lt;/p&gt;
+&lt;h4 id=&quot;31-给线程传递值&quot;&gt;3.1 给线程传递值：&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+#include &amp;lt;thread&amp;gt;
+
+void threadCallback(int x, std::string str) {
+  std::cout &amp;lt;&amp;lt; &quot;Passed Number = &quot; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; std::endl;
+  std::cout &amp;lt;&amp;lt; &quot;Passed String = &quot; &amp;lt;&amp;lt; str &amp;lt;&amp;lt; std::endl;
+}
+int main() {
+  int x = 10;
+  std::string str = &quot;Sample String&quot;;
+  std::thread threadObj(threadCallback, x, str);
+  threadObj.join();
+  return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;32-给线程传递引用&quot;&gt;3.2 给线程传递引用：&lt;/h4&gt;
+
+&lt;h5 id=&quot;320-直接传引用不改变原来的值&quot;&gt;3.2.0 直接传引用不改变原来的值&lt;/h5&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;thread&amp;gt;
+
+void threadCallback(int const&amp;amp; x) {
+  int&amp;amp; y = const_cast&amp;lt;int&amp;amp;&amp;gt;(x);
+  y++;
+  std::cout &amp;lt;&amp;lt; &quot;Inside Thread x = &quot; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; std::endl;
+}
+
+int main() {
+  int x = 9;
+  std::cout &amp;lt;&amp;lt; &quot;In Main Thread : Before Thread Start x = &quot; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; std::endl;
+  std::thread threadObj(threadCallback, x);
+  threadObj.join();
+  std::cout &amp;lt;&amp;lt; &quot;In Main Thread : After Thread Joins x = &quot; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; std::endl;
+  return 0;
+} 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;输出结果为：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;In Main Thread : Before Thread Start x = 9 
+Inside Thread x = 10 
+In Main Thread : After Thread Joins x = 9
+
+Process finished with exit code 0 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;　　
+即使threadCallback接受参数作为引用，但是并没有改变main中x的值，在线程引用外它是不可见的。这是因为线程函数threadCallback中的x是引用复制在新线程的堆栈中的临时值，&lt;/p&gt;
+
+&lt;h5 id=&quot;321-使用stdref可进行修改&quot;&gt;3.2.1 使用std::ref可进行修改：&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;thread&amp;gt;
+
+void threadCallback(int const&amp;amp; x) {
+  int&amp;amp; y = const_cast&amp;lt;int&amp;amp;&amp;gt;(x);
+  y++;
+  std::cout &amp;lt;&amp;lt; &quot;Inside Thread x = &quot; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; std::endl;
+}
+
+int main() {
+  int x = 9;
+  std::cout &amp;lt;&amp;lt; &quot;In Main Thread : Before Thread Start x = &quot; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; std::endl;
+  std::thread threadObj(threadCallback, std::ref(x));
+  threadObj.join();
+  std::cout &amp;lt;&amp;lt; &quot;In Main Thread : After Thread Joins x = &quot; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; std::endl;
+  return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;输出结果为： 
+In Main Thread : Before Thread Start x = 9 
+Inside Thread x = 10 
+In Main Thread : After Thread Joins x = 10
+Process finished with exit code 0&lt;/p&gt;
+
+&lt;h4 id=&quot;33-传类的成员函数&quot;&gt;3.3 传类的成员函数&lt;/h4&gt;
+
+&lt;p&gt;　　指定一个类的成员函数的指针作为线程函数，将指针传递给成员函数作为回调函数，并将指针指向对象作为第二个参数：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;thread&amp;gt;
+
+class DummyClass {
+ public:
+  DummyClass() { }
+  DummyClass(const DummyClass&amp;amp; obj) { }
+  void sampleMemberfunction(int x) {
+    std::cout &amp;lt;&amp;lt; &quot;Inside sampleMemberfunction &quot; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; std::endl;
+  }
+};
+
+int main() {
+  DummyClass dummyObj;
+  int x = 10;
+  std::thread threadObj(&amp;amp;DummyClass::sampleMemberfunction, &amp;amp;dummyObj, x);
+  threadObj.join();
+
+  return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4-线程间数据的共享与竞争条件&quot;&gt;4. 线程间数据的共享与竞争条件&lt;/h3&gt;
+
+&lt;p&gt;　　在多线程间的数据共享很简单，但是在程序中的这种数据共享可能会引起问题，其中一种便是竞争条件。当两个或多个线程并行执行一组操作，访问相同的内存位置，此时，它们中的一个或多个线程会修改内存位置中的数据，这可能会导致一些意外的结果，这就是竞争条件。竞争条件通常较难发现并重现，因为它们并不总是出现，只有当两个或多个线程执行操作的相对顺序导致意外结果时，它们才会发生。&lt;/p&gt;
+
+&lt;p&gt;　　例如创建5个线程，这些线程共享类Wallet的一个对象，使用addMoney()成员函数并行添加100元。所以，如果最初钱包中的钱是0，那么在所有线程的竞争执行完毕后，钱包中的钱应该是500，但是，由于所有线程同时修改共享数据，在某些情况下，钱包中的钱可能远小于500。&lt;/p&gt;
+
+&lt;p&gt;测试如下：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;thread&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+
+class Wallet {
+    int mMoney;
+public:
+    Wallet() : mMoney(0) { }
+    int getMoney() { return mMoney; }
+    void addMoney(int money) {
+        for (int i = 0; i &amp;lt; money; i++) {
+            mMoney++;
+        }
+    }
+};
+
+int testMultithreadWallet() {
+    Wallet walletObject;
+    std::vector&amp;lt;std::thread&amp;gt; threads;
+    for (int i = 0; i &amp;lt; 5; i++) {
+        threads.push_back(std::thread(&amp;amp;Wallet::addMoney, &amp;amp;walletObject, 100));
+    }
+    for (int i = 0; i &amp;lt; 5; i++) {
+        threads.at(i).join();
+    }
+    return walletObject.getMoney();
+}
+
+int main() {
+    int val = 0;
+    for (int k = 0; k &amp;lt; 100; k++) {
+        if ((val=testMultithreadWallet()) != 500) {
+            std::cout &amp;lt;&amp;lt; &quot;Error at count = &quot; &amp;lt;&amp;lt; k &amp;lt;&amp;lt; &quot; Money in Wallet = &quot; &amp;lt;&amp;lt; val &amp;lt;&amp;lt; std::endl;
+        }
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;每个线程并行地增加相同的成员变量“mMoney”，看似是一条线，但是这个“nMoney++”实际上被转换为3条机器命令：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在Register中加载”mMoney”变量&lt;/li&gt;
+  &lt;li&gt;增加register的值&lt;/li&gt;
+  &lt;li&gt;用register的值更新“mMoney”变量&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在这种情况下，一个增量将被忽略，因为不是增加mMoney变量，而是增加不同的寄存器，“mMoney”变量的值被覆盖。所以最终的输出结果并不是5个线程各自叠加了100，即最终的输出结果不一定是 500 ！&lt;/p&gt;
+
+&lt;h3 id=&quot;5-使用mutex处理竞争条件&quot;&gt;5. 使用mutex处理竞争条件&lt;/h3&gt;
+
+&lt;p&gt;　　为了处理多线程环境中的竞争条件，我们需要mutex互斥锁，在修改或读取共享数据前，需要对数据加锁，修改完成后，对数据进行解锁。在c++11的线程库中，mutex 在&amp;lt; mutex &amp;gt;头文件中，表示互斥体的类是std::mutex。&lt;/p&gt;
+
+&lt;p&gt;　　就上面的问题进行处理，Wallet类提供了在Wallet中增加money的方法，并且在不同的线程中使用相同的Wallet对象，所以我们需要对Wallet的addMoney()方法加锁。在增加Wallet中的money前加锁，并且在离开该函数前解锁，看代码：Wallet类内部维护money，并提供函数addMoney()，这个成员函数首先获取一个锁，然后给wallet对象的money增加指定的数额，最后释放锁。&lt;/p&gt;
+
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;thread&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;mutex&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Wallet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mMoney&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mutex&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mutex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Wallet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mMoney&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getMoney&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mMoney&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addMoney&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;mutex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;mMoney&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;mutex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testMultithreadWallet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Wallet&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;walletObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;thread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;threads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;thread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Wallet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addMoney&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;walletObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;threads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;walletObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getMoney&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;testMultithreadWallet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Error at count= &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; money in wallet&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这种情况保证了钱包里的钱不会出现少于5000的情况，因为addMoney()中的互斥锁确保了只有在一个线程修改完成money后，另一个线程才能对其进行修改，但是，如果我们忘记在函数结束后对锁进行释放会怎么样？这种情况下，一个线程将退出而不释放锁，其他线程将保持等待，为了避免这种情况，我们应当使用std::lock_guard，这是一个template class，它为mutex实现RALL，它将mutex包裹在其对象内，并将附加的mutex锁定在其构造函数中，当其析构函数被调用时，它将释放互斥体。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Wallet {
+  int mMoney;
+  std::mutex mutex;
+ public:
+  Wallet() : mMoney(0) { }
+  int getMoney() { return mMoney;}
+  void addMoney(int money) {
+    std::lock_guard&amp;lt;std::mutex&amp;gt; lockGuard(mutex);
+
+    for (int i = 0; i &amp;lt; mMoney; ++i) {
+      //如果在此处发生异常，lockGuadr的析构函数将会因为堆栈展开而被调用
+      mMoney++;
+      //一旦函数退出，那么lockGuard对象的析构函数将被调用，在析构函数中mutex会被释放
+    }
+
+  }
+}; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;6-条件变量&quot;&gt;6. 条件变量&lt;/h3&gt;
+
+&lt;p&gt;　　条件变量是一种用于在2个线程之间进行信令的事件，一个线程可以等待它得到信号，其他的线程可以给它发信号。在c++11中，条件变量需要头文件&amp;lt; condition_variable&amp;gt;，同时，条件变量还需要一个mutex锁。&lt;/p&gt;
+
+&lt;h4 id=&quot;61-条件变量是如何运行的&quot;&gt;6.1 条件变量是如何运行的：&lt;/h4&gt;
+
+&lt;p&gt;　　- 线程1调用等待条件变量，内部获取mutex互斥锁并检查是否满足条件； 
+　　- 如果没有，则释放锁，并等待条件变量得到发出的信号(线程被阻塞),条件变量的 wait() 函数以原子方式提供这两个操作；&lt;/p&gt;
+
+&lt;p&gt;　　- 另一个线程，如线程2，当满足条件时，向条件变量发信号； 
+　　- 一旦线程1正等待其恢复的条件变量发出信号，线程1便获取互斥锁，并检查与条件变量相关关联的条件是否满足，或者是否是一个上级调用，如果多个线程正在等待，那么notify_one将只解锁一个线程； 
+　　- 如果是一个上级调用，那么它再次调用wait()函数。 
+　　&lt;/p&gt;
+&lt;h4 id=&quot;62-条件变量的主要成员函数&quot;&gt;6.2 条件变量的主要成员函数：&lt;/h4&gt;
+&lt;h5 id=&quot;wait&quot;&gt;Wait()&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;它使得当前线程阻塞，直到条件变量得到信号或发生虚假唤醒；&lt;/li&gt;
+  &lt;li&gt;它原子性地释放附加的mutex，阻塞当前线程，并将其添加到等待当前条件变量对象的线程列表中，当某线程在同样的条件变量上调用notify_one() 或者 notify_all()，线程将被解除阻塞；&lt;/li&gt;
+  &lt;li&gt;这种行为也可能是虚假的，因此，解除阻塞后，需要再次检查条件；&lt;/li&gt;
+  &lt;li&gt;一个回调函数会传给该函数，调用它来检查其是否是虚假调用，还是确实满足了真实条件；&lt;/li&gt;
+  &lt;li&gt;当线程解除阻塞后，wait()函数获取mutex锁，并检查条件是否满足，如果条件不满足，则再次原子性地释放附加的mutex，阻塞当前线程，并将其添加到等待当前条件变量对象的线程列表中。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;notify_one&quot;&gt;notify_one()&lt;/h5&gt;
+&lt;p&gt;如果所有线程都在等待相同的条件变量对象，那么notify_one会取消阻塞其中一个等待线程。&lt;/p&gt;
+
+&lt;h5 id=&quot;notify_all&quot;&gt;notify_all()&lt;/h5&gt;
+&lt;p&gt;如果所有线程都在等待相同的条件变量对象，那么notify_all会取消阻塞所有的等待线程。&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;thread&amp;gt;
+#include &amp;lt;functional&amp;gt;
+#include &amp;lt;mutex&amp;gt;
+#include &amp;lt;condition_variable&amp;gt;
+using namespace std::placeholders;
+
+class Application {
+    std::mutex m_mutex;
+    std::condition_variable m_condVar;
+    bool m_bDataLoaded;
+public:
+    Application() {
+        m_bDataLoaded = false;
+    }
+
+    void loadData() {
+        //使该线程sleep 1秒
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        std::cout &amp;lt;&amp;lt; &quot;Loading Data from XML&quot; &amp;lt;&amp;lt; std::endl;
+
+        //锁定数据
+        std::lock_guard&amp;lt;std::mutex&amp;gt; guard(m_mutex);
+
+        //flag设为true，表明数据已加载
+        m_bDataLoaded = true;
+
+        //通知条件变量
+        m_condVar.notify_one();
+    }
+
+    bool isDataLoaded() {
+        return m_bDataLoaded;
+    }
+
+    void mainTask() {
+        std::cout &amp;lt;&amp;lt; &quot;Do some handshaking&quot; &amp;lt;&amp;lt; std::endl;
+
+        //获取锁
+        std::unique_lock&amp;lt;std::mutex&amp;gt; mlock(m_mutex);
+
+        //开始等待条件变量得到信号
+        //wait()将在内部释放锁，并使线程阻塞
+        //一旦条件变量发出信号，则恢复线程并再次获取锁
+        //然后检测条件是否满足，如果条件满足，则继续，否则再次进入wait
+        m_condVar.wait(mlock, std::bind(&amp;amp;Application::isDataLoaded, this));
+        std::cout &amp;lt;&amp;lt; &quot;Do Processing On loaded Data&quot; &amp;lt;&amp;lt; std::endl;
+    }
+};
+
+int main() {
+    Application app;
+    std::thread thread_1(&amp;amp;Application::mainTask, &amp;amp;app);
+    std::thread thread_2(&amp;amp;Application::loadData, &amp;amp;app);
+    thread_2.join();
+    thread_1.join();
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;作者：krais24 
+来源：CSDN 
+原文：https://blog.csdn.net/krais_wk/article/details/81095899 
+版权声明：本文为博主原创文章，转载请附上博文链接！&lt;/p&gt;
+
+&lt;h3 id=&quot;7-参考文献&quot;&gt;7. 参考文献&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/haippy/p/3235560.html&quot;&gt;http://www.cnblogs.com/haippy/p/3235560.html&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 01 Jan 2019 00:00:00 +0800</pubDate>
+        <link>//2019/01/cpp-multi-thread.html</link>
+        <guid isPermaLink="true">//2019/01/cpp-multi-thread.html</guid>
+        
+        <category>c++</category>
+        
+        <category>多线程</category>
+        
+        
+      </item>
     
       <item>
         <title>这一年</title>
@@ -40,8 +505,8 @@
 
 </description>
         <pubDate>Mon, 31 Dec 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/12/%E8%BF%99%E4%B8%80%E5%B9%B4.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/12/%E8%BF%99%E4%B8%80%E5%B9%B4.html</guid>
+        <link>//2018/12/year-of-2018.html</link>
+        <guid isPermaLink="true">//2018/12/year-of-2018.html</guid>
         
         <category>Think and Want</category>
         
@@ -53,8 +518,8 @@
         <description>&lt;p&gt;&lt;a href=&quot;https://tracholar.github.io/machine-learning/2018/01/26/auc.html&quot;&gt;https://tracholar.github.io/machine-learning/2018/01/26/auc.html&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 03 Dec 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/12/AUC-Introduction-and-Explanation.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/12/AUC-Introduction-and-Explanation.html</guid>
+        <link>//2018/12/AUC-Introduction-and-Explanation.html</link>
+        <guid isPermaLink="true">//2018/12/AUC-Introduction-and-Explanation.html</guid>
         
         <category>Machine Learning</category>
         
@@ -138,8 +603,8 @@
 
 </description>
         <pubDate>Fri, 30 Nov 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/11/Think-Like-A-Bussiness-Man.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/11/Think-Like-A-Bussiness-Man.html</guid>
+        <link>//2018/11/Think-Like-A-Bussiness-Man.html</link>
+        <guid isPermaLink="true">//2018/11/Think-Like-A-Bussiness-Man.html</guid>
         
         <category>生活开心</category>
         
@@ -212,8 +677,8 @@ Create()
 
 </description>
         <pubDate>Wed, 28 Nov 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/11/xgboost-code-review.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/11/xgboost-code-review.html</guid>
+        <link>//2018/11/xgboost-code-review.html</link>
+        <guid isPermaLink="true">//2018/11/xgboost-code-review.html</guid>
         
         <category>Machine Learning</category>
         
@@ -407,8 +872,8 @@ $m_0 = 0$, $v_0 = 0$&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 26 Nov 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/11/Optimization-Algorithm-For-Machine-Learning.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/11/Optimization-Algorithm-For-Machine-Learning.html</guid>
+        <link>//2018/11/Optimization-Algorithm-For-Machine-Learning.html</link>
+        <guid isPermaLink="true">//2018/11/Optimization-Algorithm-For-Machine-Learning.html</guid>
         
         <category>Machine Learning</category>
         
@@ -454,8 +919,8 @@ $m_0 = 0$, $v_0 = 0$&lt;/p&gt;
 &lt;a href=&quot;http://www.yinwang.org/blog-cn/2013/03/19/eliminate-problems&quot;&gt;http://www.yinwang.org/blog-cn/2013/03/19/eliminate-problems&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 19 Oct 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/10/problem-solver-and-problem-eliminator.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/10/problem-solver-and-problem-eliminator.html</guid>
+        <link>//2018/10/problem-solver-and-problem-eliminator.html</link>
+        <guid isPermaLink="true">//2018/10/problem-solver-and-problem-eliminator.html</guid>
         
         
       </item>
@@ -482,8 +947,8 @@ $m_0 = 0$, $v_0 = 0$&lt;/p&gt;
 &lt;p&gt;想饮一些酒，让灵魂失重，好被风吹走。&lt;/p&gt;
 </description>
         <pubDate>Tue, 16 Oct 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/10/passby.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/10/passby.html</guid>
+        <link>//2018/10/passby.html</link>
+        <guid isPermaLink="true">//2018/10/passby.html</guid>
         
         <category>poem</category>
         
@@ -506,8 +971,8 @@ $m_0 = 0$, $v_0 = 0$&lt;/p&gt;
 就要一个人笑出声来。&lt;/p&gt;
 </description>
         <pubDate>Tue, 16 Oct 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/10/friends-and-lovers.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/10/friends-and-lovers.html</guid>
+        <link>//2018/10/friends-and-lovers.html</link>
+        <guid isPermaLink="true">//2018/10/friends-and-lovers.html</guid>
         
         
       </item>
@@ -558,27 +1023,10 @@ $m_0 = 0$, $v_0 = 0$&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 12 Oct 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/10/see-you-again.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/10/see-you-again.html</guid>
+        <link>//2018/10/see-you-again.html</link>
+        <guid isPermaLink="true">//2018/10/see-you-again.html</guid>
         
         <category>warm and beautiful</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>新婚致辞</title>
-        <description>&lt;p&gt;又是秋天，阳光炙热，闪耀已旧，万物生长,繁茂故我，而你们的故事也终于开始写了，书写新的篇章。我很开心，由衷地为你们感到高兴。太多美好的故事开始于这个季节，萌芽滋长，零转回来，又在这个季节恣意盛放，升华结果。&lt;/p&gt;
-
-&lt;p&gt;青春是追逐奔跑，不知疲倦，是清风摇曳荷花，蜻蜓画出涟漪，青春太好，好到怎么过都觉得是挥霍。回头一望,都要生活,只可辜负。生活是理解扶持,砥砺前行;是眼中万物，兜兜转转,都是彼此;是岁岁年年，朝朝暮暮，也要心心念念。一生太长，长到都不知道怎么过完，却望着并肩白首，不负此生。&lt;/p&gt;
-
-&lt;p&gt;人生若只如初见，我曾觉得两个人相对一生是极其可怕，怕中有生活的无奈，有挫败的难过，有伤心，有疲倦，有时间消磨的平淡，却终有人为了彼此,愿拼尽全力，义无反顾。愿用余生做筹码，一起执上命运的轮盘;愿用仅有的一生做戏码，同台演出;愿不远万里，只要生活在一起。是啊,只要两个人在一起，有什么可怕的呢？希望你们不妨用受伤的勇气，处理琐事的耐心,经营平淡的智慧，风雨同舟的坚决。&lt;/p&gt;
-
-&lt;p&gt;愿你们永远不忘心心相遇，能相知美好，永远保有相爱能相守的幸福；愿你们一直记得偷偷喜欢时的忐忑，也记得被灼热目光灼红的脸颊；愿你们享受昼夜厨房与爱，也能比肩穿行山川湖海；愿你们在晨曦中亲吻，在月光下相拥；愿你们拥有阳光味道的衬衣和漂亮的碎花裙子，愿你们是彼此冬日的手套，夏日的汽水，努力奋斗的动力，日复一日的梦想；愿你们的生活没有命运，只有选择，无论艰困，只有勇气和决心，不忘初心，方得始终，衷心祝福新婚快乐幸福美满！&lt;/p&gt;
-</description>
-        <pubDate>Tue, 09 Oct 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/10/best-wishes-to-you.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/10/best-wishes-to-you.html</guid>
         
         
       </item>

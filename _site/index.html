@@ -80,6 +80,64 @@
     
     
         
+    
+        
+            
+                
+                <div class="image">
+                    <img  src="http://localhost:4000/images/word2vec/code_seq.png" alt="word2vec 代码实现流程" / />
+                </div> 
+                
+                 
+-->
+
+    <div class="content">
+        <a class="header" href="/2019/02/word-2-vec-code-review.html">word2vec 源码解析</a>
+        <div class="meta">
+            <span class="date">06 Feb 2019 
+             
+            [word2vec原理源码]
+            </span>            
+        </div>
+        <div class="description">
+            基本概念
+在wrod2vec工具中，有如下的几个比较重要的概念：
+
+  CBOW
+  Skip-Gram
+  Hierarchical Softmax
+  Negative Sampling
+
+
+
+            <!-- 基本概念 在wrod2vec工具中，有如下的几个比较重要的概念： CBOW Skip-Gram Hierarchical Softmax Negative Sampling 其中CBOW和Skip-Gram是word2vec工具中使用到的两种不同的语言模型，而Hierarchical Softmax和Negative Sampling是对以上的两种模型的具体的优化方法。 在word2vec工具中，主要的工作包括： 预处理。即变量的声明，全局变量的定义等； 构建词库。即包含文本的处理，以及是否需要有指定词库等； 初始化网络结构。即包含CBOW模型和Skip-Gram模型的参数初始化，Huffman编码的生成等； 多线程模型训练。即利用Hierarchical Softmax 或者 Negative Sampling 方法对网络中的参数进行求解； 最终结果的处理。即是否保存和以何种形式保存。 对于以上的过程，可以由下图表示： 1、预处理 在预处理部分，对word2vec需要使用的参数进行初始化，在word2vec中是利用传入的方式对参数进行初始化的。 在预处理部分，实现了sigmoid函数值的近似计算。在利用神经网络模型对样本进行预测的过程中，需要对其进行预测，此时，需要使用到sigmoid函数，sigmoid函数的具体形式为： \begin{equation} \sigma = \frac{1}{1+... -->
+        </div>
+    </div>
+    <div class="extra content">
+        <i class="comments icon"></i>
+        <a href="/2019/02/word-2-vec-code-review.htmlindex.html#disqus_thread" data-disqus-identifier="/2019/02/word-2-vec-code-review.html">
+            0 Comments
+        </a>
+        
+        <div class="right floated author">
+            <img class="ui avatar image" src="/assets/img/profile.jpg"> 晋戈
+        </div>
+        
+    </div>
+</div>
+            </div>
+        
+    
+        
+        
+            <div class="eight wide column">
+                <div class="ui card">
+
+<!--     
+
+    
+    
+        
      
 -->
 
@@ -115,7 +173,7 @@
     
         
         
-            <div class="eight wide column">
+            <div class="four wide column">
                 <div class="ui card">
 
 <!--     
@@ -509,30 +567,19 @@ make every moment count.
     
         
         
-            <div class="four wide column">
-                <div class="ui card">
-
-<!--     
-
-    
-    
-        
-     
--->
-
-    <div class="content">
-        <a class="header" href="/2018/10/see-you-again.html">我心里住的那个人，好像还是他(转)</a>
-        <div class="meta">
-            <span class="date">12 Oct 2018 
-             
-            [warm and beautiful]
-            </span>            
-        </div>
-        <div class="description">
-            2006年的深冬，我和唐耀拽着青春的尾巴，谈了一场众望所归的恋爱。后来我才想起来问自己，喜欢他吗？好像没有。他喜欢我吗？不清楚。哦，似乎连表白这样重要的环节，用的也是省略号。当然，这并不重要，重要的是我们有在一起的必要性。
-
-
-            <!-- 2006年的深冬，我和唐耀拽着青春的尾巴，谈了一场众望所归的恋爱。后来我才想起来问自己，喜欢他吗？好像没有。他喜欢我吗？不清楚。哦，似乎连表白这样重要的环节，用的也是省略号。当然，这并不重要，重要的是我们有在一起的必要性。
+            
+                <div class="ui horizontal divider">
+                    Older Posts
+                </div>
+            
+            <div class="sixteen wide column">
+                <div class="ui middle aligned selection list">
+                    <div class="item">
+                        <div class="header">
+                            我心里住的那个人，好像还是他(转)
+                            <small class="small-date">12 Oct 2018</small>
+                        </div>
+						<!-- 2006年的深冬，我和唐耀拽着青春的尾巴，谈了一场众望所归的恋爱。后来我才想起来问自己，喜欢他吗？好像没有。他喜欢我吗？不清楚。哦，似乎连表白这样重要的环节，用的也是省略号。当然，这并不重要，重要的是我们有在一起的必要性。
 
 百度贴吧里说，要想在人海中，遇到那个和自己同年同月同日生的人，理论上的概率大约为四万分之一。我和唐耀，刚好存在于这样的概率里。如果不发生点什么，还好意思说青春无悔吗？班上同学看我俩的眼神，个个都写着“在一起”。你知道的，那个年纪，喜欢这件事，众人一起哄，总是容易弄假成真。所以，我和唐耀没有经过任何铺垫，就很自然地被划归同一小组做实验，分在同一天做值日，也很自然地被打上了属于对方的标签。
 
@@ -575,25 +622,16 @@ make every moment count.
 有人感叹，这一定是比大海还深的缘分。可我知道，这世间哪有那么多的久别重逢。很多的重逢是因为我们想要见到对方，才想方设法制造重逢的机会。就像这个生日party，是唐耀和茉莉的精心安排。看《绯闻女孩》时，其中有一幕，Blair对Chuck说，“我不指望你能等我。”Chuck答，“如果两个人注定在一起，最终他们总会找到重温旧梦的路。”眼前这个男人，我想告诉他，见过满天星辰后，我心里住的那个人，好像还是他。
 
  -->
-        </div>
-    </div>
-    <div class="extra content">
-        <i class="comments icon"></i>
-        <a href="/2018/10/see-you-again.htmlindex.html#disqus_thread" data-disqus-identifier="/2018/10/see-you-again.html">
-            0 Comments
-        </a>
-        
-    </div>
-</div>
+						2006年的深冬，我和唐耀拽着青春的尾巴，谈了一场众望所归的恋爱。后来我才想起来问自己，喜欢他吗？好像没有。他喜欢我吗？不清楚。哦，似乎连表白这样重要的环节，用的也是省略号。当然，这并不重要，重要的是我们有在一起的必要性。
+
+
+                    </div>
+                </div>
             </div>
         
     
         
         
-            
-                <div class="ui horizontal divider">
-                    Older Posts
-                </div>
             
             <div class="sixteen wide column">
                 <div class="ui middle aligned selection list">

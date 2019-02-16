@@ -5,23 +5,40 @@
     <description>New Start For New Journey</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-<<<<<<< HEAD
-    <pubDate>Wed, 06 Feb 2019 18:27:52 +0800</pubDate>
-    <lastBuildDate>Wed, 06 Feb 2019 18:27:52 +0800</lastBuildDate>
-=======
-    <pubDate>Wed, 06 Feb 2019 18:26:14 +0800</pubDate>
-    <lastBuildDate>Wed, 06 Feb 2019 18:26:14 +0800</lastBuildDate>
->>>>>>> 2bfda2dc40170b55cff6d859fc47e5422c6709fa
+    <pubDate>Tue, 12 Feb 2019 22:06:02 +0800</pubDate>
+    <lastBuildDate>Tue, 12 Feb 2019 22:06:02 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>linux learning</title>
+        <description>&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;批量查找某个目下文件的包含的内容，例如：&lt;/p&gt;
+
+    &lt;p&gt;grep -rn “要找查找的文本” ./&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;批量查找并替换文件内容。&lt;/p&gt;
+
+    &lt;p&gt;sed -i “s/要找查找的文本/替换后的文本/g” &lt;code class=&quot;highlighter-rouge&quot;&gt;grep -rl &quot;要找查找的文本&quot; ./&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Tue, 12 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//2019/02/learn-linux-commands.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2019/02/learn-linux-commands.html</guid>
+        
+        <category>linux</category>
+        
+        <category>shell</category>
+        
+        
+      </item>
     
       <item>
         <title>word2vec 源码解析</title>
         <description>&lt;h3 id=&quot;基本概念&quot;&gt;基本概念&lt;/h3&gt;
 &lt;h4 id=&quot;在wrod2vec工具中有如下的几个比较重要的概念&quot;&gt;在wrod2vec工具中，有如下的几个比较重要的概念：&lt;/h4&gt;
-<<<<<<< HEAD
-=======
-
->>>>>>> 2bfda2dc40170b55cff6d859fc47e5422c6709fa
 &lt;ul&gt;
   &lt;li&gt;CBOW&lt;/li&gt;
   &lt;li&gt;Skip-Gram&lt;/li&gt;
@@ -417,19 +434,11 @@ for (a = b; a &amp;lt; window * 2 + 1 - b; a++) if (a != window) {
 
 &lt;p&gt;注释版的word2vec源码已经上传到Github中：Github：&lt;a href=&quot;https://github.com/zhaozhiyong19890102/OpenSourceReading/blob/master/word2vec/word2vec.c&quot;&gt;word2vec.c&lt;/a&gt;&lt;/p&gt;
 
-<<<<<<< HEAD
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;作者：zhiyong_will 
 来源：CSDN 
 原文：https://blog.csdn.net/google19890102/article/details/51887344 
 版权声明：本文为博主原创文章，转载请附上博文链接！
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-=======
-&lt;hr /&gt;
-&lt;p&gt;作者：zhiyong_will 
-来源：CSDN 
-原文：https://blog.csdn.net/google19890102/article/details/51887344 
-版权声明：本文为博主原创文章，转载请附上博文链接！&lt;/p&gt;
->>>>>>> 2bfda2dc40170b55cff6d859fc47e5422c6709fa
 </description>
         <pubDate>Wed, 06 Feb 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000//2019/02/word-2-vec-code-review.html</link>
@@ -1379,28 +1388,6 @@ $m_0 = 0$, $v_0 = 0$&lt;/p&gt;
         <guid isPermaLink="true">http://localhost:4000//2018/10/passby.html</guid>
         
         <category>poem</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>想起一个人(转)</title>
-        <description>&lt;p&gt;不可能老是想着你，
-你不是我火烧眉毛的生活，
-但当闲暇时候，
-就会偶尔把你想起。&lt;/p&gt;
-
-&lt;p&gt;想起,
-你我站在灵魂的深处，
-就这样互相望着，
-那么简单，那么美好。&lt;/p&gt;
-
-&lt;p&gt;如果我不是小心忍着，
-就要一个人笑出声来。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 16 Oct 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/10/friends-and-lovers.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/10/friends-and-lovers.html</guid>
         
         
       </item>

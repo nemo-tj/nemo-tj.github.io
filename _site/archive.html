@@ -75,6 +75,42 @@
 
     <div class="ui middle aligned selection list">
         <div class="item">
+            <a class="header" href="/2019/02/learn-linux-commands.html">
+                linux learning
+                <small class="small-date">
+                    12 Feb 2019
+                     
+                </small>
+            </a>
+            
+  
+    批量查找某个目下文件的包含的内容，例如：
+
+    grep -rn “要找查找的文本” ./
+  
+
+
+
+            <!-- 
+  
+    批量查找某个目下文件的包含的内容，例如：
+
+    grep -rn “要找查找的文本” ./
+  
+  
+    批量查找并替换文件内容。
+
+    sed -i “s/要找查找的文本/替换后的文本/g” grep -rl "要找查找的文本" ./
+  
+
+ -->
+        </div>
+    </div>
+
+
+
+    <div class="ui middle aligned selection list">
+        <div class="item">
             <a class="header" href="/2019/02/word-2-vec-code-review.html">
                 word2vec 源码解析
                 <small class="small-date">
@@ -85,15 +121,12 @@
             基本概念
 在wrod2vec工具中，有如下的几个比较重要的概念：
 
-<<<<<<< HEAD
   CBOW
   Skip-Gram
   Hierarchical Softmax
   Negative Sampling
 
 
-=======
->>>>>>> 2bfda2dc40170b55cff6d859fc47e5422c6709fa
 
             <!-- 基本概念 在wrod2vec工具中，有如下的几个比较重要的概念： CBOW Skip-Gram Hierarchical Softmax Negative Sampling 其中CBOW和Skip-Gram是word2vec工具中使用到的两种不同的语言模型，而Hierarchical Softmax和Negative Sampling是对以上的两种模型的具体的优化方法。 在word2vec工具中，主要的工作包括： 预处理。即变量的声明，全局变量的定义等； 构建词库。即包含文本的处理，以及是否需要有指定词库等； 初始化网络结构。即包含CBOW模型和Skip-Gram模型的参数初始化，Huffman编码的生成等； 多线程模型训练。即利用Hierarchical Softmax 或者 Negative Sampling 方法对网络中的参数进行求解； 最终结果的处理。即是否保存和以何种形式保存。 对于以上的过程，可以由下图表示： 1、预处理 在预处理部分，对word2vec需要使用的参数进行初始化，在word2vec中是利用传入的方式对参数进行初始化的。 在预处理部分，实现了sigmoid函数值的近似计算。在利用神经网络模型对样本进行预测的过程中，需要对其进行预测，此时，需要使用到sigmoid函数，sigmoid函数的具体形式为： \begin{equation} \sigma = \frac{1}{1+... -->
         </div>

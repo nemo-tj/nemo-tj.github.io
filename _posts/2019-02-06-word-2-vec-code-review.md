@@ -332,7 +332,7 @@ for (a = b; a < window * 2 + 1 - b; a++) if (a != window) {
 ```
 
 ##### 4.3.3、Negative Sampling
-与Hierarchical Softmax一致，Negative Sampling也是一种加速计算的方法，在Negative Sampling方法中使用的是随机的负采样，在CBOW模型中，已知词ww的上下文，需要预测词ww，对于给定的上下文，词ww即为正样本，其他的样本为负样本，此时我们需要根据词频从剩下的词中挑选出最合适的负样本，实现的代码如下所示：
+与Hierarchical Softmax一致，Negative Sampling也是一种加速计算的方法，在Negative Sampling方法中使用的是随机的负采样，在CBOW模型中，已知词$w$的上下文$context(w)$，需要预测词$w$，对于给定的上下文$context(w)$，词$w$即为正样本，其他的样本为负样本，此时我们需要根据词频从剩下的词中挑选出最合适的负样本，实现的代码如下所示：
 ```cpp
 // 标记target和label
 if (d == 0) {// 正样本

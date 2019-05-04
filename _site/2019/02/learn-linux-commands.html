@@ -23,13 +23,6 @@
     <header>
         <!-- logo and description -->
         
-        <div class="head-area">
-            <h1 class="site-logo">
-                <a href="/"><img src="/assets/img/logo.png" class="logo"/></a>
-            </h1>
-            <h3 class="site-description">用心设计未来</h3>
-        </div>
-        
         <nav class="site-nav">
             <div class="left-nav">
                 <!-- add titles to all buttons -->
@@ -68,23 +61,61 @@
         <main>
             <div class="post-container">
     <center>
-        <h1 class="post-title">About Me</h1>
+        <span class="date">
+            12 Feb 2019 
+             
+        </span>
+        <h1 class="post-title">linux learning</h1>
     </center>
     <div class="ui divider"></div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat commodo sed egestas egestas fringilla phasellus. Pellentesque id nibh tortor id aliquet lectus proin nibh nisl. Ac auctor augue mauris augue neque gravida in. Vel turpis nunc eget lorem dolor sed viverra ipsum nunc. Morbi non arcu risus quis varius quam quisque. Convallis tellus id interdum velit. Eget gravida cum sociis natoque. Sed enim ut sem viverra aliquet eget sit amet tellus. Fringilla ut morbi tincidunt augue interdum velit. Velit ut tortor pretium viverra suspendisse potenti nullam ac. Sit amet massa vitae tortor condimentum lacinia quis vel. Tellus orci ac auctor augue mauris augue neque. Id velit ut tortor pretium viverra suspendisse potenti. Accumsan in nisl nisi scelerisque eu. Eget est lorem ipsum dolor sit amet consectetur.
-</p>
-<img src="/assets/img/logo.png">
-<p>
-Augue mauris augue neque gravida in fermentum. Id consectetur purus ut faucibus pulvinar. Mauris nunc congue nisi vitae suscipit tellus mauris. Est ullamcorper eget nulla facilisi. Etiam sit amet nisl purus in. Nisl nisi scelerisque eu ultrices vitae auctor eu augue. Aliquam ut porttitor leo a diam. Risus sed vulputate odio ut. Sit amet porttitor eget dolor morbi non arcu risus quis. Cras fermentum odio eu feugiat pretium nibh ipsum. Quam id leo in vitae turpis massa sed. Sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula. Mattis enim ut tellus elementum sagittis. Bibendum arcu vitae elementum curabitur vitae. Nibh mauris cursus mattis molestie a.
-</p>
-<p>
-Velit scelerisque in dictum non consectetur a erat nam. Amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Dui sapien eget mi proin. Dapibus ultrices in iaculis nunc. Consequat id porta nibh venenatis. Facilisi morbi tempus iaculis urna id volutpat lacus laoreet. Donec et odio pellentesque diam. Nibh tortor id aliquet lectus proin nibh nisl. Enim ut sem viverra aliquet eget sit amet tellus cras. Urna condimentum mattis pellentesque id nibh tortor. Tellus in hac habitasse platea dictumst vestibulum rhoncus. Enim facilisis gravida neque convallis a. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Morbi enim nunc faucibus a pellentesque. Pellentesque eu tincidunt tortor aliquam nulla. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam. Euismod lacinia at quis risus. Volutpat odio facilisis mauris sit.
-</p>
-<img src="/assets/img/logo.png">
-<p>
-Vel pharetra vel turpis nunc eget lorem dolor. Tincidunt vitae semper quis lectus nulla at volutpat diam ut. Nunc scelerisque viverra mauris in aliquam. A pellentesque sit amet porttitor eget dolor morbi non arcu. Ut tortor pretium viverra suspendisse potenti nullam ac. Consequat interdum varius sit amet mattis vulputate enim nulla aliquet. Viverra ipsum nunc aliquet bibendum enim. Diam quam nulla porttitor massa. Ac turpis egestas integer eget aliquet nibh. In pellentesque massa placerat duis ultricies lacus sed. Facilisi morbi tempus iaculis urna id volutpat lacus laoreet. Sed tempus urna et pharetra pharetra massa massa ultricies mi. Ut morbi tincidunt augue interdum. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus.
-</p>
-    <br/>
+    <ol>
+  <li>
+    <p>批量查找某个目下文件的包含的内容，例如：</p>
+
+    <p>grep -rn “要找查找的文本” ./</p>
+  </li>
+  <li>
+    <p>批量查找并替换文件内容。</p>
+
+    <p>sed -i “s/要找查找的文本/替换后的文本/g” `grep -rl “要找查找的文本” ./`</p>
+  </li>
+</ol>
+
+    <div class="ui horizontal divider">
+        Thank You For Reading
+    </div>
+    <!-- author box -->
+<div class="ui segment">
+    <div class="ui items">
+        <div class="item">
+            <a class="ui circular tiny image">
+                <img src="/assets/img/profile.jpg">
+            </a>
+            <div class="content">
+                <a class="header">晋戈</a>
+                <div class="description">
+                    <p>同理心温暖世界，认真设计未来</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_shortname = 'nagekar'; 
+        var disqus_developer = 0; // developer mode is on
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
 </div>
         </main>
     </div>

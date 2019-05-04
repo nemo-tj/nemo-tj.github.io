@@ -6,7 +6,11 @@ tags: [Think and Want]
 author: 晋戈
 ---
 
-0. 非淡泊无以明志。
+35. 别把世界让给那些你看不上的人，勇敢点，别输了。
+
+34. 当你不再制定计划，而是一次又一次放纵自己沉溺于即时快感和虚拟的成就感中，你离废掉就不远了。20190503
+
+33. 非淡泊无以明志。
 
 32.	穿梭于城市的繁忙和灯光中，也不要忘记仰望星空，那些遥远和无穷的星光，会告诉你，更深远的启示。仰望星空，方知我的渺小；仰望星空，方晓可以的无穷。
 
@@ -32,7 +36,7 @@ author: 晋戈
 
 21. 有那么一瞬间，我真的有放下一切的决心。再选一次。但是，又有很多的道理说：生活在哪儿过，和谁过都一样。于是，那些疯狂和折腾，似乎就失去了所有的意义。我知道和你说话，很开心。进一步，或许是深渊，或许是桃源。也都是或许，但肯定的是，不会再回现在。太危险了，太自私了，对谁都不一定好,除了我自己,好像也未必。是的,危险。
 
-20. I have to admit that, I feel kind of love that girl now. Each time we talked, I feel happy, I kind feel it is not right. But I just can't help to do it. Especially , the "hello " from her voice, it is so nice and warm. Now I have to choose between morality and intension, to be or not to be. Never looking for love, let love find you. Because you don't force you fall, you just fall. That's why called falling in love. Sorry, I'm falling in a time which is not properly. Indeed, I'm falling, to be or not to be. 2018-11-18
+20. I have to admit that, I feel kind of love that girl now. Each time we talked, I feel happy, I kind feel it is not right. But I just can't help to do it. Especially , the "hello " from her voice, it is so nice and warm. Now I have to choose between morality and intension, to be or not to be. Never looking for love, let love find you. Because you don't force you fall, you just fall. That's why called falling in love. Sorry, I'm falling in a time which is not properly. Indeed, I'm falling, to be or not to be. 
 
 19. 原谅我自负又自卑的矛盾体。却还是希望收获另一半那种无条件的相信，相信你一定可以。上学时，那种需要看到成绩单，才能被judge为优秀的感觉真不好。虽然社会是以看得到的成绩来评定一个人，但我还是深深的希望，在你我心中，彼此崇拜和惺惺相惜。
 

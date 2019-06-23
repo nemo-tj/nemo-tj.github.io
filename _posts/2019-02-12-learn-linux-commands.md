@@ -15,3 +15,4 @@ author: 晋戈
 
 1. <font color="Blue">在src_path 目录下，批量查找from_context并替换文件内容为 to_context：</font>
  - ```sed -i "s/from_context/to_context/g" `grep -rl "from_context" src_path` ```
+

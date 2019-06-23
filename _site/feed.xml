@@ -5,8 +5,8 @@
     <description>用心设计未来</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 Jun 2019 12:25:01 +0800</pubDate>
-    <lastBuildDate>Sun, 23 Jun 2019 12:25:01 +0800</lastBuildDate>
+    <pubDate>Sun, 23 Jun 2019 18:23:52 +0800</pubDate>
+    <lastBuildDate>Sun, 23 Jun 2019 18:23:52 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -188,8 +188,8 @@ g_{r}(D, A)=g(D, A) / H(A)
 
 </description>
         <pubDate>Fri, 21 Jun 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2019/06/information.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2019/06/information.html</guid>
+        <link>http://localhost:4000//2019/06/information-entropy.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2019/06/information-entropy.html</guid>
         
         <category>熵</category>
         
@@ -248,14 +248,23 @@ g_{r}(D, A)=g(D, A) / H(A)
         <title>linux learning</title>
         <description>&lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;批量查找某个目下文件的包含的内容，例如：&lt;/p&gt;
-
-    &lt;p&gt;grep -rn “要找查找的文本” ./&lt;/p&gt;
+    &lt;font color=&quot;Blue&quot;&gt;批量删除src_path下：&lt;/font&gt;
+    &lt;ul&gt;
+      &lt;li&gt;10天以前的文件：&lt;code class=&quot;highlighter-rouge&quot;&gt;find src_path -type f -mtime +20 -exec rm {} \;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;20分钟以前的文件夹: &lt;code class=&quot;highlighter-rouge&quot;&gt;find src_path -type d -mmin +20 -exec rm {} \;&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;批量查找并替换文件内容。&lt;/p&gt;
-
-    &lt;p&gt;sed -i “s/要找查找的文本/替换后的文本/g” `grep -rl “要找查找的文本” ./`&lt;/p&gt;
+    &lt;font color=&quot;Blue&quot;&gt;批量查找src_path下文件的包含to_find_context内容，例如：&lt;/font&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grep -rn &quot;to_find_context&quot; src_path&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;font color=&quot;Blue&quot;&gt;在src_path 目录下，批量查找from_context并替换文件内容为 to_context：&lt;/font&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sed -i &quot;s/from_context/to_context/g&quot; `grep -rl &quot;from_context&quot; src_path`&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 </description>

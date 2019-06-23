@@ -5,9 +5,216 @@
     <description>用心设计未来</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 04 May 2019 14:44:31 +0800</pubDate>
-    <lastBuildDate>Sat, 04 May 2019 14:44:31 +0800</lastBuildDate>
+    <pubDate>Sun, 23 Jun 2019 12:25:01 +0800</pubDate>
+    <lastBuildDate>Sun, 23 Jun 2019 12:25:01 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>熵和机器学习</title>
+        <description>&lt;h3 id=&quot;一自信息&quot;&gt;一、自信息&lt;/h3&gt;
+&lt;p&gt;自信息表示某一事件发生时所带来的信息量的多少，当事件发生的概率越大，则自信息越小，或者可以这样理解：某一事件发生的概率非常小，但是实际上却发生了(观察结果)，则此时的自信息非常大；某一事件发生的概率非常大，并且实际上也发生了，则此时的自信息较小。&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+I(p_i) = -log(p_i)
+\end{equation}&lt;/p&gt;
+
+&lt;h3 id=&quot;二信息熵&quot;&gt;二、信息熵&lt;/h3&gt;
+&lt;p&gt;自信息描述的是随机变量的某个事件发生所带来的信息量，而信息熵通常用来描述整个随机分布所带来的信息量平均值，更具统计特性。&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+H(X) = E_{x\sim p}[I(x)] = -E_{x\sim p}[log(p(x))] 
+= -\sum_{i=1}^{n}p(x_i)log(p(x_i))
+= -\int_{x}p(x)log(p(x))dx
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;从公式可以看出，信息熵H(X)是各项自信息的累加值，由于每一项都是整正数，故而 $\underline{随机变量取值个数越多，状态数也就越多，累加次数就越多，信息熵就越大，混乱程度就越大，纯度越小.}$ 越宽广的分布，熵就越大，在同样的定义域内，由于分布宽广性中脉冲分布&amp;lt;高斯分布&amp;lt;均匀分布，故而熵的关系为脉冲分布信息熵&amp;lt;高斯分布信息熵&amp;lt;均匀分布信息熵。可以通过数学证明，当随机变量分布为均匀分布时即状态数最多时，熵最大。熵代表了随机分布的混乱程度，这一特性是所有基于熵的机器学习算法的核心思想。&lt;/p&gt;
+
+&lt;p&gt;多维联合信息熵：
+\begin{equation}
+H(X, Y) = -\sum^n_{i=1}\sum^m_{j=1}p(x_i,y_j)log(p(x_i,y_j))
+\end{equation}&lt;/p&gt;
+
+&lt;h3 id=&quot;三条件熵&quot;&gt;三、条件熵&lt;/h3&gt;
+&lt;p&gt;条件熵的定义为：在X给定条件下，Y的条件概率分布的熵对X的数学期望
+\begin{equation}
+H(Y|X)  = E_{x\sim p}[H(Y|X=x)] = \sum^n_{i=1} p(x)H(Y|X = x) 
+ = - \sum^n_{i=1}p(x)\sum^m_{j=1}p(y|x)log(p(y|x)) 
+ = -\sum^n_{i=1}\sum^m_{j=1}p(x,y)log(y|x) 
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+= -\left(\sum^n_{i=1}\sum^m_{j=1}p(x,y)log(p(x,y)) - \sum^n_{i=1}\sum^{m}_{j=1}p(x,y)log(p(x))\right)
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+= -\left(\sum^n_{i=1}\sum^m_{j=1}p(x,y)log(p(x,y)) - \sum^n_{i=1}log(p(x))\sum^m_{j=1}p(x,y)\right)
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+= -\left(\sum^n_{i=1}\sum^m_{j=1}p(x,y)log(p(x,y)) - \sum^n_{i=1}log(p(x))p(x)\right)
+= H(X,Y) - H(X)
+\end{equation}&lt;/p&gt;
+
+&lt;h3 id=&quot;四交叉熵&quot;&gt;四、交叉熵&lt;/h3&gt;
+&lt;p&gt;主要用于度量两个概率分布间的差异性信息。p对q的交叉熵表示q分布的自信息对p分布的期望，公式定义为：
+\begin{equation}
+H(p;q) = E_{x\sim p}[-log(q(x))] = -\sum^n_{i=1}p(x)log(q(x))
+\end{equation}
+其中。p是真实样本分布，q是预测得到样本分布。在信息论中，其计算的数值表示：如果用错误的编码方式q去编码真实分布p的事件，需要多少bit数，是一种非常有用的衡量概率分布相似性的数学工具。&lt;/p&gt;
+
+&lt;p&gt;在机器学习中，经常用到的交叉熵：
+\begin{equation}
+J(\theta) = -\frac{1}{m}\sum^m_{i=1}\left(y_i log\, h_{\theta}(x_i) + (1-y_i)log\,(1-h_{\theta}(x_i))\right)
+\end{equation}&lt;/p&gt;
+
+&lt;h3 id=&quot;五相对熵kl散度&quot;&gt;五、相对熵（KL散度）&lt;/h3&gt;
+&lt;p&gt;$\textbf{交叉熵，其用来衡量在给定的真实分布下，使用非真实分布所指定的策略消除系统的不确定性所需要付出的努力的大小;}$ 
+$\textbf{相对熵，其用来衡量两个取值为正的函数或概率分布之间的差异}$&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+\begin{array}{l}{\qquad \begin{array}{c}{D_{K L}(p | q)=E_{x \sim p}\left[\log \frac{p(x)}{q(x)}\right]=-E_{x \sim p}\left[\log \frac{q(x)}{p(x)}\right]} \ 
+{=-\sum_{i=1}^{n} p(x) \log \frac{q(x)}{p(x)}=H(p; q)-H(p)}\end{array}}\end{array}
+\end{equation}
+简单对比交叉熵和相对熵，可以发现仅仅差了一个H(p)，如果从优化角度来看，p是真实分布，是固定值，最小化KL散度情况下，H(p)可以省略，此时交叉熵等价于KL散度。&lt;/p&gt;
+
+&lt;p&gt;在最优化问题中，最小化相对熵等价于最小化交叉熵；相对熵和交叉熵的定义其实都可以从最大似然估计得到，下面进行详细推导:以某个生成模型算法为例，假设是生成对抗网络GAN，其实只要是生成模型，都满足以下推导。&lt;/p&gt;
+
+&lt;p&gt;若给定一个样本数据的真实分布 $P_{data}(x)$ 和生成的数据分布 $P_{G}(x;\theta)$, 那么生成模型希望找到一组参数 $\theta$ 使得分布 $P_{G}(x;\theta)$ 和 $P_{data}(x)$之间的距离最短。也就是找到一组生成器参数，使得生成器能生成十分逼真的分布。现在从真实分布 $P_{data}(x)$ 中抽取m个真实样本： &lt;script type=&quot;math/tex&quot;&gt;x^{1}, x^{2}, \ldots x^{m}&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\underline{对于每一个真实样本，我们可以计算 P_{G}(x^i;\theta), 即在由 \theta 确定的生成分布中，x^i 样本所出现的概率。}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;因此， 我们可以构建似然函数：
+\begin{equation}
+L=\prod_{i=1}^{m} P_{G}\left(x^{i} ; \theta\right)
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;最大化似然函数，即可求得最优参数 $\theta^*$, 即：
+\begin{equation}
+\theta^*=arg \max_{\theta} \prod_{i=1}^{m} P_{G}\left(x^{i} ; \theta\right)
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;转化成对数似然函数：
+\begin{equation}
+\theta^{*}=\arg {\max_{\theta}} \log \prod_{i=1}^{m} P_{G}\left(x^{i} ; \theta\right)
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+= \arg \max_{\theta} \sum_{i=1}^{m} \log P_{G}\left(x^{i} ; \theta\right)
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;由于是求最大值，故整体乘上常数对结果没有影响,这里是逐点乘上一个常数，所以不能取等于号，但是因为在取得最大值时候 $P_{G}\left(x^{i} ; \theta\right)$ 和 $P_{data}\left(x\right)$肯定是相似的，并且肯定大于0，所以依然可以认为是近视相等的:
+\begin{equation}
+\approx \arg \max_{\theta} \sum_{i=1}^{m} P_{d a t a}\left(x^{i}\right) \log P_{G}\left(x^{i} ; \theta\right)
+\end{equation}
+\begin{equation}
+=\arg \max_{\theta} E_{x_i \sim p_{\text { data }}}\left[\log P_{G}\left(x^{i} ; \theta\right)\right]
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;上面这个公式正好是交叉熵的定义式，我们在这个基础上减去一个常数项：&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+\theta^{*}=\arg \max \{ E_{x \sim p_{\text {data}}}\left[\log P_{G}\left(x^{i} ; \theta\right)\right] - E_{x \sim p_{\text {data}}}\left[\log P_{\text {data}}\left(x^{i}\right)\right] \}
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+=\arg \max_{\theta} \int_{x} P_{data} \log \frac{P_{G}(\theta)}{P_{data}} dx
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+=\arg \min_{\theta} \int_{x} P_{data} \log \frac{P_{data}}{P_{G}(\theta)} dx
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+=\arg \min_{\theta} E_{x \sim P_{data}}\left[\log \frac{P_{data}}{P_{G}(\theta)}\right]
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+=\arg \min_{\theta} K L\left(P_{data}(x) || P_{G}(x ; \theta)\right)
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;$\underline{最大化似然函数，等价于最小化负对数似然，等价于最小化交叉熵，等价于最小化KL散度}$&lt;/p&gt;
+
+&lt;h3 id=&quot;六互信息&quot;&gt;六、互信息&lt;/h3&gt;
+&lt;p&gt;互信息在信息论和机器学习中非常重要，其可以评价两个分布之间的距离，这主要归因于其$\underline{对称性}$，假设互信息不具备对称性，那么就不能作为距离度量，例如相对熵，由于不满足对称性，故通常说相对熵是评价分布的相似程度，而不会说距离。互信息的定义为：一个随机变量由于已知另一个随机变量而减少的不确定性，或者说从贝叶斯角度考虑，由于新的观测数据y到来而导致x分布的不确定性下降程度。公式如下：
+\begin{equation}
+\begin{aligned} I(X, Y) =H(X)-H(X | Y)=H(Y)-H(Y | X) =H(X)+H(Y)-H(X, Y) = H(X, Y)-H(X | Y)-H(Y | X) \end{aligned}
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;互信息和相对熵也存在联系，如果说相对熵不能作为距离度量，是因为其非对称性，那么互信息的出现正好弥补了该缺陷，使得我们可以计算任意两个随机变量之间的距离，或者说两个随机变量分布之间的相关性、独立性。
+\begin{equation}
+I(X, Y)=K L(p(x,y) || p(x) p(y) )
+\end{equation}
+互信息也是大于等于0的，当且仅当x与y相互独立时候取等号。&lt;/p&gt;
+
+&lt;h3 id=&quot;七信息增益&quot;&gt;七、信息增益&lt;/h3&gt;
+&lt;p&gt;\begin{equation}
+g(D, A)=H(D)-H(D | A)
+\end{equation}
+其中D表示数据集，A表示特征，信息增益表示得到A的信息而使得类X的不确定度下降的程度，在ID3中，需要选择一个A使得信息增益最大，这样可以使得分类系统进行快速决策。&lt;/p&gt;
+
+&lt;h3 id=&quot;八信息增益率&quot;&gt;八、信息增益率&lt;/h3&gt;
+&lt;p&gt;信息增益率是决策树C4.5算法引入的划分特征准则，其主要是克服信息增益存在的在某种特征上分类特征细，但实际上无意义取值时候导致的决策树划分特征失误的问题。例如假设有一列特征是身份证ID，每个人的都不一样，其信息增益肯定是最大的，但是对于一个情感分类系统来说，这个特征是没有意义的，此时如果采用ID3算法就会出现失误，而C4.5正好克服了该问题。其公式如下：&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+g_{r}(D, A)=g(D, A) / H(A)
+\end{equation}&lt;/p&gt;
+
+&lt;h3 id=&quot;九基尼系数&quot;&gt;九、基尼系数&lt;/h3&gt;
+&lt;p&gt;基尼系数是决策树CART算法引入的划分特征准则，其提出的目的不是为了克服上面算法存在的问题，而主要考虑的是计算快速性、高效性，这种性质使得CART二叉树的生成非常高效。其公式如下：&lt;/p&gt;
+
+&lt;p&gt;\begin{equation}
+\begin{aligned} \operatorname{Gini}(p)=&amp;amp; \sum_{i=1}^{m} p_{i}\left(1-p_{i}\right)=1-\sum_{i=1}^{m} p_{i}^{2} =1-\sum_{i=1}^{m}\left(\frac{\left|C_{k}\right|}{|D|}\right)^{2} \end{aligned}
+\end{equation}
+为啥说基尼系数计算速度快呢，因为基尼系数实际上是信息熵的一阶进似，作用等价于信息熵，只不过是简化版本。根据泰勒级数公式，将 $f(x)=-ln(x)$  在$x=1$处展开，忽略高阶无穷小，其可以等价为 $f(x)=1-x$,所以可以很容易得到上述定义。&lt;/p&gt;
+
+&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;$\underline{自信息}$是衡量随机变量中的某个事件发生时所带来的信息量的多少，越是不可能发生的事情发生了，那么自信息就越大；&lt;/li&gt;
+  &lt;li&gt;$\underline{信息熵}$是衡量随机变量分布的混乱程度，是随机分布各事件发生的自信息的期望值，随机分布越宽广，则熵越大，越混乱；&lt;/li&gt;
+  &lt;li&gt;信息熵推广到多维领域，则可得到$\underline{联合信息熵}$；&lt;/li&gt;
+  &lt;li&gt;在某些先验条件下，自然引出$\underline{条件熵}$，其表示在X给定条件下，Y的条件概率分布熵对X的数学期望，没有啥特别的含义，是一个非常自然的概念；&lt;/li&gt;
+  &lt;li&gt;前面的熵都是针对一个随机变量的，而$\underline{交叉熵、相对熵和互信息可以衡量两个随机变量之间的关系}$，三者作用几乎相同，只是应用范围和领域不同。
+    &lt;ul&gt;
+      &lt;li&gt;$\underline{交叉熵}$一般用在神经网络和逻辑回归中作为损失函数，&lt;/li&gt;
+      &lt;li&gt;$\underline{相对熵}$一般用在生成模型中用于评估生成的分布和真实分布的差距，&lt;/li&gt;
+      &lt;li&gt;而$\underline{互信息}$是纯数学的概念，作为一种评估两个分布之间相似性的数学工具，&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;其三者的关系是：
+    &lt;ul&gt;
+      &lt;li&gt;最大化似然函数，等价于最小化负对数似然，等价于最小化交叉熵，等价于最小化KL散度，互信息相对于相对熵区别就是互信息满足对称性；&lt;/li&gt;
+      &lt;li&gt;作为熵的典型机器学习算法-决策树，广泛应用了熵进行特征划分，常用的有信息增益、信息增益率和基尼系数。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 21 Jun 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//2019/06/information.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2019/06/information.html</guid>
+        
+        <category>熵</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>信息流产品的若干事项</title>
+        <description>&lt;p&gt;互联网产品的品质可以归入两个点：黏性和规模。黏性是产品的内驱活力，好的产品，一定是有用户黏性的。这个表现为，能帮用户解决问题，满足用户的需要，被用户记住，并且在需要时想起。比如，相互介绍之后，就会想起，加个微信吧。微信提供了社交功能，并在这个场景中，被用户主动想起。规模是另一个关键的维度，这个能给产品不断地输入动力，并驱动着产品升级。没有内驱力的产品，是很难走远的，即使是获得了规模。虽然规模会直接表现为市场、收益和回报。&lt;/p&gt;
+
+&lt;p&gt;如果规模的上升，不能提升产品黏性的提升，那是非常危险的。规模扩大的成本，相对较低。&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 16 Jun 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//2019/06/Ideas-about-a-good-product-for-internet.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2019/06/Ideas-about-a-good-product-for-internet.html</guid>
+        
+        <category>feed</category>
+        
+        <category>产品</category>
+        
+        <category>用户</category>
+        
+        
+      </item>
     
       <item>
         <title>梦回山大</title>
@@ -982,6 +1189,9 @@ Process finished with exit code 0&lt;/p&gt;
         <title>心情印记</title>
         <description>&lt;ol&gt;
   &lt;li&gt;
+    &lt;p&gt;To be a scientist is to be naive. We are so focused on our search for truth, we fail to consider how few actually want us to find it. But it is always there, whether we choose to or not. The truth doesn’t care about our needs or wants. It doesn’t care about our governments, our ideologies, our religions. It will lie in wait for all time. And this last gift was Chernobyl. Where I once would fear the cost of truth, now I only ask: What is the cost of lies?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
     &lt;p&gt;别把世界让给那些你看不上的人，勇敢点，别输了。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -1192,275 +1402,6 @@ Process finished with exit code 0&lt;/p&gt;
         <guid isPermaLink="true">http://localhost:4000//2018/11/Think-Like-A-Bussiness-Man.html</guid>
         
         <category>生活开心</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>xgboost原理和源码分析</title>
-        <description>&lt;h3 id=&quot;xgboost-原理&quot;&gt;xgboost 原理&lt;/h3&gt;
-
-&lt;h3 id=&quot;源码走读&quot;&gt;源码走读&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cli_main.cc:
-main()
-     -&amp;gt; CLIRunTask()
-          -&amp;gt; CLITrain()
-               -&amp;gt; DMatrix::Load()
-               -&amp;gt; learner = Learner::Create()
-               -&amp;gt; learner-&amp;gt;Configure()
-               -&amp;gt; learner-&amp;gt;InitModel()
-               -&amp;gt; for (i = 0; i &amp;lt; param.num_round; ++i)
-                    -&amp;gt; learner-&amp;gt;UpdateOneIter()
-                    -&amp;gt; learner-&amp;gt;Save()    
-learner.cc:
-Create()
-      -&amp;gt; new LearnerImpl()
-Configure()
-InitModel()
-     -&amp;gt; LazyInitModel()
-          -&amp;gt; obj_ = ObjFunction::Create()
-               -&amp;gt; objective.cc
-                    Create()
-                         -&amp;gt; SoftmaxMultiClassObj(multiclass_obj.cc)/
-                              LambdaRankObj(rank_obj.cc)/
-                              RegLossObj(regression_obj.cc)/
-                              PoissonRegression(regression_obj.cc)
-          -&amp;gt; gbm_ = GradientBooster::Create()
-               -&amp;gt; gbm.cc
-                    Create()
-                         -&amp;gt; GBTree(gbtree.cc)/
-                              GBLinear(gblinear.cc)
-          -&amp;gt; obj_-&amp;gt;Configure()
-          -&amp;gt; gbm_-&amp;gt;Configure()
-UpdateOneIter()
-      -&amp;gt; PredictRaw()
-      -&amp;gt; obj_-&amp;gt;GetGradient()
-      -&amp;gt; gbm_-&amp;gt;DoBoost()         
- 
-gbtree.cc:
-Configure()
-      -&amp;gt; for (up in updaters)
-           -&amp;gt; up-&amp;gt;Init()
-DoBoost()
-      -&amp;gt; BoostNewTrees()
-           -&amp;gt; new_tree = new RegTree()
-           -&amp;gt; for (up in updaters)
-                -&amp;gt; up-&amp;gt;Update(new_tree)    
- 
-tree_updater.cc:
-Create()
-     -&amp;gt; ColMaker/DistColMaker(updater_colmaker.cc)/
-        SketchMaker(updater_skmaker.cc)/
-        TreeRefresher(updater_refresh.cc)/
-        TreePruner(updater_prune.cc)/
-        HistMaker/CQHistMaker/
-                  GlobalProposalHistMaker/
-                  QuantileHistMaker(updater_histmaker.cc)/
-        TreeSyncher(updater_sync.cc)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 28 Nov 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/11/xgboost-code-review.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/11/xgboost-code-review.html</guid>
-        
-        <category>Machine Learning</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>机器学习-优化器</title>
-        <description>&lt;h3 id=&quot;机器学习模型组成&quot;&gt;机器学习模型组成&lt;/h3&gt;
-
-&lt;p&gt;一个机器学习的任务，主要包含以下几个组成部分：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;数据       : $(X,y)$&lt;/li&gt;
-  &lt;li&gt;模型函数    : $\hat{y} = f(x)$&lt;/li&gt;
-  &lt;li&gt;损失函数    : $L(y,\hat{y})$&lt;/li&gt;
-  &lt;li&gt;优化器      : $Optimizer$&lt;/li&gt;
-  &lt;li&gt;评估       : $Eval$&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;机器学习任务，可以看作是，$\underline{以数据作为输入，用优化器最小化损失函数，得到模型函数f，用于预估给定的x，并进行评估。}$
-一般的，考虑到模型预估的准确和泛化，两个方面的需求，损失函数常被定义成如下形式:&lt;/p&gt;
-
-&lt;p&gt;\begin{equation}
-L(y,\hat{y}) = H(y,\hat{y}) + \phi(f(x))
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;其中，$H$, $\phi$ 分别指预测损失和结构损失，前者反映模型预测的准确性，后者是为了保证模型的泛化性能。&lt;/p&gt;
-
-&lt;p&gt;可以看出，模型训练的关键在于最小化损失函数。优化器的选取和对应的原理从而成为关键。&lt;/p&gt;
-
-&lt;h3 id=&quot;从梯度下降法说起&quot;&gt;从梯度下降法说起&lt;/h3&gt;
-
-&lt;p&gt;梯度下降算法是一类应用非常广泛优化方法，属于批量优化算法的一个分支。其思想，尤其简单直接：$\underline{沿着下降速度最快的方向迭代}$&lt;/p&gt;
-
-&lt;p&gt;\begin{equation}
-\theta_{n+1} = \theta_{n} - \eta \nabla {J_{\theta}(\theta_{n}) }
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;下面证明 &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
-J(\theta_{n+1}) &lt; J(\theta_{n}) %]]&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;\begin{equation}
-J(\theta_{n+1}) - J(\theta_{n}) 
-= \nabla {J(\theta_{n})(\theta_{n+1} - \theta_{n})} + o(\theta)&lt;br /&gt;
-= -\eta \nabla{J(\theta_{n})} \cdot \nabla{J(\theta_{n})} + o(\theta)
-= -\eta \nabla J^2(\theta_{n}) + o(\theta) \leq 0
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;根据上面公式可以得到两个结论：&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;梯度下降法，在更新步长足够小的情况下(上述证明中用到了中值定理)，是能够逐步优化损失函数值的，得到$J(\theta_{n}) &amp;gt; J(\theta_{n+1}) &amp;gt; J(\theta_{n+2}) &amp;gt; … $&lt;/li&gt;
-  &lt;li&gt;因为梯度是当前点下降最快的方向。所以梯度下降法是一个贪心地最快优化方法。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;学习率&quot;&gt;学习率&lt;/h4&gt;
-
-&lt;p&gt;学习率，亦即步长。是梯度下降法最 trick 的地方：首先，learning_rate 不能太大，因为这个会破坏上面证明中的前提条件（中值定理的前提条件); 然后，learning_rate 不能太小，步长小，更新慢。最后，learning_rate大，除了可能会破坏中值定理的前提条件，也会带来另外的好处，跳出局部最优解。&lt;/p&gt;
-
-&lt;p&gt;所以，一个合理的learning_rate 的选取，要既能够保证收敛，获得一个局部最优解；又能够在几个局部最优解中，选择到最优的那个解。&lt;/p&gt;
-
-&lt;h4 id=&quot;动量&quot;&gt;动量&lt;/h4&gt;
-
-&lt;p&gt;历史更新量，刻画历史更新的方向，对当下更新的影响。能加快收敛，减小震荡。&lt;/p&gt;
-
-&lt;h4 id=&quot;梯度&quot;&gt;梯度&lt;/h4&gt;
-
-&lt;p&gt;当前点的梯度，更新方向的基础量&lt;/p&gt;
-
-&lt;h3 id=&quot;梯度下降框架流程&quot;&gt;梯度下降框架流程&lt;/h3&gt;
-
-&lt;p&gt;梯度下降基本框架和执行流程：&lt;/p&gt;
-
-&lt;p&gt;(1) 计算目标函数关于参数的梯度&lt;/p&gt;
-
-&lt;p&gt;\begin{equation}
-g_t = \nabla_{\theta}J(\theta_t)
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;(2) 根据历史梯度计算一阶和二阶动量
-\begin{equation}
-m_t = \phi(g_1,g_2,g_3,…,g_t)
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;\begin{equation}
-v_t = \psi(g_1,g_2,g_3,…,g_t)
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;(3) 更新模型参数
-\begin{equation}
-\theta_{t+1} = \theta_{t} - \frac{1}{\sqrt{v_t + \epsilon}} m_t
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;其中， $\epsilon$ 为平滑项，防止分母为零，通常取 1e-8。&lt;/p&gt;
-
-&lt;h3 id=&quot;基于框架的算法实例&quot;&gt;基于框架的算法实例&lt;/h3&gt;
-
-&lt;h4 id=&quot;随机梯度下降-sgd&quot;&gt;随机梯度下降 (SGD)&lt;/h4&gt;
-
-&lt;p&gt;学习率$\eta$是固定的，不考虑动量。&lt;/p&gt;
-
-&lt;p&gt;\begin{equation}
-\theta_{t} = \theta_{t-1} - \eta g_{t}
-\end{equation}&lt;/p&gt;
-
-&lt;h4 id=&quot;动量-momentum-sgd-m&quot;&gt;动量 momentum (SGD-M)&lt;/h4&gt;
-&lt;p&gt;相信历史更新的方向，也很有可能是接下来的更新方向: 
-\begin{equation}
-m_{t} = \lambda m_{t-1}  + \eta g_t 
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;\begin{equation}
-\theta_{t} = \theta_{t-1} - m_{t} = \theta_{t-1} - \eta g_{t}  - \lambda m_{t-1}
-\end{equation}&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;当梯度保持相同方向时，加大步长，加速参数更新；&lt;/li&gt;
-  &lt;li&gt;当梯度方向改变时，动量会拉小步长，减缓参数更新。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;带梯度预估的更新方式nag&quot;&gt;带梯度预估的更新方式(NAG)&lt;/h4&gt;
-&lt;p&gt;算法能够在目标函数有增高趋势之前，减缓更新速率&lt;/p&gt;
-
-&lt;p&gt;\begin{equation}
-g_t = \nabla_\theta J(\theta_t - \gamma m_{t-1})
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;其他步骤和动量momentum保持一致
-\begin{equation}
-m_t = \gamma m_{t-1} + \eta g_t
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;\begin{equation}
-\theta_{t+1} = \theta_t - m_t 
-= \theta_t - \eta \nabla_\theta J(\theta_t - \gamma m_{t-1}) - \gamma m_{t-1}
-\end{equation}&lt;/p&gt;
-
-&lt;h4 id=&quot;adagrad&quot;&gt;Adagrad&lt;/h4&gt;
-
-&lt;p&gt;SGD、SGD-M 和 NAG 均是以相同的学习率去更新 $\theta$ 的各个分量。而深度学习模型中往往涉及大量的参数，不同参数的更新频率往往有所区别。$\underline{区分对待不同特征的学习率}$. 对于更新不频繁的参数（典型例子：更新 word embedding 中的低频词），我们希望单次步长更大，多学习一些知识；对于更新频繁的参数，我们则希望步长较小，使得学习到的参数更稳定，不至于被单个样本影响太多。&lt;/p&gt;
-
-&lt;p&gt;Adagrad[4] 算法即可达到此效果。其引入了二阶动量：&lt;/p&gt;
-
-&lt;p&gt;\begin{equation}
-v_t = \text{diag}(\sum_{s=1}^t g_{s,1}^2, \sum_{s=1}^t g_{s,2}^2, \cdots, \sum_{s=1}^t g_{s,d}^2)
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;其中， $v_t \in \mathbb{R}^{d\times d} $是对角矩阵，其元素 $v_{t, ii}$ 为参数第 $i$维从初始时刻到时刻 $t$ 的梯度平方和。&lt;/p&gt;
-
-&lt;p&gt;\begin{equation}
-v_{t, ii} = \sum_{s=1}^t g_{s,i}^2
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;\begin{equation}
-\theta_{t+1,i} = \theta_{t,i} - \frac{\eta}{\sqrt{ v_{t, ii}+ \epsilon }} \cdot g_t
-\end{equation}
-此时，可以这样理解：学习率等效为 $\eta / \sqrt{v_t + \epsilon} $。对于此前频繁更新过的参数，其二阶动量的对应分量较大，学习率就较小。这一方法在稀疏数据的场景下表现很好。&lt;/p&gt;
-
-&lt;h4 id=&quot;rmsprop&quot;&gt;RMSprop&lt;/h4&gt;
-&lt;p&gt;在 Adagrad 中， $v_t$ 是单调递增的，使得学习率逐渐递减至 0，可能导致训练过程提前结束。为了改进这一缺点，可以考虑在计算二阶动量时不累积全部历史梯度，而只关注最近某一时间窗口内的下降梯度。根据此思想有了 RMSprop[5]。记 $g_t \odot g_t$ 为 $g_t^2$ ，有
-\begin{equation}
-v_t = \gamma v_{t-1} + (1-\gamma) \cdot \text{diag}(g_t^2)
-\end{equation}
-其二阶动量采用指数移动平均公式计算，这样即可避免二阶动量持续累积的问题。和 SGD-M 中的参数类似，$\gamma$ 通常取 0.9 左右。&lt;/p&gt;
-
-&lt;h4 id=&quot;adam&quot;&gt;Adam&lt;/h4&gt;
-&lt;p&gt;Adam[6] 可以认为是 RMSprop 和 Momentum 的结合。和 RMSprop 对二阶动量使用指数移动平均类似，Adam 中对一阶动量也是用指数移动平均计算。
-\begin{equation}
-m_t = \eta[ \beta_1 m_{t-1} + (1 - \beta_1)g_t ]
-\end{equation}
-\begin{equation}
-v_t = \beta_2 v_{t-1} + (1-\beta_2) \cdot \text{diag}(g_t^2)
-\end{equation}
-其中，初值
-$m_0 = 0$, $v_0 = 0$&lt;/p&gt;
-
-&lt;p&gt;注意到，在迭代初始阶段，$m_t$ 和 $v_t$ 有一个向初值的偏移（过多的偏向了 0）。因此，可以对一阶和二阶动量做偏置校正 (bias correction)，
-\begin{equation}
-\hat{m}_t = \frac{m_t}{1-\beta_1^t}
-\end{equation}
-\begin{equation}
-\hat{v}_t = \frac{v_t}{1-\beta_2^t}
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;再进行更新，
-\begin{equation}
-\theta_{t+1} = \theta_t - \frac{1}{\sqrt{\hat{v}_t} + \epsilon } \hat{m}_t
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;可以保证迭代较为平稳。&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 26 Nov 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/11/Optimization-Algorithm-For-Machine-Learning.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/11/Optimization-Algorithm-For-Machine-Learning.html</guid>
-        
-        <category>Machine Learning</category>
         
         
       </item>

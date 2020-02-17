@@ -5,9 +5,54 @@
     <description>用心设计未来</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Jan 2020 23:06:06 +0800</pubDate>
-    <lastBuildDate>Sat, 25 Jan 2020 23:06:06 +0800</lastBuildDate>
+    <pubDate>Sun, 26 Jan 2020 15:22:34 +0800</pubDate>
+    <lastBuildDate>Sun, 26 Jan 2020 15:22:34 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>Wide &amp; Deep 系列CTR预估论文</title>
+        <description>&lt;h3 id=&quot;wide--deep-learning-for-recommender-systems&quot;&gt;Wide &amp;amp; Deep Learning for Recommender Systems&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;wide linear models:  $\underline{memorization}$&lt;/li&gt;
+  &lt;li&gt;deep neural networks: $\underline{generalization}$&lt;/li&gt;
+  &lt;li&gt;Vocabularies, which are tables mapping categorical feature strings to integer IDs, are also generated in this stage.
+The system computes the ID space for all the string features
+that occurred more than a minimum number of times. Continuous real-valued features are normalized to $[0, 1]$ by mapping a feature value x to its cumulative distribution function
+$P(X \leq x)$, divided into $n_q$ quantiles. The normalized value
+is $\frac{i−1}{n_q-1}$ for values in the i-th quantiles. 
+&lt;img src=&quot;http://localhost:4000/images/paper/deepxxxx/wide-deep.png&quot; alt=&quot;wide&amp;amp;deep&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;deepfm-a-factorization-machine-based-neural-network-for-ctr-prediction&quot;&gt;DeepFM: A Factorization-Machine based Neural Network for CTR Prediction&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;这个是 wide_deep 的升级版本，主要贡献在于引入 FM 解决稀疏特征的二阶交叉的问题，减少特征工程的工作量。而且FM的时间复杂度是 $O(nk)$, $k$ 是超参数，一般很小。&lt;/li&gt;
+  &lt;li&gt;引入 embedding layer, 使用joint learning 的方式进行训练，实现end-to-end&lt;/li&gt;
+  &lt;li&gt;缺点：
+    &lt;ul&gt;
+      &lt;li&gt;所有特征项统一进行embedding 成相同的维度，不能差异化体现不同特征的贡献&lt;/li&gt;
+      &lt;li&gt;数值型特征需要先转化成类别型特征，才能处理&lt;/li&gt;
+      &lt;li&gt;同一特征与不同特征的交叉，使用相同的权重embedding，过于粗暴&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;###&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;通过和一阶项进行逐步交叉，得到多阶项。同时避免高阶项之间的交叉，从而控制了参数数量。
+&lt;img src=&quot;http://localhost:4000/images/paper/deepxxxx/wide-cross.png&quot; alt=&quot;wide&amp;amp;deep&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sun, 26 Jan 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//2020/01/Youtube-Recommendation-System.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2020/01/Youtube-Recommendation-System.html</guid>
+        
+        <category>wide&amp;deep</category>
+        
+        <category>DeepFM</category>
+        
+        
+      </item>
     
       <item>
         <title>悲欣交集，热泪盈眶</title>
@@ -1281,33 +1326,40 @@ Process finished with exit code 0&lt;/p&gt;
     
       <item>
         <title>AUC的定义和原理分析【转】</title>
-        <description>&lt;p&gt;在统计和机器学习中，常常用AUC来评估二分类模型的性能。AUC的全称是 area under the curve，即曲线下的面积。 通常这里的曲线指的是受试者操作曲线(Receiver operating characteristic, ROC)。 相比于准确率、召回率、F1值等依赖于判决阈值的评估指标，AUC则没有这个问题。&lt;/p&gt;
+        <description>&lt;p&gt;[toc]&lt;/p&gt;
+
+&lt;p&gt;在统计和机器学习中，常常用AUC来评估二分类模型的性能。AUC的全称是 area under the curve，即曲线下的面积。 通常这里的曲线指的是受试者操作曲线(Receiver operating characteristic, ROC)。 相比于准确率、召回率、F1值等依赖于判决阈值的评估指标，AUC则没有这个问题。&lt;/p&gt;
 
 &lt;p&gt;ROC曲线早在第二次世界大战期间就被使用在电子工程和雷达工程当中，被用于军事目标检测。 后来，ROC曲线也被应用到心理学、医学、机器学习和数据挖掘等领域的模型性能评估。&lt;/p&gt;
 
 &lt;p&gt;对于二分类问题，预测模型会对每一个样本预测一个得分s或者一个概率p。 然后，可以选取一个阈值$t$，让得分$s&amp;gt;t$的样本预测为正，而得分$s&amp;lt;t$的样本预测为负。 这样一来，根据预测的结果和实际的标签可以把样本分为4类：&lt;/p&gt;
+&lt;blockquote rules=&quot;groups&quot;&gt;
 
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;预测值&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;正样本&lt;/th&gt;
-      &lt;th&gt;负样本&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;预测为正&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;TP(真正例)&lt;/td&gt;
-      &lt;td&gt;FP(假正例)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;预测为负&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;FN(假负例)&lt;/td&gt;
-      &lt;td&gt;TN(真负例)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th style=&quot;text-align: center&quot;&gt;预测值&lt;/th&gt;
+        &lt;th style=&quot;text-align: center&quot;&gt;正样本&lt;/th&gt;
+        &lt;th style=&quot;text-align: center&quot;&gt;负样本&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;text-align: center&quot;&gt;预测为正&lt;/td&gt;
+        &lt;td style=&quot;text-align: center&quot;&gt;TP(真正例)&lt;/td&gt;
+        &lt;td style=&quot;text-align: center&quot;&gt;FP(假正例)&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;text-align: center&quot;&gt;预测为负&lt;/td&gt;
+        &lt;td style=&quot;text-align: center&quot;&gt;FN(假负例)&lt;/td&gt;
+        &lt;td style=&quot;text-align: center&quot;&gt;TN(真负例)&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;随着阈值t选取的不同，这四类样本的比例各不相同。定义真正例率TPR和假正例率FPR为：
 \begin{equation}
@@ -1455,91 +1507,6 @@ $s_i^+, s_j^-$分别表示正例和负例的得分。 这解释了为什么某�
         <guid isPermaLink="true">http://localhost:4000//2018/12/AUC-Introduction-and-Explanation.html</guid>
         
         <category>Machine Learning</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>像一个商人一样思考</title>
-        <description>&lt;h3 id=&quot;倒卖红枣&quot;&gt;倒卖红枣&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;卖什么？&lt;/li&gt;
-  &lt;li&gt;卖给谁？&lt;/li&gt;
-  &lt;li&gt;怎么卖？&lt;/li&gt;
-  &lt;li&gt;售后、成本？&lt;/li&gt;
-  &lt;li&gt;影响力与收益核算。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;基本理念&quot;&gt;基本理念&lt;/h3&gt;
-
-&lt;p&gt;做生意的基本问题就上面几个，思考的顺序也需要如此。永远把产品放在第一位，客户和渠道排在自己前面。产品决定了客户来源，客户决定了渠道和企业收益。企业的根本是产品，核心是客户和渠道。是客户成就了我们，服务好客户是我们企业责任和担当。&lt;/p&gt;
-
-&lt;h4 id=&quot;产品&quot;&gt;产品&lt;/h4&gt;
-
-&lt;p&gt;新疆红枣：&lt;/p&gt;
-
-&lt;h4 id=&quot;客户&quot;&gt;客户&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;挖掘用户群: 什么人会买我的红枣？他们有什么特征？年龄，性别,区域？他们买红枣的主要动机是什么？送人？自己吃？怎么吃？干吃？泡着吃？炖汤？买红枣的时机？&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;主体用户特征: 性别 + 付费意愿 + 需求&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;终端客户：
-    &lt;ul&gt;
-      &lt;li&gt;$\underline{产品和客户的匹配}$：
-        &lt;ul&gt;
-          &lt;li&gt;养生：&lt;/li&gt;
-          &lt;li&gt;送礼：&lt;/li&gt;
-          &lt;li&gt;居家：&lt;/li&gt;
-          &lt;li&gt;热水泡&lt;/li&gt;
-          &lt;li&gt;干吃&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;中间商：
-    &lt;ul&gt;
-      &lt;li&gt;赚差价，但是都是服务终端客户&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;渠道&quot;&gt;渠道&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;直销到终端用户: 快递？阶梯价格&lt;/li&gt;
-  &lt;li&gt;代销商: 代理？人脉背书，规模。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;售后成本&quot;&gt;售后、成本&lt;/h4&gt;
-&lt;p&gt;售后服务的本质是对企业商业系统的监测，我们的系统需要是一个让大家都高兴的系统。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;我们的终端客户是否满意？让终端客户满意，是最根本的问题。如果终端客户不满意，那他们的不满意就会一层层的放大，直到系统崩溃。&lt;/li&gt;
-  &lt;li&gt;有没有给合作伙伴带来收益，没有收益的商业合作都是不长久的，只有合作伙伴收益了，我们才能继续合作，继续共赢，继续成长。系统才能成为一个正向的系统。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;收益&quot;&gt;收益&lt;/h4&gt;
-&lt;p&gt;永远要在考虑清楚前面几点之后，再来考虑这一点。因为上来就考虑这一点，是不能走多远的，也不是一个正能量的事情。&lt;/p&gt;
-
-&lt;p&gt;核算收益是对企业健康的监测。赔钱赚吆喝的事情，不一定不好，但不能长久。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;直接收益: 总收入减去总支出，净利润是最好的说明。&lt;/li&gt;
-  &lt;li&gt;影响力: 未来能获取净利润的预期，品牌，资产，体量等等。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;这两点需要综合起来看，权衡好比例，才是一个客观的评价。同时，核算好这部分之后，可以一定程度上，调整合作伙伴的收益和用户的体验。但是，一定尽可能在大家满意、合理能接受的基础上调整。&lt;/p&gt;
-
-&lt;h3 id=&quot;总结&quot;&gt;总结&lt;/h3&gt;
-&lt;p&gt;用售后检验企业系统的满意程度；用收益检验合理程度。&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 30 Nov 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/11/Think-Like-A-Bussiness-Man.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/11/Think-Like-A-Bussiness-Man.html</guid>
-        
-        <category>生活开心</category>
         
         
       </item>

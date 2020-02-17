@@ -68,33 +68,40 @@
         <h1 class="post-title">AUC的定义和原理分析【转】</h1>
     </center>
     <div class="ui divider"></div>
-    <p>在统计和机器学习中，常常用AUC来评估二分类模型的性能。AUC的全称是 area under the curve，即曲线下的面积。 通常这里的曲线指的是受试者操作曲线(Receiver operating characteristic, ROC)。 相比于准确率、召回率、F1值等依赖于判决阈值的评估指标，AUC则没有这个问题。</p>
+    <p>[toc]</p>
+
+<p>在统计和机器学习中，常常用AUC来评估二分类模型的性能。AUC的全称是 area under the curve，即曲线下的面积。 通常这里的曲线指的是受试者操作曲线(Receiver operating characteristic, ROC)。 相比于准确率、召回率、F1值等依赖于判决阈值的评估指标，AUC则没有这个问题。</p>
 
 <p>ROC曲线早在第二次世界大战期间就被使用在电子工程和雷达工程当中，被用于军事目标检测。 后来，ROC曲线也被应用到心理学、医学、机器学习和数据挖掘等领域的模型性能评估。</p>
 
 <p>对于二分类问题，预测模型会对每一个样本预测一个得分s或者一个概率p。 然后，可以选取一个阈值$t$，让得分$s&gt;t$的样本预测为正，而得分$s&lt;t$的样本预测为负。 这样一来，根据预测的结果和实际的标签可以把样本分为4类：</p>
+<blockquote rules="groups">
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">预测值</th>
-      <th style="text-align: center">正样本</th>
-      <th>负样本</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">预测为正</td>
-      <td style="text-align: center">TP(真正例)</td>
-      <td>FP(假正例)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">预测为负</td>
-      <td style="text-align: center">FN(假负例)</td>
-      <td>TN(真负例)</td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: center">预测值</th>
+        <th style="text-align: center">正样本</th>
+        <th style="text-align: center">负样本</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: center">预测为正</td>
+        <td style="text-align: center">TP(真正例)</td>
+        <td style="text-align: center">FP(假正例)</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td style="text-align: center">预测为负</td>
+        <td style="text-align: center">FN(假负例)</td>
+        <td style="text-align: center">TN(真负例)</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+<p><br /></p>
 
 <p>随着阈值t选取的不同，这四类样本的比例各不相同。定义真正例率TPR和假正例率FPR为：
 \begin{equation}

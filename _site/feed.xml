@@ -5,8 +5,8 @@
     <description>用心设计未来</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 26 Jan 2020 15:22:34 +0800</pubDate>
-    <lastBuildDate>Sun, 26 Jan 2020 15:22:34 +0800</lastBuildDate>
+    <pubDate>Thu, 20 Feb 2020 14:42:51 +0800</pubDate>
+    <lastBuildDate>Thu, 20 Feb 2020 14:42:51 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -38,14 +38,14 @@ is $\frac{i−1}{n_q-1}$ for values in the i-th quantiles.
 
 &lt;p&gt;###&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;通过和一阶项进行逐步交叉，得到多阶项。同时避免高阶项之间的交叉，从而控制了参数数量。
-&lt;img src=&quot;http://localhost:4000/images/paper/deepxxxx/wide-cross.png&quot; alt=&quot;wide&amp;amp;deep&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;通过和一阶项进行逐步交叉，得到多阶项。同时避免高阶项之间的交叉，从而控制了参数数量。&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;http://localhost:4000/images/paper/deepxxxx/wide-cross.png&quot; alt=&quot;wide&amp;amp;deep&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
         <pubDate>Sun, 26 Jan 2020 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2020/01/Youtube-Recommendation-System.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2020/01/Youtube-Recommendation-System.html</guid>
+        <link>http://localhost:4000//2020/01/Wide-Deep-Series-CTR-Prediction.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2020/01/Wide-Deep-Series-CTR-Prediction.html</guid>
         
         <category>wide&amp;deep</category>
         

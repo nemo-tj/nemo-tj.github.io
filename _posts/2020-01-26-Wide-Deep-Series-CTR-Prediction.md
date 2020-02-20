@@ -26,6 +26,7 @@ is $\frac{i−1}{n_q-1}$ for values in the i-th quantiles.
 
 ### 
 + 通过和一阶项进行逐步交叉，得到多阶项。同时避免高阶项之间的交叉，从而控制了参数数量。
++ 
 ![wide&deep]({{ site.url}}/images/paper/deepxxxx/wide-cross.png)
 
 

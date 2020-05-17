@@ -5,9 +5,108 @@
     <description>用心设计未来</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 20 Feb 2020 14:42:51 +0800</pubDate>
-    <lastBuildDate>Thu, 20 Feb 2020 14:42:51 +0800</lastBuildDate>
+    <pubDate>Sun, 15 Mar 2020 10:04:16 +0800</pubDate>
+    <lastBuildDate>Sun, 15 Mar 2020 10:04:16 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>素材和创作</title>
+        <description>&lt;p&gt;照相机可以拍出照片，但绝大部分照片都不是作品。&lt;/p&gt;
+
+&lt;p&gt;在未来的社会里，素材是丰富多样的。即使质量良莠不齐，但是巨大的体量为无数的组合创造了可能性。能够整合素材资源，进行创作，才是未来最重要的竞争力之一。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 15 Mar 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//2020/03/Design-Material-and-Creative-Work.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2020/03/Design-Material-and-Creative-Work.html</guid>
+        
+        <category>未来的趋势判断</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>短视频消费的若干分析和总结</title>
+        <description>&lt;p&gt;2018年，美团ceo王兴说：2019年可能会是过去十年里最差的一年,但却是未来十年里最好的一年。仅以2020年的开头看，这句话差不多就对了大半。资本寒冬，经济下行，而且还难以看到一个增长点。我身边的朋友普遍反应，生意不好做。这个时候，也是最考验企业和个人的时候。而往往在这个时期成长起来的公司和产品，很多恰恰是下一个时代的标杆。&lt;/p&gt;
+
+&lt;p&gt;下一个10年才刚刚开始，但不管会发生怎样的变化，短视频很大程度上已经拿到一张标杆的门票。以一个15秒的平快视频，搭载动感十足的音乐，成功抓住了无数老铁的芳心。从一线城市的地铁、写字楼，到五环外的农村集市，目光所及，几乎都是上滑下拉。&lt;/p&gt;
+
+&lt;p&gt;“为什么短视频会火？抖音和快手是如何做到的？”&lt;/p&gt;
+
+&lt;p&gt;一个产品不火，可能有无数的理由；但是能够火的产品，却只可能有一个原因：满足用户的需求。 一句正确的废话。互联网产品的划分思路，以王兴的三横四纵理论为著：
+纵向代表技术变革方向，横向代表用户需求的发展方向。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;item&lt;/th&gt;
+      &lt;th&gt;资讯&lt;/th&gt;
+      &lt;th&gt;交流&lt;/th&gt;
+      &lt;th&gt;娱乐&lt;/th&gt;
+      &lt;th&gt;商务&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Web 1.0 搜索&lt;/td&gt;
+      &lt;td&gt;Yahoo/Google/Baidu&lt;/td&gt;
+      &lt;td&gt;MSN/QQ&lt;/td&gt;
+      &lt;td&gt;百度音乐/盛大游戏&lt;/td&gt;
+      &lt;td&gt;阿里/淘宝&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Web 2.0 社交&lt;/td&gt;
+      &lt;td&gt;Twitter/微博&lt;/td&gt;
+      &lt;td&gt;FaceBook/人人网&lt;/td&gt;
+      &lt;td&gt;开心网&lt;/td&gt;
+      &lt;td&gt;美丽说/蘑菇街/互联网金融&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Web 3.0 移动&lt;/td&gt;
+      &lt;td&gt;今日头条&lt;/td&gt;
+      &lt;td&gt;微信&lt;/td&gt;
+      &lt;td&gt;手游&lt;/td&gt;
+      &lt;td&gt;美团点评、穿戴式设备&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;纵轴是和时间相关的变量，技术变更代表着新的方式和手段，从而带来产品上的升级和行业的兴盛。横向是相对稳定的，并具有驱动性。用户的需求驱动着技术的发展，技术的发展影响着需求的满足。需求是确定并存在于当前的，技术的升级却是可遇而不可求的。所以本文主要聚焦在用户，从人的需求角度上，进行产品划分。&lt;/p&gt;
+
+&lt;p&gt;提起需求分析，就绕不开亚伯拉罕·马斯洛，他于1943年提出的需求层次理论: 人的需求从低到高依次分为生理需求、安全需求、社交需求、尊重需求和自我实现需求。按照马前辈的说法，这5个需求的层次是逐步推进的，形成一个正金子塔结构，人们更应该向着更高的需求发展。这个看起来很对，但其实也不完全对。从感性角度讲，金字塔越往上，获得的自由和满足越多，也可以说人活得更加幸福，看似需求也变得更难以满足。&lt;/p&gt;
+
+&lt;p&gt;其实不是的。如果把金字塔倒过来看：“自我实现”是一种个人认同感，实现成本只在个人一念之间，”尊重需求“是一种感受，很大程度上也取决于个人的态度，”社交需求“是一种形式手段，不能说是一个需求，”安全需求“是要物质和感受共同保证的，”生理需求“是需要切实的物质和资源来满足的。经过这样的解析，其实最终的需求，并不在顶层，而在底部。但受制于环境和资源，这是不可能被完全满足的部分，却也是人最需要被满足的部分。这也能解释，虽然各国政府和司法对黄毒赌暴等犯罪行为，处以很大的惩罚，但是这些灰色地带依然还存在。&lt;/p&gt;
+
+&lt;p&gt;经过上述的解析，可以把用户的需求大致可以分成：衣食住行、社交、工作、工具；&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;衣食住行&lt;/th&gt;
+      &lt;th&gt;社交&lt;/th&gt;
+      &lt;th&gt;工作&lt;/th&gt;
+      &lt;th&gt;工具&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;淘宝、京东；美团、口碑；自如、链家；滴滴、曹操&lt;/td&gt;
+      &lt;td&gt;微信、陌陌、FaceBook&lt;/td&gt;
+      &lt;td&gt;脉脉、Boss&lt;/td&gt;
+      &lt;td&gt;360杀毒、Office软件&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;按产品领域来拆分，工具类产品很直接，比如，360杀毒是用于电脑杀毒的，uc浏览器是用来浏览网页的。服务类产品，也能大致这算成服务需求，如：美团，提供外卖、酒率&lt;/p&gt;
+</description>
+        <pubDate>Sun, 23 Feb 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//2020/02/How-to-Shoot-a-Nice-Video.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2020/02/How-to-Shoot-a-Nice-Video.html</guid>
+        
+        <category>产品分析</category>
+        
+        
+      </item>
     
       <item>
         <title>Wide &amp; Deep 系列CTR预估论文</title>
@@ -1281,232 +1380,6 @@ Process finished with exit code 0&lt;/p&gt;
         <category>c++</category>
         
         <category>多线程</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>这一年</title>
-        <description>&lt;p&gt;2018年是关于足球和关于世界杯的一年；是关于告别和重启的一年。这一年，我在北京。此刻我在重温着世界杯的淘汰赛，法国对阿根廷的那一场。足坛新星姆巴佩缓缓升起，英雄的球王无力回天。两相对比中，更加的具有心里冲击。&lt;/p&gt;
-
-&lt;p&gt;这一年，以换工作开始，以换工作结束。差强人意的生活里，更多的是迷茫和不安。从工作到生活，到爱情，到友情，都是冲击和历练。在经历了系列的心理建设后，18年终是走过来。&lt;/p&gt;
-
-&lt;p&gt;年初在gap了一段时间后，我最终还是走向了社会，走向了工作。心里的那个关于学术和创造的梦想，也在生活的推动下，不得不搁置。讲真，上班比上学轻松很多，这样的生活真的很惬意。接需求，写代码，测试，上线，分析，写报表。除了刚开始时候的陌生，真的过得很舒适，舒适的甚至都让我感到迷恋。暑假的时候，二哥来北京，在我的小出租屋里，我无比骄傲的给他说：看，这都是我挣的。是的，我实现了比经济独立更前一步的独立。这一年，大约近似地算下来，存到了人生的第一个十万；换掉了二十几年的平头发型；空闲时也会自己整两菜，小喝一个。&lt;/p&gt;
-
-&lt;p&gt;去年这时候，我来北京实习。懵懵懂懂。怕犯错，怕被看低，又怕被高估。担心又谨慎。每周六都主动去加班。工作上的努力，多是有回报的，如果没有，换个地方就可以兑换到。在美团的实习经历，助我推开了互联网行业的大门。感谢小伙伴的包容和帮助，理解和支持。去年的元旦晚会，尤其让我感动和敬佩。那一刻，我由衷的感到：”多么高兴和你们在一起共事，多么希望我和你们一样“。只是，以我当时的阅历和水平，不甘心，却又力不从心。留下来可以，出去看似乎更好。挣扎许久，最终，我选择去360，无关对错。&lt;/p&gt;
-
-&lt;p&gt;感谢同组的小伙伴xuetao,runfen,yinrui,xiaobo,zhixiong,zhangqiang，还有老大renqing你们是最棒的团队。在360，我同样幸运的遇上了新的朋友，包容和耐心的AI算法组yuhang,yuanyuan，haide,zeping和 xuesong, 还有数据组的小伙伴。我们一起度过了一段非常美好的时光。于我本人，完成了自己在技术栈上的系统建设。在360实现了个人的快速成长。从零到一的构建了基于深度学习的推荐系统，并成为我简历上闪光的背书。现在我在bat，放空自我，再出发，找寻新的成长点。有过波折，也正在波折中。但是，也因为未知，所以才有无限可能嘛。&lt;/p&gt;
-
-&lt;p&gt;在北京这一年，有经历过凌晨4点的太阳，有经历过被diss的惊恐，有过担心，有过迷茫。但更多是，成长和稳重。感谢北京，感谢坑爹的房东，教会了我隐忍；感谢咄咄逼人的搬家小哥，让我学会了谦逊；感谢北京的冬天，让我知道什么是温暖。&lt;/p&gt;
-
-&lt;p&gt;18年，我和珍珍去见家长了。有点像我来北京之前的面试。有些新鲜，又有些害怕和担心。我们是用吵架开始这一年的。是的，我们有过很大很大的分歧和隔阂；我甚至一度认为，也许你想的和我根本不是一路。“我不会因为你，而改变我的工作方向”，“即使没有你，我也要做我想做的”。讲真，心碎是有声音的。可是，亲爱的，你知道么，遇上你之前。我是准备去读博或者去和老板创业的。讲真，我梦见过很多次回去重新高考，重新读博，梦见我在黑板上推下一行行公式。是的，我放下了它们。因为，一个男票应该有的是，担当。客观地对付现在的生活。&lt;/p&gt;
-
-&lt;p&gt;如果，你觉得，工作内容和方向，能带给你更多的安心，我祝贺你，也祝贺我自己。我们做到了。现在，你是一个正式的算法工程师了。期间，我无数次的心理建设过。我知道，存十万块钱，对我的意义是什么，也清楚那些藏在自己内心深处的悸动。或许，我们是因为太相似，所以才太相惜，却又会在不经意里磕磕碰碰。也许，我们还需要更多的成长。希望，明年会更好吧。希望所有的爱情都有它应有的归宿。&lt;/p&gt;
-
-&lt;p&gt;18年重新和一些很久没联系的同学和朋友联系上了。感受到那穿越时光的明媚，亦体会到那份成人世界里的不堪。不说破，一笑而过。在北京的冬天里，我站在天桥上，看着来来往往的车与人群。夜的城市，灯火通明，金光闪闪，天桥上的风从耳旁吹过，冰冷冰冷。止不住的想，于这个城市，我是怎样的一个存在，会怎样，要怎样。有那么一瞬间，我很深刻的体会到研究生宿舍大哥的一句话：是否有一天，旧心酸一笑而过，青春的故事又重新开始。&lt;/p&gt;
-
-&lt;p&gt;走过2018年，走过北漂的一年，新年伊始，总是需要展望下未来一年的。但是，生活从来不会有一个完全ready的状态，时机的落脚点更多的不是机会，而是时间。也就是在任何时候，站出来，迎接挑战。在工作中抽空学习，在学习时不断工作。所以，一年太短，不用事无巨细的计划，好好过好每一天，相信走过的每一步，都是未来回首时，一个个connected dots，就很好啦。&lt;/p&gt;
-
-&lt;p&gt;毕竟成年人的世界，从来没有容易两个字。&lt;/p&gt;
-
-&lt;p&gt;14年，我大学毕业暑假里也是世界杯，在决赛的解说里，有这么一段话：
-“这就是本届世界杯最后的篇章，也是华彩的篇章，还有人类情绪中，最高昂的情绪和最低落的情绪交相辉映而成。只有一种情绪绝对够不成丰满，也许只有在失利者落寞的陪伴之下，胜利者才感觉得到幸福的滋味。而我们这些旁观球迷在这样的情感交织之中，终于体会到活着的意味。”&lt;/p&gt;
-
-&lt;p&gt;make every moment count.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 31 Dec 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/12/year-of-2018.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/12/year-of-2018.html</guid>
-        
-        <category>Think and Want</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>AUC的定义和原理分析【转】</title>
-        <description>&lt;p&gt;[toc]&lt;/p&gt;
-
-&lt;p&gt;在统计和机器学习中，常常用AUC来评估二分类模型的性能。AUC的全称是 area under the curve，即曲线下的面积。 通常这里的曲线指的是受试者操作曲线(Receiver operating characteristic, ROC)。 相比于准确率、召回率、F1值等依赖于判决阈值的评估指标，AUC则没有这个问题。&lt;/p&gt;
-
-&lt;p&gt;ROC曲线早在第二次世界大战期间就被使用在电子工程和雷达工程当中，被用于军事目标检测。 后来，ROC曲线也被应用到心理学、医学、机器学习和数据挖掘等领域的模型性能评估。&lt;/p&gt;
-
-&lt;p&gt;对于二分类问题，预测模型会对每一个样本预测一个得分s或者一个概率p。 然后，可以选取一个阈值$t$，让得分$s&amp;gt;t$的样本预测为正，而得分$s&amp;lt;t$的样本预测为负。 这样一来，根据预测的结果和实际的标签可以把样本分为4类：&lt;/p&gt;
-&lt;blockquote rules=&quot;groups&quot;&gt;
-
-  &lt;table&gt;
-    &lt;thead&gt;
-      &lt;tr&gt;
-        &lt;th style=&quot;text-align: center&quot;&gt;预测值&lt;/th&gt;
-        &lt;th style=&quot;text-align: center&quot;&gt;正样本&lt;/th&gt;
-        &lt;th style=&quot;text-align: center&quot;&gt;负样本&lt;/th&gt;
-      &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-      &lt;tr&gt;
-        &lt;td style=&quot;text-align: center&quot;&gt;预测为正&lt;/td&gt;
-        &lt;td style=&quot;text-align: center&quot;&gt;TP(真正例)&lt;/td&gt;
-        &lt;td style=&quot;text-align: center&quot;&gt;FP(假正例)&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-    &lt;tbody&gt;
-      &lt;tr&gt;
-        &lt;td style=&quot;text-align: center&quot;&gt;预测为负&lt;/td&gt;
-        &lt;td style=&quot;text-align: center&quot;&gt;FN(假负例)&lt;/td&gt;
-        &lt;td style=&quot;text-align: center&quot;&gt;TN(真负例)&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;随着阈值t选取的不同，这四类样本的比例各不相同。定义真正例率TPR和假正例率FPR为：
-\begin{equation}
-TPR=\frac{TP}{TP+FN}
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;\begin{equation}
-FPR=\frac{FP}{FP+TN}
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;对于真正例率$TPR$，分子是得分$&amp;gt;t$里面正样本的数目，分母是总的正样本数目。 而对于假正例率$FPR$,分子是得分&amp;gt;t里面负样本的数目，分母是总的负样本数目。 因此，如果定义$N_+(t)$,$N_-(t)$分别为得分大于$t$的样本中正负样本数目，$N_+$,$N_−$为总的正负样本数目， 那么 $TPR$ 和$FPR$可以表达为阈值$t$的函数
-\begin{equation}
-TPR(t)=\frac{N_+(t)}{N_+}
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;\begin{equation}
-FPR(t)=\frac{N_−(t)}{N_−}
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;随着阈值$t$的变化，$TPR$和$FPR$在坐标图上形成一条曲线，这条曲线就是ROC曲线。 显然，如果模型是随机的，模型得分对正负样本没有区分性，那么得分大于t的样本中，正负样本比例和总体的正负样本比例应该基本一致。 也就是说
-\begin{equation}
-\frac{N_+(t)}{N_−(t)}=\frac{N_+}{N_−}
-\end{equation}
-结合上面的式子可知TPR和FPR相等，对应的ROC曲线是一条直线！&lt;/p&gt;
-
-&lt;p&gt;反之，如果模型的区分性非常理想，也就是说正负样本的得分可以完全分开，所有的正样本都比负样本得分高，此时ROC曲线表现为「 字形。 因为正例得分都比负例搞，所以要么$TPR=0$要么$FPR=0$&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/auc/ROC_curves.svg&quot; alt=&quot;ROC曲线&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;实际的模型的ROC曲线则是一条上凸的曲线，介于随机和理想的ROC曲线之间。而ROC曲线下的面积，即为AUC！
-\begin{equation}
-\mathrm{AUC}=\int_{t=\infty}^{-\infty} y(t) d x(t)
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;这里的$x$和$y$分别对应TPR和FPR，也是ROC曲线的横纵坐标。&lt;/p&gt;
-
-&lt;h2 id=&quot;auc的概率解释&quot;&gt;AUC的概率解释&lt;/h2&gt;
-&lt;h3 id=&quot;概率解释的证明&quot;&gt;概率解释的证明&lt;/h3&gt;
-&lt;p&gt;AUC常常被用来作为模型排序好坏的指标，原因在于AUC可以看做随机从正负样本中选取一对正负样本，其中正样本的得分大于负样本的概率！ 这个结论很容易证明，考虑随机取得这对正负样本中，负样本得分在$[t,t+Δt]$之间的概率为
-\begin{equation}
-\begin{aligned} &amp;amp; P\left(t \leq s_{-}&amp;lt;t+\Delta t\right) \\=&amp;amp; P\left(s_{-}&amp;gt;t\right)-P\left(s_{-}&amp;gt;t+\Delta t\right) \\=&amp;amp; \frac{N_{-}(t)-N_{-}(t+\Delta t)}{N_{-}} \\=&amp;amp; x(t)-x(t+\Delta t)=-\Delta x(t) 
-\end{aligned}
-\end{equation}
-如果Δt很小，那么该正样本得分大于该负样本的概率为
-\begin{equation}
-\begin{array}{l}{P\left(s_{+}&amp;gt;s_{-} | t \leq s_{-}&amp;lt;t+\Delta t\right)} \\ {\approx P\left(s_{+}&amp;gt;t\right)=\frac{N_{+}(t)}{N_{+}}=y(t)}\end{array}
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;所以，
-\begin{equation}
-\begin{array}{l}{\quad P\left(s_{+}&amp;gt;s_{-}\right)} \\ {=\sum{P\left(t \leq s_{-}&amp;lt;t+\Delta t\right) P\left(s_{+}&amp;gt;s_{-} | t \leq s_{-}&amp;lt;t+\Delta t\right)}} \\ {=-\sum{y(t) \Delta x(t)}} 
-\\ {=-\int_{t=-\infty}^{\infty} y(t) d x(t)} \\ {=\int_{t=\infty}^{-\infty} y(t) d x(t)}\end{array}
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;注意积分区间，$t=-\infty$ 对应ROC图像最右上角的点，而$t=\infty$ 对应ROC图像最左下角的点。所以，计算面积是$\int_{t=\infty}^{-\infty}$, 可以看出，积分项里面实际上是这样一个事件的概率：$\underline{随机取一对正负样本，负样本得分为t且正样本大于t}$. 因此，对这个概率微元积分就可以到正样本得分大于负样本的概率！&lt;/p&gt;
-
-&lt;h2 id=&quot;auc的排序特性&quot;&gt;AUC的排序特性&lt;/h2&gt;
-&lt;p&gt;根据上述概率解释，AUC实际上在说一个模型把正样本排在负样本前面的概率！ 所以，AUC常用在排序场景的模型评估，比如搜索和推荐等场景！ 这个解释还表明，如果将所有的样本的得分都加上一个额外的常数，并不改变这个概率，因此AUC不变！ 因此，在广告等需要绝对的点击率场景下，AUC并不适合作为评估指标，而是用logloss等指标。&lt;/p&gt;
-
-&lt;h2 id=&quot;auc对正负样本比例不敏感&quot;&gt;AUC对正负样本比例不敏感&lt;/h2&gt;
-&lt;p&gt;利用概率解释，还可以得到AUC另外一个性质，对正负样本比例不敏感。 在训练模型的时候，如果正负比例差异比较大，例如正负比例为1:1000，训练模型的时候通常要对负样本进行下采样。当一个模型训练完了之后，用负样本下采样后的测试集计算出来的AUC和未采样的测试集计算的AUC基本一致，或者说前者是后者的无偏估计！ 如果采样是随机的，对于给定的正样本，假定得分为s+，那么得分小于s+的负样本比例不会因为采样而改变！ 例如，假设采样前负样本里面得分小于s+的样本占比为70%，如果采样是均匀的，即&amp;gt;s+的负样本和&amp;lt;s+的负样本留下的概率是相同的，那么显然采样后这个比例仍然是70%！ 这表明，该正样本得分大于选取的负样本的概率不会因为采样而改变，也就是y(t)dx(t)是不变的，因此，AUC也不变！&lt;/p&gt;
-
-&lt;p&gt;相比于其他评估指标，例如准确率、召回率和F1值，负样本下采样相当于只将一部分真实的负例排除掉了，然而模型并不能准确地识别出这些负例，所以用下采样后的样本来评估会高估准确率；因为采样只对负样本采样，正样本都在，所以采样对召回率并没什么影响。这两者结合起来，最终导致高估F1值！&lt;/p&gt;
-
-&lt;h2 id=&quot;auc的计算&quot;&gt;AUC的计算&lt;/h2&gt;
-&lt;p&gt;AUC可以直接根据ROC曲线，利用梯形积分进行计算。此外，还有一个比较有意思的是，可以 利用AUC与Wilcoxon-Mann-Whitney测试的U统计量的关系，来计算AUC。这可以从AUC的概率意义推导而来。&lt;/p&gt;
-
-&lt;p&gt;假设我们将测试集的正负样本按照模型预测得分 从小到大 排序，对于第$j$个正样本，假设它的排序为 $r_j$， 那么说明排在这个正样本前面的总样本有 $r_j−1$个，其中正样本有 $j−1$个（因为这个正样本在所有的正样本里面排第$j$）， 所以排在第$j$个正样本前面(得分比它小)的负样本个数为 $r_j−j$个。也就是说，对于第$j$个正样本来说，其得分比随机取的一个负样本大(排序比它靠后)的概率是 $\frac{(r_j−j)}{N_−}$,其中N−是总的负样本数目。所以，平均下来，随机取的正样本得分比负样本大的概率为&lt;/p&gt;
-
-&lt;p&gt;\begin{equation}
-\frac{1}{N_{+}} \sum_{j=1}^{N_{+}}\left(r_{j}-j\right) / N_{-}=\frac{\sum_{j=1}^{N_{+}} r_{j}-N_{+}\left(N_{+}+1\right) / 2}{N_{+} N_{-}}
-\end{equation}&lt;/p&gt;
-
-&lt;p&gt;所以
-\begin{equation}
-A U C=\frac{\sum_{j=1}^{N_{+}} r_{j}-N_{+}\left(N_{+}+1\right) / 2}{N_{+} N_{-}}
-\end{equation}
-因此，很容易写出计算AUC的SQL代码&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;select
-    (ry - 0.5*n1*(n1+1))/n0/n1 as auc
-from(
-    select
-        sum(if(y=0, 1, 0)) as n0,
-        sum(if(y=1, 1, 0)) as n1,
-        sum(if(y=1, r, 0)) as ry
-    from(
-        select y, row_number() over(order by score asc) as r
-        from(
-            select y, score
-            from some.table
-        )A
-    )B
-)C
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;AUC的优化
-采用极大似然估计对应的损失函数是logloss，因此极大似然估计的优化目标并不是AUC。 在一些排序场景下，AUC比logloss更贴近目标，因此直接优化AUC可以达到比极大似然估计更好的效果。 实际上，pairwise的目标函数就可以看做一种对AUC的近似。因为损失函数都是作用与正负样本得分差之上！ 例如，&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;类型&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;函数&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;rank-SVM&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;$\max(0, - s_+ + s_- + \Delta)$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;rank-net&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;$\log (1 + \exp(- (s_+ - s_-)))$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;指数损失&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;$\exp(- (s_+ - s_-))$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;TOP 损失&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;$\sum_s \max(0, - s_c + s + \Delta)$&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;显然，这些损失函数都是对$s+ &amp;lt;s−$的正负样本对进行惩罚！ 此外，也有一些其它对AUC近似度更好的损失函数，例如
-\begin{equation}
-\begin{aligned} &amp;amp; \mathbf{E}\left[\left(1-w^{T}\left(s_{+}-s_{-}\right)\right)^{2}\right] = \frac{1}{n_{+} n_{-}} \sum_{i=1}^{n_{+}} \sum_{j=1}^{n_{-}}\left(1-w^{T}\left(s_{i}^{+}-s_{j}^{-}\right)\right)^{2} \end{aligned}
-\end{equation}
-$s_i^+, s_j^-$分别表示正例和负例的得分。 这解释了为什么某些问题中，利用排序损失函数比$logloss$效果更好，因为在这些问题中排序比概率更重要！&lt;/p&gt;
-
-&lt;h2 id=&quot;auc要到多少才算好的模型&quot;&gt;AUC要到多少才算好的模型&lt;/h2&gt;
-&lt;p&gt;AUC越大表示模型区分正例和负例的能力越强，那么AUC要达到多少才表示模型拟合的比较好呢？在实际建模中发现，预测点击的模型比预测下单的模型AUC要低很多，在月活用户里面预测下单和日活用户里面预测下单的AUC差异也很明显，预测用户未来1小时下单和预测未来1天的下单模型AUC差异也很大。这表明，AUC非常依赖于具体任务。&lt;/p&gt;
-
-&lt;p&gt;以预测点击和预测下单为例，下单通常决策成本比点击高很多，这使得点击行为比下单显得更加随意，也更加难以预测，所以导致点击率模型的AUC通常比下单率模型低很多。&lt;/p&gt;
-
-&lt;p&gt;那么月活用户和日活用户那个更容易区分下单与不下单用户呢？显然月活用户要容易一些，因为里面包含很多最近不活跃的用户，所以前者的AUC通常要高一些。&lt;/p&gt;
-
-&lt;p&gt;对于预测1小时和预测1天的模型，哪一个更加困难？因为时间越长，用户可能发生的意料之外的事情越多，也越难预测。举个极端的例子，预测用户下一秒中内会干啥，直接预测他会做正在干的事情即可，这个模型的准确率就会很高，但是预测长期会干啥就很困难了。所以对于这两个模型，后者更加困难，所以AUC也越低。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://tracholar.github.io/machine-learning/2018/01/26/auc.html&quot;&gt;https://tracholar.github.io/machine-learning/2018/01/26/auc.html&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 03 Dec 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//2018/12/AUC-Introduction-and-Explanation.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2018/12/AUC-Introduction-and-Explanation.html</guid>
-        
-        <category>Machine Learning</category>
         
         
       </item>

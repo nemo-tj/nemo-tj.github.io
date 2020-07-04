@@ -91,7 +91,7 @@
 
 <p>对于以上的过程，可以由下图表示：</p>
 
-<p><img src="/images/word2vec/code_seq.png" alt="word2vec 代码实现流程" /></p>
+<p><img src="http://localhost:4000/images/word2vec/code_seq.png" alt="word2vec 代码实现流程" /></p>
 
 <h3 id="1预处理">1、预处理</h3>
 <p>在预处理部分，对word2vec需要使用的参数进行初始化，在word2vec中是利用传入的方式对参数进行初始化的。</p>
@@ -127,7 +127,7 @@
 <h4 id="21构建词库的过程">2.1、构建词库的过程</h4>
 <p>在这里，我们以从词的文本构建词库为例。构建词库的过程如下所示：</p>
 
-<p><img src="/images/word2vec/vocab.png" alt="构建词库" /></p>
+<p><img src="http://localhost:4000/images/word2vec/vocab.png" alt="构建词库" /></p>
 
 <p>在这部分中，最主要的工作是对文本进行处理，包括低频词的处理，hash表的处理等等。首先，会在词库中增加一个“&lt; /s&gt;”的词，同时，在读取文本的过程中，将换行符“\n”也表示成该该词，如：</p>
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">ch</span> <span class="o">==</span> <span class="sc">'\n'</span><span class="p">)</span> <span class="p">{</span>
@@ -209,7 +209,7 @@
 <h4 id="31初始化网络参数">3.1、初始化网络参数</h4>
 <p>在初始化的过程中，主要的参数包括词向量的初始化和映射层到输出层的权重的初始化，如下图所示：</p>
 
-<p><img src="/images/word2vec/net.png" alt="网络参数" /></p>
+<p><img src="http://localhost:4000/images/word2vec/net.png" alt="网络参数" /></p>
 
 <p>在初始化的过程中，映射层到输出层的权重都初始化为0.0，而对于每一个词向量的初始化，作者的初始化方法如下代码所示：</p>
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">vocab_size</span><span class="p">;</span> <span class="n">a</span><span class="o">++</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">b</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -231,7 +231,7 @@
 </code></pre></div></div>
 <p>其中，count数组中前vocab_size存储的是每一个词的对应的词频，后面初始化的是很大的数，已知词库中的词是按照降序排列的，因此，构建Huffman树的过程如下所示：</p>
 
-<p><img src="/images/word2vec/huff_1.png" alt="huffman 数据结构" /></p>
+<p><img src="http://localhost:4000/images/word2vec/huff_1.png" alt="huffman 数据结构" /></p>
 
 <p>首先，设置两个指针pos1和pos2，分别指向最后一个词和最后一个词的后一位，从两个指针所指的数中选择出最小的值，记为min1i，如pos1所指的值最小，此时，将pos1左移，再比较pos1和pos2所指的数，选择出最小的值，记为min2i，将他们的和存储到pos2所指的位置。并将此时pos2所指的位置设置为min1i和min2i的父节点，同时，记min2i所指的位置的编码为1，如下代码所示：</p>
 
@@ -243,11 +243,11 @@
 
 <p>构建好Huffman树后，此时，需要根据构建好的Huffman树生成对应节点的Huffman编码。假设，上述的数据生成的最终的Huffman树为：</p>
 
-<p><img src="/images/word2vec/huff_2.png" alt="huffman树" /></p>
+<p><img src="http://localhost:4000/images/word2vec/huff_2.png" alt="huffman树" /></p>
 
 <p>此时，count数组，binary数组和parent_node数组分别为：</p>
 
-<p><img src="/images/word2vec/huff_3.png" alt="数组值" /></p>
+<p><img src="http://localhost:4000/images/word2vec/huff_3.png" alt="数组值" /></p>
 
 <p>在生成Huffman编码的过程中，针对每一个词（词都在叶子节点上），从叶子节点开始，将编码存入到code数组中，如对于上图中的“R”节点来说，其code数组为{1,0}，再对其反转便是Huffman编码：</p>
 
@@ -301,7 +301,7 @@
 
 <p>这个过程可以通过下图简单的描述：</p>
 
-<p><img src="/images/word2vec/pthread.png" alt="多线程处理" /></p>
+<p><img src="http://localhost:4000/images/word2vec/pthread.png" alt="多线程处理" /></p>
 
 <p>在实现多线程的过程中，作者并没有加锁的操作，而是对模型参数和词向量的修改可以任意执行，这一点类似于基于随机梯度的方法，训练的过程与训练样本的训练是没有关系的，这样可以大大加快对词向量的训练。抛开多线程的部分，在每一个线程内执行的是对模型和词向量的训练。</p>
 
@@ -317,7 +317,7 @@
 
 <p>CBOW模型和Skip-gram模型是神经概率语言模型的两种变形形式，其中，在CBOW模型中包含三层，即输入层，映射层和输出层。对于CBOW模型，如下图所示：</p>
 
-<p><img src="/images/word2vec/cbow.png" alt="cbow模型" /></p>
+<p><img src="http://localhost:4000/images/word2vec/cbow.png" alt="cbow模型" /></p>
 
 <p>在CBOW模型中，通过词$w_t$的前后词$w_{t-2},w_{t-1},w_{t+1},w_{t+2}$来预测当前词$w_t$。此处的窗口的大小 $window = 2$。</p>
 
@@ -352,7 +352,7 @@ for (a = b; a &lt; window * 2 + 1 - b; a++) if (a != window) {
 
 <h5 id="432hierarchical-softmax">4.3.2、Hierarchical Softmax</h5>
 
-<p><img src="/images/word2vec/hs.png" alt="hs模型的数学原理" /></p>
+<p><img src="http://localhost:4000/images/word2vec/hs.png" alt="hs模型的数学原理" /></p>
 
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="n">d</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="n">vocab</span><span class="p">[</span><span class="n">word</span><span class="p">].</span><span class="n">codelen</span><span class="p">;</span> <span class="n">d</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span><span class="c1">// word为当前词</span>
     <span class="c1">// 计算输出层的输出</span>
@@ -404,7 +404,7 @@ for (a = b; a &lt; window * 2 + 1 - b; a++) if (a != window) {
     <span class="n">label</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<p><img src="/images/word2vec/neg.png" alt="neg模型的数学原理" /></p>
+<p><img src="http://localhost:4000/images/word2vec/neg.png" alt="neg模型的数学原理" /></p>
 
 <p>代码更新为：</p>
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">f</span> <span class="o">&gt;</span> <span class="n">MAX_EXP</span><span class="p">)</span> <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">label</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">alpha</span><span class="p">;</span>
@@ -420,7 +420,7 @@ for (a = b; a &lt; window * 2 + 1 - b; a++) if (a != window) {
 
 <p>而Skip-gram模型与CBOW正好相反，在Skip-gram模型中，则是通过当前词$w_t$来预测其前后词$w_{t-2},w_{t-1},w_{t+1},w_{t+2}$，Skip-gram模型如下图所示：</p>
 
-<p><img src="/images/word2vec/skg.png" alt="skip-gram 模型" /></p>
+<p><img src="http://localhost:4000/images/word2vec/skg.png" alt="skip-gram 模型" /></p>
 
 <h5 id="431hierarchical-softmax">4.3.1、Hierarchical Softmax</h5>
 

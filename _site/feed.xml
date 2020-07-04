@@ -3,10 +3,10 @@
   <channel>
     <title>Wall-E - From Space From Earth</title>
     <description>用心设计未来</description>
-    <link>//</link>
-    <atom:link href="//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 17 May 2020 18:19:17 +0800</pubDate>
-    <lastBuildDate>Sun, 17 May 2020 18:19:17 +0800</lastBuildDate>
+    <link>http://localhost:4000//</link>
+    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 04 Jul 2020 14:34:40 +0800</pubDate>
+    <lastBuildDate>Sat, 04 Jul 2020 14:34:40 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -118,8 +118,8 @@
 
 </description>
         <pubDate>Sun, 29 Mar 2020 00:00:00 +0800</pubDate>
-        <link>//2020/03/IOT-Project-DeepLearning-Application.html</link>
-        <guid isPermaLink="true">//2020/03/IOT-Project-DeepLearning-Application.html</guid>
+        <link>http://localhost:4000//2020/03/IOT-Project-DeepLearning-Application.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2020/03/IOT-Project-DeepLearning-Application.html</guid>
         
         <category>IOT</category>
         
@@ -127,16 +127,211 @@
       </item>
     
       <item>
-        <title>素材和创作</title>
-        <description>&lt;p&gt;照相机可以拍出照片，但绝大部分照片都不是作品。&lt;/p&gt;
+        <title>信息流推荐中的若干问题和思考</title>
+        <description>&lt;h2 id=&quot;信息流产品的优化点&quot;&gt;信息流产品的优化点&lt;/h2&gt;
 
-&lt;p&gt;在未来的社会里，素材是丰富多样的。即使质量良莠不齐，但是巨大的体量为无数的组合创造了可能性。能够整合素材资源，进行创作，才是未来最重要的竞争力之一。&lt;/p&gt;
+&lt;h3 id=&quot;供给侧--努力--数量质量效率&quot;&gt;供给侧 ( 努力 ): 数量、质量、效率&lt;/h3&gt;
+
+&lt;p&gt;内容量大幅提升：主要来自于开放跟拍权限，加上低门槛创作工具和爆款内容的持续引流。&lt;/p&gt;
+
+&lt;p&gt;内容审核效率的提升：机器审核准确率提高。&lt;/p&gt;
+
+&lt;h3 id=&quot;运营侧--努力--丰富多元&quot;&gt;运营侧 ( 努力 ): 丰富多元&lt;/h3&gt;
+
+&lt;p&gt;海外团队的本土化运营能力持续在增强，local团队对内容生态的把控，更丰富多元化&lt;/p&gt;
+
+&lt;h3 id=&quot;营销侧--努力--品牌心智&quot;&gt;营销侧 ( 努力 ): 品牌心智&lt;/h3&gt;
+
+&lt;p&gt;PR品牌的持续曝光以及泛娱乐战略资源的深入&lt;/p&gt;
+
+&lt;h3 id=&quot;匹配侧--努力--个性化&quot;&gt;匹配侧 ( 努力 ): 个性化&lt;/h3&gt;
+
+&lt;p&gt;泛化的内容加算法可看性更强，留存也涨;&lt;/p&gt;
+
+&lt;p&gt;用户活跃度的升高，结合进一步泛化内容源 (低门槛创作工具和爆款内容的持续引流，刺激投稿和创作)&lt;/p&gt;
+
+&lt;h3 id=&quot;其它--运气-&quot;&gt;其它 ( 运气 )&lt;/h3&gt;
+
+&lt;p&gt;疫情期间，多出来的宅家线上娱乐时间，也是不可忽视的一大因素&lt;/p&gt;
+
+&lt;p&gt;其它未洞察的点&lt;/p&gt;
+
+&lt;h2 id=&quot;拆分&quot;&gt;拆分&lt;/h2&gt;
+
+&lt;h3 id=&quot;内力&quot;&gt;内力&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 内容: 识别爆款、风险，快速进入分发，扩充新热资源
+- 供给: 流量及时精准投入
+- 消费: 看见新颖、有趣的内容，留存提升
+- 匹配: 
+    + 用户: 感兴趣且优质内容 + 全方位泛化内容
+    + 分析: 回访留存等指标的长期建模
+    + 策略: 新内容的审核和爆款引流算法配合
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;如何判定哪些是曝款内容哪些是违规有风险内容，越早的识别爆款可以越早地给予流量，持续爆款新内容流入资源池；从供给端来说，持续的流量也可以让内容生产者的积极性提高，可以持续的从其它平台逐步迁移有生产能力的KOL或KOC；从消费端来说，让用户总能看到新颖、惊喜的内容，从而提升留存。从匹配侧来说，为用户快速找到感兴趣且优质的内容满足当前消费；为用户展现全方位泛化的内容；精细化地进行回访留存等长期建模；新内容的审核与爆款引流算法配合。&lt;/p&gt;
+
+&lt;h3 id=&quot;外力&quot;&gt;外力&lt;/h3&gt;
+
+&lt;p&gt;Local团队对于美国本土化的理解，对于持续内容生态的把控可以带来算法之外的东西；这一部分属于外力，通过外力推动数据的齿轮开始运转，后期就是算法和数据逐步带来良性循环；也可以认为是算法和数据中的专家知识。&lt;/p&gt;
+
+&lt;p&gt;PR、品牌持续曝光，内容生态的布局，为内容的生产和消费做铺垫。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/RS/p1-level.jpg&quot; alt=&quot;多因素影响下的内容分发&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可能抖音走在了飞轮效应那条路上，但是现在只在7或者8这个位置，将来想在美国突破1亿DAU，那需要在接下来的若干发展中继续踩准节奏。&lt;/p&gt;
+
+&lt;h2 id=&quot;数据与算法可以发力的点&quot;&gt;数据与算法可以发力的点&lt;/h2&gt;
+
+&lt;p&gt;借着上面的问题，今天想分享的是，这里面数据和算法可以做什么:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如何审核出有风险的内容，识别优质的内容；&lt;/li&gt;
+  &lt;li&gt;识别出来了优质内容，如何引爆 (算法预测准确率不是百分百，如何及时止损)&lt;/li&gt;
+  &lt;li&gt;精准匹配用户和内容，且在最大化短期匹配效率的同时如何兼顾长期留存 (让你嗨，但不能让你太嗨；玩游戏也是一样，太简单和太难都会让留存不好)&lt;/li&gt;
+  &lt;li&gt;让有爆款能力的内容生产者，拿到更多的流量，提高其积极性 ( 这里谈论的更多是全站维度 )；&lt;/li&gt;
+  &lt;li&gt;如何识别趋势，让虽然不是爆款内容生产者但是满足一定圈层的内容生产者，能够精准地触达其能够覆盖的用户并且获得那个圈层内的流量；&lt;/li&gt;
+  &lt;li&gt;泛内容生态下，如何在现有流量体系下做一定干预，给予流量或者限制流量。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;要想变强不能有短板，短板就是你的生命线，有短板的越变越小，有长板的越变越强。&lt;/p&gt;
+
+&lt;h3 id=&quot;如何审核出有风险的内容识别优质的内容&quot;&gt;如何审核出有风险的内容，识别优质的内容&lt;/h3&gt;
+
+&lt;p&gt;相关技术：语音转文本, 标题、内容敏感词识别, 图像识别 ( 黄色、暴力、相似内容 )，新品爆款预测。&lt;/p&gt;
+
+&lt;p&gt;通过上述技术对内容进行初步审核，然后进行小流量测试 ( 其关注的粉丝或内容匹配的类型背后感兴趣的人群 )，如果流量效果表现良好，再通过用户众包的理念对内容进行把控 ( 降低人力审核压力 )，推荐系统分发过程中引入举报途径。&lt;/p&gt;
+
+&lt;p&gt;这里技术和算法的本质是通过算法和数据结合的方式，大幅提升信息密度，在海量内容被创作的时候，审核人力无须每个都做审核，而是对可能违规内容进行审核，如下图。通过人工检测和举报并被确认的违规内容，持续地数据积累，未来机器检测会越来越准。&lt;/p&gt;
+
+&lt;!-- ![内容审核流程](http://localhost:4000/images/RS/p2-audit.png)![分发量和视频分布](http://localhost:4000/images/RS/p3-num-show.png) --&gt;
+
+&lt;center class=&quot;half&quot;&gt;
+    &lt;img src=&quot;http://localhost:4000/images/RS/p2-audit.png&quot; width=&quot;60%&quot; /&gt;&lt;img src=&quot;http://localhost:4000/images/RS/p3-num-show.png&quot; width=&quot;40%&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;爆款和优质内容的挖掘至关重要，因为这部分内容承载了平台大部分的播放量，也是吸引用户留存的重要载体。&lt;/p&gt;
+
+&lt;p&gt;产品通过算法和数据也可以一定程度上自动化地挖掘出可能可以引爆的内容点，比如通过类比电商挖掘模式中的种子自动化流程，如下图。&lt;/p&gt;
+
+&lt;center class=&quot;half&quot;&gt;
+    &lt;img src=&quot;http://localhost:4000/images/RS/p5-seed.png&quot; width=&quot;60%&quot; /&gt;
+&lt;/center&gt;
+
+&lt;!-- ![种子视频筛选](http://localhost:4000/images/RS/p5-seed.png) --&gt;
+
+&lt;h3 id=&quot;识别出来了优质内容如何引爆--算法预测准确率不是百分百如何及时止损-&quot;&gt;识别出来了优质内容，如何引爆 ( 算法预测准确率不是百分百，如何及时止损 )&lt;/h3&gt;
+
+&lt;p&gt;通过新品测试流程，将流量利用最大化，这里可以通过一定概率统计手段进行平滑 ( 同样是20%的点击率，一个曝光是100w，一个是100，后者相对不置信 )，在逐渐积累流量持续进行流量调整；因为你从低点击率上省下来给到了高点击率的商品上，这中间可以通过一些EE的策略或者简单的统计可以完成部分的工作，如下图。&lt;/p&gt;
+
+&lt;center class=&quot;half&quot;&gt;
+    &lt;img src=&quot;http://localhost:4000/images/RS/p6-ee.png&quot; width=&quot;50%&quot; /&gt;&lt;img src=&quot;http://localhost:4000/images/RS/p7-ee-1.png&quot; width=&quot;50%&quot; /&gt;
+&lt;/center&gt;
+
+&lt;!-- ![流量优化1](http://localhost:4000/images/RS/p6-ee.png)
+![流量优化2](http://localhost:4000/images/RS/p7-ee-1.png) --&gt;
+
+&lt;p&gt;这里面也涉及几个问题，就是内容类的产品，不像电商的商品，有很多内容具有较短的生命周期，特别是热点类、时政类的内容，或者优质内容衰退的过程，比如下图。&lt;/p&gt;
+
+&lt;center class=&quot;half&quot;&gt;
+    &lt;img src=&quot;http://localhost:4000/images/RS/p8-plr.png&quot; width=&quot;50%&quot; /&gt;&lt;img src=&quot;http://localhost:4000/images/RS/p8-hot.png&quot; width=&quot;50%&quot; /&gt;
+&lt;/center&gt;
+
+&lt;!-- ![完播率变化](http://localhost:4000/images/RS/p8-plr.png)
+![新热变化](http://localhost:4000/images/RS/p8-hot.png) --&gt;
+
+&lt;p&gt;这部分可能成为爆款快速，但也会快速冷却，所以整套优质候选爆款内容需要持续不断地、快速地被识别出来，并快速获得流量；因为爆款普通内容也存在随着播放量和覆盖人群的上升，完播率及引流转化效率降低的过程（因为没有适合任何人口味的短视频），这时候也需要适时地将这部分流量打到新的爆款上；这些不是不好的内容，是内容已经过了时效或合适人群已经覆盖十之七八了，需要降温。&lt;/p&gt;
+
+&lt;h3 id=&quot;精准匹配用户和内容且在最大化短期匹配效率的同时如何兼顾长期留存--让你嗨但不能让你太嗨玩游戏也是一样太简单和太难都会让留存不好-&quot;&gt;精准匹配用户和内容，且在最大化短期匹配效率的同时如何兼顾长期留存 ( 让你嗨，但不能让你太嗨；玩游戏也是一样，太简单和太难都会让留存不好 )&lt;/h3&gt;
+
+&lt;p&gt;可以借鉴下面的拆解方式。
+&lt;img src=&quot;http://localhost:4000/images/RS/p9-theory.png&quot; alt=&quot;流量-转化-反馈&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们以某天的匹配来看，首先DAU代表了当日的流量，当日我们需要做好匹配 ( 也就是y这个因子 )，其次我们需要更加注重的是x因素，n代表了累计效应。&lt;/p&gt;
+
+&lt;p&gt;换个角度，每日的DAU=新客UV+老客UV，这里面老客UV是前面公式x带来的，在互联网用户天花板明显的情况下，获客成本持续走高，老客维护就是如何在精准匹配的同时，让用户时常回产品看看。&lt;/p&gt;
+
+&lt;p&gt;从交互来看，全屏幕式沉入让用户尽可能沉浸，自动循环播放刺激人的视听，下滑切换让人获得即时满足，不可预测的内容提供间歇性变量奖励，强大的推荐机制个性化快速匹配用户实时需求，让用户上瘾。这中间需对内容和用户进行解构，提取出用户和内容背后的项目特征，然后找到合适的模型进行预估，最终以预估值进行排序和展现。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/RS/p10-rc.png&quot; alt=&quot;个性化匹配&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/images/RS/p11-user-item.png&quot; alt=&quot;算法模型输入&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;先说短期匹配效率上的发力点，我们可以通过算法和数据建模，来最大化目标量。流量分发权重可以进行干预，并且不同的干预手段会带来完全不一样的产品最终形态演变。&lt;/p&gt;
+
+&lt;h4 id=&quot;以快手举例&quot;&gt;以快手举例：&lt;/h4&gt;
+
+&lt;p&gt;快手促使主播和粉丝进行更多交互。通过算法推荐，粉丝关注的用户的作品出现在发现页的可能性更高，动态功能让用户有类 似朋友圈的体验，且关注页和个人主页方便通知用户主播发布新作品和开始直播，因此快手和用户的互动更加频繁：快手用户刷关注页的比例高于抖音。未来快手希望将这一比例提升到80%。稠密用户关系网络意味着更高迁移成本。和抖音等侧重内容的平台相比，快手平台的迁移成本更高，用户留存度更高。注：本段以及下面2张图来自峰瑞资本-黄海老师的研究报告/公众号：黄海的消费业观察。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/RS/p12-ks.png&quot; alt=&quot;权重-原则-分布&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/images/RS/p12-ks-2.png&quot; alt=&quot;体验-露出-互动&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;所以，相对而言快手希望流量更加扁平，做了一些流量的控制 ( 虽然头部流量还是聚集 )。&lt;/p&gt;
+
+&lt;p&gt;我们以电商来举例，x很大程度上会被平台的商品供应丰富程度、价格、履约/物流速度、后期商品使用、退换货等等后端服务所影响。内容领域相对电商更难具象化，可能是娱乐性、多样性、新颖性、惊喜性等，可以通过对若干指标数据化后，评估长期留存与相关短期指标的关系，最终在推荐或者搜索层面进行干预，比如下图多样性与长期留存的关系。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/RS/p13-rem.png&quot; alt=&quot;留存-追求全局的-不是局部的&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可以尝试在推荐系统中引入一定的多样性控制，可以带来长期指标的提升，尽量将模型带入去全局最优解。这部分的工作也是希望通过兴趣探索在用户某类兴趣衰减明显时，有其它主题内容可以承载用户接下来的时长，比如刚开始用户被漂亮小姐姐的视频吸引，进来以后有时尚、护肤、彩妆、美食、健身、旅行、影视等等其它内容持续地满足他，所以需要在他进来的有限次数中，发现内容平台上更大的世界。&lt;/p&gt;
+
+&lt;h3 id=&quot;让有爆款能力的内容生产者拿到更多的流量提高其积极性--这里谈论的更多是全站维度-&quot;&gt;让有爆款能力的内容生产者，拿到更多的流量，提高其积极性 ( 这里谈论的更多是全站维度 )&lt;/h3&gt;
+
+&lt;p&gt;首先你得对内容生产者进行分层，将平台内的内容生产者进行区分，并根据对平台最终的贡献将他们分层，如下图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/RS/p13-st.png&quot; alt=&quot;生态&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;对平台内容生产者分层后，可以根据其流量配比进行调整，金字塔的底层需要被快速地识别，并将流量减少到可控范围内的最低；前2层需要被鼓励，特别是特色生产者需要流量倾斜，以保证其积极性，对于价值生产者所需流量不够的情况下，可以在非价值生产者内容流量中倾斜一部分。特色内容生产者可以类比第一个主题分享爆款种子内容筛选流程类似，可以通过部分种子特色内容生产者找到更多的特色内容生产者。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/RS/p13-dy.png&quot; alt=&quot;流量分配&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;流量如何控制呢，我们可以看下分配流程，当然这个是借鉴淘宝的商品流量分配模式，如上图所示。通过数据化和算法的方式先对整个流量体系进行拆解，将流量拆分成若干主要模块，并通过流量控制系统进行干预，可以实现用户时长、完播率、浏览深度不变的情况下，内容流量分布的调整 ( 至少电商中可以做到gmv不变的情况下，流量实现分配目标的80%-90% )。&lt;/p&gt;
+
+&lt;p&gt;逐步完成几类正反馈：&lt;/p&gt;
+
+&lt;p&gt;初级反馈：点赞数、粉丝数；&lt;/p&gt;
+
+&lt;p&gt;中级反馈：被推荐，获取到了更大的流量；&lt;/p&gt;
+
+&lt;p&gt;高级反馈：对于优秀内容生产者，变现的可能变大。&lt;/p&gt;
+
+&lt;h3 id=&quot;如何识别趋势让虽然不是爆款内容生产者但是满足一定圈层的内容生产者能够精准地触达其能够覆盖的用户并且获得那个圈层内的流量&quot;&gt;如何识别趋势，让虽然不是爆款内容生产者但是满足一定圈层的内容生产者，能够精准地触达其能够覆盖的用户并且获得那个圈层内的流量&lt;/h3&gt;
+
+&lt;p&gt;在推荐系统中，由于算法模型是基于数据的，如果你不做小圈层的区分，很容易较大覆盖率的人群喜好会覆盖小圈层用户的兴趣，因为模型在训练过程中天然就是兼顾大概率的类别的，除非你对建模过程进行干预，比如对小比例的label进行加权等操作。&lt;/p&gt;
+
+&lt;p&gt;南抖音北快手格局的打破，或者快手进攻一、二线城市都是需要突破圈层，逐渐尝试将新圈层的人逐步拉进产品内部；同样B站也是，需要将非二次元爱好者逐步拉入夸大DAU；那如果没有干预或者一些做一些精细化的手段，很难有突破，因为每次引流进来的新圈层用户对老圈层的内容不满意，最终离开 ( 周杰伦入驻快手，前期进来的一、二线城市的用户留存好，过半个月基本留存就惨不忍睹了；抖音也有进攻快手腹地，但是留存差的情况 )；这也是一般用户增长团队的一个非常重要的事情。&lt;/p&gt;
+
+&lt;p&gt;破圈层有三个事情要做，第一通过产品目标定位清楚需要扩的人群，或者通过站内数据分析发现潜力群体，第二通过深入地挖掘找到他们的一些兴趣点和话题，并开始进行内容延展，第三内容体系够完善加上更精准的分群推荐及体验的区隔，最终可以培养产品内新圈层的人群，只有这群人到达一定体量，接下来就是数据和算法的事情了，他们会通过内容和人群算法为他们带来个性化的体验。这里给一篇小红书在做15岁以下小学和初中生的留存的案例：&lt;/p&gt;
+
+&lt;p&gt;https://zhuanlan.zhihu.com/p/58241575&lt;/p&gt;
+
+&lt;p&gt;新圈层的需求如何发现呢，上述文章中有几种方案，一种方案是分析现有产品体系下某些关键指标低的群体，然后根据他们站内的行为，配合这批用户进来的初期，进行冷启动或者适合内容的筛选与补充。在很多年前你做产品，你的种子用户决定了你产品未来；现在这个阶段也是，只不过这个阶段，对于需要扩圈的产品来说，他们需要时不时地去维护新进来圈层的种子用户，并让他们消费和生产更多这个圈层喜欢的内容，带来圈层的扩大。&lt;/p&gt;
+
+&lt;p&gt;如何洞察呢？可以通过站内数据，比如搜索词、搜索主题环比变化情况 ( 见下图 )，用户消费内容效率的环比情况；分群再看上述指标的情况；&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/RS/p13-query.png&quot; alt=&quot;洞察&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;泛内容生态下如何在现有流量体系下做一定干预给予流量或者限制流量&quot;&gt;泛内容生态下，如何在现有流量体系下做一定干预，给予流量或者限制流量&lt;/h3&gt;
+
+&lt;p&gt;这一块类似商品的新内容体系方案，需要强制在流量侧给予倾斜，对新类型内容进行扶持；当然这里面其实也可以做到用数据和算法驱动，提升效率。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/RS/p13-cy.png&quot; alt=&quot;创新机会发现&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/images/RS/p12-td.png&quot; alt=&quot;权衡&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/images/RS/p12-td-2.png&quot; alt=&quot;取舍&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;数据和算法是0，初期的冷启动和运营是1，大于1还是小于1很关键，这个考验的就是创始人团队的能力；如果小于1，后面加0都是无用功，如果大于1，后面加零就是快速地增长。比如我所从事的电商领域，不只是前台的流量精准匹配 ( 推荐、搜索 ) 做好就可以了，你还需要有优质的货品，极快极好的履约 ( 物流、退换货 ) 等等，算法和数据只是其中一块，但是是产品成长路上重要的一块。&lt;/p&gt;
+
+&lt;p&gt;如何系统性地构建数据与算法体系，并跟其他构建系统的模块手拉手，构建飞轮效应，逐渐扩圈是接下来互联网产品持续增长的动力。&lt;/p&gt;
+
+&lt;p&gt;## 参考&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[1] &lt;a href=&quot;https://mp.weixin.qq.com/s/QMORttE80yiIQnkVQFLxUQ&quot;&gt;TikTok抖音国际版留存背后的数据和算法推演&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[2] &lt;a href=&quot;https://en.wikipedia.org/wiki/Main_Page&quot;&gt;Wikipedia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Sun, 15 Mar 2020 00:00:00 +0800</pubDate>
-        <link>//2020/03/Design-Material-and-Creative-Work.html</link>
-        <guid isPermaLink="true">//2020/03/Design-Material-and-Creative-Work.html</guid>
-        
-        <category>未来的趋势判断</category>
+        <link>http://localhost:4000//2020/03/Design-Material-and-Creative-Work.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2020/03/Design-Material-and-Creative-Work.html</guid>
         
         
       </item>
@@ -217,8 +412,8 @@
 &lt;p&gt;按产品领域来拆分，工具类产品很直接，比如，360杀毒是用于电脑杀毒的，uc浏览器是用来浏览网页的。服务类产品，也能大致这算成服务需求，如：美团，提供外卖、酒率&lt;/p&gt;
 </description>
         <pubDate>Sun, 23 Feb 2020 00:00:00 +0800</pubDate>
-        <link>//2020/02/How-to-Shoot-a-Nice-Video.html</link>
-        <guid isPermaLink="true">//2020/02/How-to-Shoot-a-Nice-Video.html</guid>
+        <link>http://localhost:4000//2020/02/How-to-Shoot-a-Nice-Video.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2020/02/How-to-Shoot-a-Nice-Video.html</guid>
         
         <category>产品分析</category>
         
@@ -236,7 +431,7 @@ The system computes the ID space for all the string features
 that occurred more than a minimum number of times. Continuous real-valued features are normalized to $[0, 1]$ by mapping a feature value x to its cumulative distribution function
 $P(X \leq x)$, divided into $n_q$ quantiles. The normalized value
 is $\frac{i−1}{n_q-1}$ for values in the i-th quantiles. 
-&lt;img src=&quot;/images/paper/deepxxxx/wide-deep.png&quot; alt=&quot;wide&amp;amp;deep&quot; /&gt;&lt;/li&gt;
+&lt;img src=&quot;http://localhost:4000/images/paper/deepxxxx/wide-deep.png&quot; alt=&quot;wide&amp;amp;deep&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;deepfm-a-factorization-machine-based-neural-network-for-ctr-prediction&quot;&gt;DeepFM: A Factorization-Machine based Neural Network for CTR Prediction&lt;/h3&gt;
@@ -255,13 +450,13 @@ is $\frac{i−1}{n_q-1}$ for values in the i-th quantiles.
 &lt;p&gt;###&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;通过和一阶项进行逐步交叉，得到多阶项。同时避免高阶项之间的交叉，从而控制了参数数量。&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;/images/paper/deepxxxx/wide-cross.png&quot; alt=&quot;wide&amp;amp;deep&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;http://localhost:4000/images/paper/deepxxxx/wide-cross.png&quot; alt=&quot;wide&amp;amp;deep&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
         <pubDate>Sun, 26 Jan 2020 00:00:00 +0800</pubDate>
-        <link>//2020/01/Wide-Deep-Series-CTR-Prediction.html</link>
-        <guid isPermaLink="true">//2020/01/Wide-Deep-Series-CTR-Prediction.html</guid>
+        <link>http://localhost:4000//2020/01/Wide-Deep-Series-CTR-Prediction.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2020/01/Wide-Deep-Series-CTR-Prediction.html</guid>
         
         <category>wide&amp;deep</category>
         
@@ -338,16 +533,12 @@ is $\frac{i−1}{n_q-1}$ for values in the i-th quantiles.
 
 &lt;p&gt;于我，停在这个阶段和位置，只是成为这个体系下的一颗毒瘤。只有放下昔日的光辉，才能不断前进。我的核心竞争力，应该是“把事做成”，而不仅仅是这安逸的收获。&lt;/p&gt;
 
-&lt;p&gt;年轻，是一种选择未知的勇气。永远年轻，永远热泪盈眶。&lt;/p&gt;
-
-&lt;h3 id=&quot;特别感谢&quot;&gt;特别感谢&lt;/h3&gt;
-
-&lt;h3 id=&quot;总结&quot;&gt;总结&lt;/h3&gt;
+&lt;p&gt;年轻，是一种选择未知的勇气。永远年轻，永远热泪盈眶。#&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 02 Jul 2019 00:00:00 +0800</pubDate>
-        <link>//2019/07/good-bye-baidu-feed.html</link>
-        <guid isPermaLink="true">//2019/07/good-bye-baidu-feed.html</guid>
+        <link>http://localhost:4000//2019/07/good-bye-baidu-feed.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2019/07/good-bye-baidu-feed.html</guid>
         
         <category>work</category>
         
@@ -533,8 +724,8 @@ g_{r}(D, A)=g(D, A) / H(A)
 
 </description>
         <pubDate>Fri, 21 Jun 2019 00:00:00 +0800</pubDate>
-        <link>//2019/06/information-entropy.html</link>
-        <guid isPermaLink="true">//2019/06/information-entropy.html</guid>
+        <link>http://localhost:4000//2019/06/information-entropy.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2019/06/information-entropy.html</guid>
         
         <category>熵</category>
         
@@ -549,8 +740,8 @@ g_{r}(D, A)=g(D, A) / H(A)
 
 </description>
         <pubDate>Sun, 16 Jun 2019 00:00:00 +0800</pubDate>
-        <link>//2019/06/Ideas-about-a-good-product-for-internet.html</link>
-        <guid isPermaLink="true">//2019/06/Ideas-about-a-good-product-for-internet.html</guid>
+        <link>http://localhost:4000//2019/06/Ideas-about-a-good-product-for-internet.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2019/06/Ideas-about-a-good-product-for-internet.html</guid>
         
         <category>feed</category>
         
@@ -581,8 +772,8 @@ g_{r}(D, A)=g(D, A) / H(A)
 
 </description>
         <pubDate>Sat, 04 May 2019 00:00:00 +0800</pubDate>
-        <link>//2019/05/these-years.html</link>
-        <guid isPermaLink="true">//2019/05/these-years.html</guid>
+        <link>http://localhost:4000//2019/05/these-years.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2019/05/these-years.html</guid>
         
         <category>Think and Want</category>
         
@@ -615,8 +806,8 @@ g_{r}(D, A)=g(D, A) / H(A)
 
 </description>
         <pubDate>Tue, 12 Feb 2019 00:00:00 +0800</pubDate>
-        <link>//2019/02/learn-linux-commands.html</link>
-        <guid isPermaLink="true">//2019/02/learn-linux-commands.html</guid>
+        <link>http://localhost:4000//2019/02/learn-linux-commands.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2019/02/learn-linux-commands.html</guid>
         
         <category>linux</category>
         
@@ -650,7 +841,7 @@ g_{r}(D, A)=g(D, A) / H(A)
 
 &lt;p&gt;对于以上的过程，可以由下图表示：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/word2vec/code_seq.png&quot; alt=&quot;word2vec 代码实现流程&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/word2vec/code_seq.png&quot; alt=&quot;word2vec 代码实现流程&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;1预处理&quot;&gt;1、预处理&lt;/h3&gt;
 &lt;p&gt;在预处理部分，对word2vec需要使用的参数进行初始化，在word2vec中是利用传入的方式对参数进行初始化的。&lt;/p&gt;
@@ -686,7 +877,7 @@ g_{r}(D, A)=g(D, A) / H(A)
 &lt;h4 id=&quot;21构建词库的过程&quot;&gt;2.1、构建词库的过程&lt;/h4&gt;
 &lt;p&gt;在这里，我们以从词的文本构建词库为例。构建词库的过程如下所示：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/word2vec/vocab.png&quot; alt=&quot;构建词库&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/word2vec/vocab.png&quot; alt=&quot;构建词库&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在这部分中，最主要的工作是对文本进行处理，包括低频词的处理，hash表的处理等等。首先，会在词库中增加一个“&amp;lt; /s&amp;gt;”的词，同时，在读取文本的过程中，将换行符“\n”也表示成该该词，如：&lt;/p&gt;
 &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'\n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -768,7 +959,7 @@ g_{r}(D, A)=g(D, A) / H(A)
 &lt;h4 id=&quot;31初始化网络参数&quot;&gt;3.1、初始化网络参数&lt;/h4&gt;
 &lt;p&gt;在初始化的过程中，主要的参数包括词向量的初始化和映射层到输出层的权重的初始化，如下图所示：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/word2vec/net.png&quot; alt=&quot;网络参数&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/word2vec/net.png&quot; alt=&quot;网络参数&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在初始化的过程中，映射层到输出层的权重都初始化为0.0，而对于每一个词向量的初始化，作者的初始化方法如下代码所示：&lt;/p&gt;
 &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vocab_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;layer1_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -790,7 +981,7 @@ g_{r}(D, A)=g(D, A) / H(A)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;其中，count数组中前vocab_size存储的是每一个词的对应的词频，后面初始化的是很大的数，已知词库中的词是按照降序排列的，因此，构建Huffman树的过程如下所示：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/word2vec/huff_1.png&quot; alt=&quot;huffman 数据结构&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/word2vec/huff_1.png&quot; alt=&quot;huffman 数据结构&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;首先，设置两个指针pos1和pos2，分别指向最后一个词和最后一个词的后一位，从两个指针所指的数中选择出最小的值，记为min1i，如pos1所指的值最小，此时，将pos1左移，再比较pos1和pos2所指的数，选择出最小的值，记为min2i，将他们的和存储到pos2所指的位置。并将此时pos2所指的位置设置为min1i和min2i的父节点，同时，记min2i所指的位置的编码为1，如下代码所示：&lt;/p&gt;
 
@@ -802,11 +993,11 @@ g_{r}(D, A)=g(D, A) / H(A)
 
 &lt;p&gt;构建好Huffman树后，此时，需要根据构建好的Huffman树生成对应节点的Huffman编码。假设，上述的数据生成的最终的Huffman树为：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/word2vec/huff_2.png&quot; alt=&quot;huffman树&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/word2vec/huff_2.png&quot; alt=&quot;huffman树&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;此时，count数组，binary数组和parent_node数组分别为：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/word2vec/huff_3.png&quot; alt=&quot;数组值&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/word2vec/huff_3.png&quot; alt=&quot;数组值&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在生成Huffman编码的过程中，针对每一个词（词都在叶子节点上），从叶子节点开始，将编码存入到code数组中，如对于上图中的“R”节点来说，其code数组为{1,0}，再对其反转便是Huffman编码：&lt;/p&gt;
 
@@ -860,7 +1051,7 @@ g_{r}(D, A)=g(D, A) / H(A)
 
 &lt;p&gt;这个过程可以通过下图简单的描述：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/word2vec/pthread.png&quot; alt=&quot;多线程处理&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/word2vec/pthread.png&quot; alt=&quot;多线程处理&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在实现多线程的过程中，作者并没有加锁的操作，而是对模型参数和词向量的修改可以任意执行，这一点类似于基于随机梯度的方法，训练的过程与训练样本的训练是没有关系的，这样可以大大加快对词向量的训练。抛开多线程的部分，在每一个线程内执行的是对模型和词向量的训练。&lt;/p&gt;
 
@@ -876,7 +1067,7 @@ g_{r}(D, A)=g(D, A) / H(A)
 
 &lt;p&gt;CBOW模型和Skip-gram模型是神经概率语言模型的两种变形形式，其中，在CBOW模型中包含三层，即输入层，映射层和输出层。对于CBOW模型，如下图所示：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/word2vec/cbow.png&quot; alt=&quot;cbow模型&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/word2vec/cbow.png&quot; alt=&quot;cbow模型&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在CBOW模型中，通过词$w_t$的前后词$w_{t-2},w_{t-1},w_{t+1},w_{t+2}$来预测当前词$w_t$。此处的窗口的大小 $window = 2$。&lt;/p&gt;
 
@@ -911,7 +1102,7 @@ for (a = b; a &amp;lt; window * 2 + 1 - b; a++) if (a != window) {
 
 &lt;h5 id=&quot;432hierarchical-softmax&quot;&gt;4.3.2、Hierarchical Softmax&lt;/h5&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/word2vec/hs.png&quot; alt=&quot;hs模型的数学原理&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/word2vec/hs.png&quot; alt=&quot;hs模型的数学原理&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vocab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;codelen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// word为当前词&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;// 计算输出层的输出&lt;/span&gt;
@@ -963,7 +1154,7 @@ for (a = b; a &amp;lt; window * 2 + 1 - b; a++) if (a != window) {
     &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/images/word2vec/neg.png&quot; alt=&quot;neg模型的数学原理&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/word2vec/neg.png&quot; alt=&quot;neg模型的数学原理&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;代码更新为：&lt;/p&gt;
 &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MAX_EXP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -979,7 +1170,7 @@ for (a = b; a &amp;lt; window * 2 + 1 - b; a++) if (a != window) {
 
 &lt;p&gt;而Skip-gram模型与CBOW正好相反，在Skip-gram模型中，则是通过当前词$w_t$来预测其前后词$w_{t-2},w_{t-1},w_{t+1},w_{t+2}$，Skip-gram模型如下图所示：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/word2vec/skg.png&quot; alt=&quot;skip-gram 模型&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/word2vec/skg.png&quot; alt=&quot;skip-gram 模型&quot; /&gt;&lt;/p&gt;
 
 &lt;h5 id=&quot;431hierarchical-softmax&quot;&gt;4.3.1、Hierarchical Softmax&lt;/h5&gt;
 
@@ -1031,8 +1222,8 @@ for (a = b; a &amp;lt; window * 2 + 1 - b; a++) if (a != window) {
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Wed, 06 Feb 2019 00:00:00 +0800</pubDate>
-        <link>//2019/02/word-2-vec-code-review.html</link>
-        <guid isPermaLink="true">//2019/02/word-2-vec-code-review.html</guid>
+        <link>http://localhost:4000//2019/02/word-2-vec-code-review.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2019/02/word-2-vec-code-review.html</guid>
         
         <category>word2vec</category>
         

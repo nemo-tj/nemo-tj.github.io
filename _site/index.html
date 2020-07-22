@@ -80,6 +80,57 @@
     
     
         
+    
+        
+            
+                
+                <div class="image">
+                    <img  src="http://localhost:4000/images/titanic_example/output_19_1.png" alt="png" / />
+                </div> 
+                
+                 
+-->
+
+    <div class="content">
+        <a class="header" href="/2020/07/demo-for-kaggle-titanic.html">kaggle_titanic 机器学习任务基本流程</a>
+        <div class="meta">
+            <span class="date">22 Jul 2020 
+             
+            [word2vec原理源码]
+            </span>            
+        </div>
+        <div class="description">
+            机器学习任务基本流程
+
+
+            <!-- 机器学习任务基本流程 基本情况 数据量 shape 缺失值 isnull 数值型特征的数据分布 特征分析 类别型特征：查看正负样本在不同取值上的分布 # for category feature visualization # check the difference between `Survive` and `Dead` along the `feature` # if the distribution is... -->
+        </div>
+    </div>
+    <div class="extra content">
+        <i class="comments icon"></i>
+        <a href="/2020/07/demo-for-kaggle-titanic.htmlindex.html#disqus_thread" data-disqus-identifier="/2020/07/demo-for-kaggle-titanic.html">
+            0 Comments
+        </a>
+        
+        <div class="right floated author">
+            <img class="ui avatar image" src="/assets/img/profile.jpg"> 晋戈
+        </div>
+        
+    </div>
+</div>
+            </div>
+        
+    
+        
+        
+            <div class="eight wide column">
+                <div class="ui card">
+
+<!--     
+
+    
+    
+        
      
 -->
 
@@ -123,7 +174,7 @@
     
         
         
-            <div class="eight wide column">
+            <div class="four wide column">
                 <div class="ui card">
 
 <!--     
@@ -504,35 +555,20 @@
     
         
         
-            <div class="four wide column">
-                <div class="ui card">
-
-<!--     
-
-    
-    
-        
-    
-        
             
-                
-                <div class="image">
-                    <img  src="http://localhost:4000/images/word2vec/code_seq.png" alt="word2vec 代码实现流程" / />
-                </div> 
-                
-                 
--->
-
-    <div class="content">
-        <a class="header" href="/2019/02/word-2-vec-code-review.html">word2vec 源码解析</a>
-        <div class="meta">
-            <span class="date">06 Feb 2019 
-             
-            [word2vec原理源码]
-            </span>            
-        </div>
-        <div class="description">
-            基本概念
+                <div class="ui horizontal divider">
+                    Older Posts
+                </div>
+            
+            <div class="sixteen wide column">
+                <div class="ui middle aligned selection list">
+                    <div class="item">
+                        <div class="header">
+                            word2vec 源码解析
+                            <small class="small-date">06 Feb 2019</small>
+                        </div>
+						<!-- 基本概念 在wrod2vec工具中，有如下的几个比较重要的概念： CBOW Skip-Gram Hierarchical Softmax Negative Sampling 其中CBOW和Skip-Gram是word2vec工具中使用到的两种不同的语言模型，而Hierarchical Softmax和Negative Sampling是对以上的两种模型的具体的优化方法。 在word2vec工具中，主要的工作包括： 预处理。即变量的声明，全局变量的定义等； 构建词库。即包含文本的处理，以及是否需要有指定词库等； 初始化网络结构。即包含CBOW模型和Skip-Gram模型的参数初始化，Huffman编码的生成等； 多线程模型训练。即利用Hierarchical Softmax 或者 Negative Sampling 方法对网络中的参数进行求解； 最终结果的处理。即是否保存和以何种形式保存。 对于以上的过程，可以由下图表示： 1、预处理 在预处理部分，对word2vec需要使用的参数进行初始化，在word2vec中是利用传入的方式对参数进行初始化的。 在预处理部分，实现了sigmoid函数值的近似计算。在利用神经网络模型对样本进行预测的过程中，需要对其进行预测，此时，需要使用到sigmoid函数，sigmoid函数的具体形式为： \begin{equation} \sigma = \frac{1}{1+... -->
+						基本概念
 在wrod2vec工具中，有如下的几个比较重要的概念：
 
   CBOW
@@ -542,30 +578,13 @@
 
 
 
-            <!-- 基本概念 在wrod2vec工具中，有如下的几个比较重要的概念： CBOW Skip-Gram Hierarchical Softmax Negative Sampling 其中CBOW和Skip-Gram是word2vec工具中使用到的两种不同的语言模型，而Hierarchical Softmax和Negative Sampling是对以上的两种模型的具体的优化方法。 在word2vec工具中，主要的工作包括： 预处理。即变量的声明，全局变量的定义等； 构建词库。即包含文本的处理，以及是否需要有指定词库等； 初始化网络结构。即包含CBOW模型和Skip-Gram模型的参数初始化，Huffman编码的生成等； 多线程模型训练。即利用Hierarchical Softmax 或者 Negative Sampling 方法对网络中的参数进行求解； 最终结果的处理。即是否保存和以何种形式保存。 对于以上的过程，可以由下图表示： 1、预处理 在预处理部分，对word2vec需要使用的参数进行初始化，在word2vec中是利用传入的方式对参数进行初始化的。 在预处理部分，实现了sigmoid函数值的近似计算。在利用神经网络模型对样本进行预测的过程中，需要对其进行预测，此时，需要使用到sigmoid函数，sigmoid函数的具体形式为： \begin{equation} \sigma = \frac{1}{1+... -->
-        </div>
-    </div>
-    <div class="extra content">
-        <i class="comments icon"></i>
-        <a href="/2019/02/word-2-vec-code-review.htmlindex.html#disqus_thread" data-disqus-identifier="/2019/02/word-2-vec-code-review.html">
-            0 Comments
-        </a>
-        
-        <div class="right floated author">
-            <img class="ui avatar image" src="/assets/img/profile.jpg"> 晋戈
-        </div>
-        
-    </div>
-</div>
+                    </div>
+                </div>
             </div>
         
     
         
         
-            
-                <div class="ui horizontal divider">
-                    Older Posts
-                </div>
             
             <div class="sixteen wide column">
                 <div class="ui middle aligned selection list">

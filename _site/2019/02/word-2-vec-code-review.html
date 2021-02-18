@@ -91,7 +91,7 @@
 
 <p>对于以上的过程，可以由下图表示：</p>
 
-<p><img src="http://localhost:4000/images/word2vec/code_seq.png" alt="word2vec 代码实现流程" /></p>
+<p><img src="/images/word2vec/code_seq.png" alt="word2vec 代码实现流程" /></p>
 
 <h3 id="1预处理">1、预处理</h3>
 <p>在预处理部分，对word2vec需要使用的参数进行初始化，在word2vec中是利用传入的方式对参数进行初始化的。</p>
@@ -104,12 +104,12 @@
 
 <p>如果每一次都请求计算<code class="highlighter-rouge">sigmoid</code>值，对性能将会有一定的影响，当<code class="highlighter-rouge">sigmoid</code>的值对精度的要求并不是非常严格时，可以采用近似计算。在<code class="highlighter-rouge">word2vec</code>中，将区间<code class="highlighter-rouge">[−6,6]</code>（设置的参数<code class="highlighter-rouge">MAX_EXP</code>为6）等距离划分成<code class="highlighter-rouge">EXP_TABLE_SIZE</code>等份，并将每个区间中的<code class="highlighter-rouge">sigmoid</code>值计算好存入到数组<code class="highlighter-rouge">expTable</code>中，需要使用时，直接从数组中查找。计算<code class="highlighter-rouge">sigmoid</code>值的代码如下所示：</p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">expTable</span> <span class="o">=</span> <span class="p">(</span><span class="n">real</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">((</span><span class="n">EXP_TABLE_SIZE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">real</span><span class="p">));</span><span class="c1">// 申请EXP_TABLE_SIZE+1个空间</span>
-<span class="c1">// 计算sigmoid值</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">EXP_TABLE_SIZE</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">expTable</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">exp</span><span class="p">((</span><span class="n">i</span> <span class="o">/</span> <span class="p">(</span><span class="n">real</span><span class="p">)</span><span class="n">EXP_TABLE_SIZE</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">MAX_EXP</span><span class="p">);</span> <span class="c1">// Precompute the exp() table</span>
-        <span class="n">expTable</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">expTable</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">expTable</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>                   <span class="c1">// Precompute f(x) = x / (x + 1)</span>
-<span class="p">}</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">expTable</span> <span class="o">=</span> <span class="p">(</span><span class="n">real</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">((</span><span class="n">EXP_TABLE_SIZE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">real</span><span class="p">));</span><span class="c1">// 申请EXP_TABLE_SIZE+1个空间
+// 计算sigmoid值
+</span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">EXP_TABLE_SIZE</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">expTable</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">exp</span><span class="p">((</span><span class="n">i</span> <span class="o">/</span> <span class="p">(</span><span class="n">real</span><span class="p">)</span><span class="n">EXP_TABLE_SIZE</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">MAX_EXP</span><span class="p">);</span> <span class="c1">// Precompute the exp() table
+</span>        <span class="n">expTable</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">expTable</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">expTable</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>                   <span class="c1">// Precompute f(x) = x / (x + 1)
+</span><span class="p">}</span>
 </code></pre></div></div>
 
 <blockquote>
@@ -127,12 +127,12 @@
 <h4 id="21构建词库的过程">2.1、构建词库的过程</h4>
 <p>在这里，我们以从词的文本构建词库为例。构建词库的过程如下所示：</p>
 
-<p><img src="http://localhost:4000/images/word2vec/vocab.png" alt="构建词库" /></p>
+<p><img src="/images/word2vec/vocab.png" alt="构建词库" /></p>
 
 <p>在这部分中，最主要的工作是对文本进行处理，包括低频词的处理，hash表的处理等等。首先，会在词库中增加一个“&lt; /s&gt;”的词，同时，在读取文本的过程中，将换行符“\n”也表示成该该词，如：</p>
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">ch</span> <span class="o">==</span> <span class="sc">'\n'</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">strcpy</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="s">"&lt;/s&gt;"</span><span class="p">);</span><span class="c1">// 换行符用&lt;/s&gt;表示</span>
-    <span class="k">return</span><span class="p">;</span>
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="s">"&lt;/s&gt;"</span><span class="p">);</span><span class="c1">// 换行符用&lt;/s&gt;表示
+</span>    <span class="k">return</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>在循环的过程中，不断去读取文件中的每一个词，并在词库中进行查找，若存在该词，则该词的词频+1，否则，在词库中增加该词。在词库中，是通过哈希表的形式存储的。最终，会过滤掉一些低频词。</p>
@@ -146,12 +146,12 @@
   <li>存储词的vocab</li>
   <li>存储词的hash的vocab_hash
 其中，在vocab中，存储的是词对应的结构体：
-    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 词的结构体</span>
-<span class="k">struct</span> <span class="n">vocab_word</span> <span class="p">{</span>
-      <span class="kt">long</span> <span class="kt">long</span> <span class="n">cn</span><span class="p">;</span> <span class="c1">// 出现的次数</span>
-      <span class="kt">int</span> <span class="o">*</span><span class="n">point</span><span class="p">;</span> <span class="c1">// 从根结点到叶子节点的路径</span>
-      <span class="kt">char</span> <span class="o">*</span><span class="n">word</span><span class="p">,</span> <span class="o">*</span><span class="n">code</span><span class="p">,</span> <span class="n">codelen</span><span class="p">;</span><span class="c1">// 分别对应着词，Huffman编码，编码长度</span>
-<span class="p">};</span>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 词的结构体
+</span><span class="k">struct</span> <span class="n">vocab_word</span> <span class="p">{</span>
+      <span class="kt">long</span> <span class="kt">long</span> <span class="n">cn</span><span class="p">;</span> <span class="c1">// 出现的次数
+</span>      <span class="kt">int</span> <span class="o">*</span><span class="n">point</span><span class="p">;</span> <span class="c1">// 从根结点到叶子节点的路径
+</span>      <span class="kt">char</span> <span class="o">*</span><span class="n">word</span><span class="p">,</span> <span class="o">*</span><span class="n">code</span><span class="p">,</span> <span class="n">codelen</span><span class="p">;</span><span class="c1">// 分别对应着词，Huffman编码，编码长度
+</span><span class="p">};</span>
 </code></pre></div>    </div>
     <p>在vocab_hash中存储的值是词在词库中的Index。</p>
   </li>
@@ -161,8 +161,8 @@
 
 <ul>
   <li>计算词的hash值：
-    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 取词的hash值</span>
-<span class="kt">int</span> <span class="nf">GetWordHash</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 取词的hash值
+</span><span class="kt">int</span> <span class="nf">GetWordHash</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">word</span><span class="p">)</span> <span class="p">{</span>
       <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">,</span> <span class="n">hash</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
       <span class="k">for</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">strlen</span><span class="p">(</span><span class="n">word</span><span class="p">);</span> <span class="n">a</span><span class="o">++</span><span class="p">)</span> <span class="n">hash</span> <span class="o">=</span> <span class="n">hash</span> <span class="o">*</span> <span class="mi">257</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="n">a</span><span class="p">];</span>
       <span class="n">hash</span> <span class="o">=</span> <span class="n">hash</span> <span class="o">%</span> <span class="n">vocab_hash_size</span><span class="p">;</span>
@@ -172,12 +172,12 @@
   </li>
   <li>检索词是否存在。如不存在则返回-1，否则，返回该词在词库中的索引：
     <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">vocab_hash</span><span class="p">[</span><span class="n">hash</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="c1">// 不存在该词</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">strcmp</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">vocab</span><span class="p">[</span><span class="n">vocab_hash</span><span class="p">[</span><span class="n">hash</span><span class="p">]].</span><span class="n">word</span><span class="p">))</span> <span class="k">return</span> <span class="n">vocab_hash</span><span class="p">[</span><span class="n">hash</span><span class="p">];</span><span class="c1">// 返回索引值</span>
-  <span class="n">hash</span> <span class="o">=</span> <span class="p">(</span><span class="n">hash</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">vocab_hash_size</span><span class="p">;</span><span class="c1">// 处理冲突</span>
-<span class="p">}</span>
-<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="c1">// 不存在该词</span>
-</code></pre></div>    </div>
+  <span class="k">if</span> <span class="p">(</span><span class="n">vocab_hash</span><span class="p">[</span><span class="n">hash</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="c1">// 不存在该词
+</span>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">strcmp</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">vocab</span><span class="p">[</span><span class="n">vocab_hash</span><span class="p">[</span><span class="n">hash</span><span class="p">]].</span><span class="n">word</span><span class="p">))</span> <span class="k">return</span> <span class="n">vocab_hash</span><span class="p">[</span><span class="n">hash</span><span class="p">];</span><span class="c1">// 返回索引值
+</span>  <span class="n">hash</span> <span class="o">=</span> <span class="p">(</span><span class="n">hash</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">vocab_hash_size</span><span class="p">;</span><span class="c1">// 处理冲突
+</span><span class="p">}</span>
+<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="c1">// 不存在该词
+</span></code></pre></div>    </div>
     <p>在这个过程中，使用到了线性探测的开放定址法处理冲突，开放定址法就是一旦发生冲突，就去寻找下一个空的散列地址。</p>
   </li>
   <li>不存在，则插入新词。</li>
@@ -209,16 +209,16 @@
 <h4 id="31初始化网络参数">3.1、初始化网络参数</h4>
 <p>在初始化的过程中，主要的参数包括词向量的初始化和映射层到输出层的权重的初始化，如下图所示：</p>
 
-<p><img src="http://localhost:4000/images/word2vec/net.png" alt="网络参数" /></p>
+<p><img src="/images/word2vec/net.png" alt="网络参数" /></p>
 
 <p>在初始化的过程中，映射层到输出层的权重都初始化为0.0，而对于每一个词向量的初始化，作者的初始化方法如下代码所示：</p>
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">vocab_size</span><span class="p">;</span> <span class="n">a</span><span class="o">++</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">b</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">next_random</span> <span class="o">=</span> <span class="n">next_random</span> <span class="o">*</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="mi">25214903917</span> <span class="o">+</span> <span class="mi">11</span><span class="p">;</span>
-    <span class="c1">// 1、与：相当于将数控制在一定范围内</span>
-    <span class="c1">// 2、0xFFFF：65536</span>
-    <span class="c1">// 3、/65536：[0,1]之间</span>
-    <span class="n">syn0</span><span class="p">[</span><span class="n">a</span> <span class="o">*</span> <span class="n">layer1_size</span> <span class="o">+</span> <span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">(((</span><span class="n">next_random</span> <span class="o">&amp;</span> <span class="mh">0xFFFF</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">real</span><span class="p">)</span><span class="mi">65536</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="n">layer1_size</span><span class="p">;</span><span class="c1">// 初始化词向量</span>
-<span class="p">}</span>
+    <span class="c1">// 1、与：相当于将数控制在一定范围内
+</span>    <span class="c1">// 2、0xFFFF：65536
+</span>    <span class="c1">// 3、/65536：[0,1]之间
+</span>    <span class="n">syn0</span><span class="p">[</span><span class="n">a</span> <span class="o">*</span> <span class="n">layer1_size</span> <span class="o">+</span> <span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">(((</span><span class="n">next_random</span> <span class="o">&amp;</span> <span class="mh">0xFFFF</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">real</span><span class="p">)</span><span class="mi">65536</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="n">layer1_size</span><span class="p">;</span><span class="c1">// 初始化词向量
+</span><span class="p">}</span>
 </code></pre></div></div>
 
 <p>首先，生成一个很大的<code class="highlighter-rouge">next_random</code>的数，通过与“0xFFFF”进行与运算截断，再除以65536得到<code class="highlighter-rouge">[0,1]</code>之间的数，最终，得到的初始化的向量的范围为：<code class="highlighter-rouge">[−0.5m,0.5m]</code>，其中，mm为词向量的长度。</p>
@@ -231,32 +231,32 @@
 </code></pre></div></div>
 <p>其中，count数组中前vocab_size存储的是每一个词的对应的词频，后面初始化的是很大的数，已知词库中的词是按照降序排列的，因此，构建Huffman树的过程如下所示：</p>
 
-<p><img src="http://localhost:4000/images/word2vec/huff_1.png" alt="huffman 数据结构" /></p>
+<p><img src="/images/word2vec/huff_1.png" alt="huffman 数据结构" /></p>
 
 <p>首先，设置两个指针pos1和pos2，分别指向最后一个词和最后一个词的后一位，从两个指针所指的数中选择出最小的值，记为min1i，如pos1所指的值最小，此时，将pos1左移，再比较pos1和pos2所指的数，选择出最小的值，记为min2i，将他们的和存储到pos2所指的位置。并将此时pos2所指的位置设置为min1i和min2i的父节点，同时，记min2i所指的位置的编码为1，如下代码所示：</p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 设置父节点</span>
-<span class="n">parent_node</span><span class="p">[</span><span class="n">min1i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vocab_size</span> <span class="o">+</span> <span class="n">a</span><span class="p">;</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 设置父节点
+</span><span class="n">parent_node</span><span class="p">[</span><span class="n">min1i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vocab_size</span> <span class="o">+</span> <span class="n">a</span><span class="p">;</span>
 <span class="n">parent_node</span><span class="p">[</span><span class="n">min2i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vocab_size</span> <span class="o">+</span> <span class="n">a</span><span class="p">;</span>
-<span class="n">binary</span><span class="p">[</span><span class="n">min2i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="c1">// 设置一个子树的编码为1</span>
-</code></pre></div></div>
+<span class="n">binary</span><span class="p">[</span><span class="n">min2i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="c1">// 设置一个子树的编码为1
+</span></code></pre></div></div>
 
 <p>构建好Huffman树后，此时，需要根据构建好的Huffman树生成对应节点的Huffman编码。假设，上述的数据生成的最终的Huffman树为：</p>
 
-<p><img src="http://localhost:4000/images/word2vec/huff_2.png" alt="huffman树" /></p>
+<p><img src="/images/word2vec/huff_2.png" alt="huffman树" /></p>
 
 <p>此时，count数组，binary数组和parent_node数组分别为：</p>
 
-<p><img src="http://localhost:4000/images/word2vec/huff_3.png" alt="数组值" /></p>
+<p><img src="/images/word2vec/huff_3.png" alt="数组值" /></p>
 
 <p>在生成Huffman编码的过程中，针对每一个词（词都在叶子节点上），从叶子节点开始，将编码存入到code数组中，如对于上图中的“R”节点来说，其code数组为{1,0}，再对其反转便是Huffman编码：</p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vocab</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">codelen</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span><span class="c1">// 词的编码长度</span>
-<span class="n">vocab</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">vocab_size</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vocab</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">codelen</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span><span class="c1">// 词的编码长度
+</span><span class="n">vocab</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">vocab_size</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span>
 <span class="k">for</span> <span class="p">(</span><span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="n">b</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">vocab</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">code</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">b</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">code</span><span class="p">[</span><span class="n">b</span><span class="p">];</span><span class="c1">// 编码的反转</span>
-    <span class="n">vocab</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">point</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">point</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">-</span> <span class="n">vocab_size</span><span class="p">;</span><span class="c1">// 记录的是从根结点到叶子节点的路径</span>
-<span class="p">}</span>
+    <span class="n">vocab</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">code</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">b</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">code</span><span class="p">[</span><span class="n">b</span><span class="p">];</span><span class="c1">// 编码的反转
+</span>    <span class="n">vocab</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">point</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">point</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">-</span> <span class="n">vocab_size</span><span class="p">;</span><span class="c1">// 记录的是从根结点到叶子节点的路径
+</span><span class="p">}</span>
 </code></pre></div></div>
 
 <blockquote>
@@ -266,15 +266,15 @@
 <h4 id="33负样本选中表的初始化">3.3、负样本选中表的初始化</h4>
 <p>如果是采用负采样的方法，此时还需要初始化每个词被选中的概率。在所有的词构成的词典中，每一个词出现的频率有高有低，我们希望，对于那些高频的词，被选中成为负样本的概率要大点，同时，对于那些出现频率比较低的词，我们希望其被选中成为负样本的频率低点。这个原理于“轮盘赌”的策略一致（详细可以参见“优化算法——遗传算法”）。在程序中，实现这部分功能的代码为：</p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 生成负采样的概率表</span>
-<span class="kt">void</span> <span class="nf">InitUnigramTable</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 生成负采样的概率表
+</span><span class="kt">void</span> <span class="nf">InitUnigramTable</span><span class="p">()</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
         <span class="kt">double</span> <span class="n">train_words_pow</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="kt">double</span> <span class="n">d1</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="mf">0.75</span><span class="p">;</span>
-        <span class="n">table</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">table_size</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="c1">// int --&gt; int</span>
-        <span class="k">for</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">vocab_size</span><span class="p">;</span> <span class="n">a</span><span class="o">++</span><span class="p">)</span> <span class="n">train_words_pow</span> <span class="o">+=</span> <span class="n">pow</span><span class="p">(</span><span class="n">vocab</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">cn</span><span class="p">,</span> <span class="n">power</span><span class="p">);</span>
-        <span class="c1">// 类似轮盘赌生成每个词的概率</span>
-        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">table_size</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="c1">// int --&gt; int
+</span>        <span class="k">for</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">vocab_size</span><span class="p">;</span> <span class="n">a</span><span class="o">++</span><span class="p">)</span> <span class="n">train_words_pow</span> <span class="o">+=</span> <span class="n">pow</span><span class="p">(</span><span class="n">vocab</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">cn</span><span class="p">,</span> <span class="n">power</span><span class="p">);</span>
+        <span class="c1">// 类似轮盘赌生成每个词的概率
+</span>        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="n">d1</span> <span class="o">=</span> <span class="n">pow</span><span class="p">(</span><span class="n">vocab</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">cn</span><span class="p">,</span> <span class="n">power</span><span class="p">)</span> <span class="o">/</span> <span class="n">train_words_pow</span><span class="p">;</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">table_size</span><span class="p">;</span> <span class="n">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">table</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
@@ -294,14 +294,14 @@
 
 <h4 id="41多线程的处理">4.1、多线程的处理</h4>
 <p>为了能够对文本进行加速训练，在实现的过程中，作者使用了多线程的方法，并对每一个线程上分配指定大小的文件：</p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 利用多线程对训练文件划分，每个线程训练一部分的数据</span>
-<span class="n">fseek</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">file_size</span> <span class="o">/</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">num_threads</span> <span class="o">*</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">id</span><span class="p">,</span> <span class="n">SEEK_SET</span><span class="p">);</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 利用多线程对训练文件划分，每个线程训练一部分的数据
+</span><span class="n">fseek</span><span class="p">(</span><span class="n">fi</span><span class="p">,</span> <span class="n">file_size</span> <span class="o">/</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">num_threads</span> <span class="o">*</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">id</span><span class="p">,</span> <span class="n">SEEK_SET</span><span class="p">);</span>
 </code></pre></div></div>
 <p>注意：这边的多线程分割方式并不能保证每一个线程分到的文件是互斥的。对于其中的原因，可以参见“Linux C 编程——多线程”。</p>
 
 <p>这个过程可以通过下图简单的描述：</p>
 
-<p><img src="http://localhost:4000/images/word2vec/pthread.png" alt="多线程处理" /></p>
+<p><img src="/images/word2vec/pthread.png" alt="多线程处理" /></p>
 
 <p>在实现多线程的过程中，作者并没有加锁的操作，而是对模型参数和词向量的修改可以任意执行，这一点类似于基于随机梯度的方法，训练的过程与训练样本的训练是没有关系的，这样可以大大加快对词向量的训练。抛开多线程的部分，在每一个线程内执行的是对模型和词向量的训练。</p>
 
@@ -317,7 +317,7 @@
 
 <p>CBOW模型和Skip-gram模型是神经概率语言模型的两种变形形式，其中，在CBOW模型中包含三层，即输入层，映射层和输出层。对于CBOW模型，如下图所示：</p>
 
-<p><img src="http://localhost:4000/images/word2vec/cbow.png" alt="cbow模型" /></p>
+<p><img src="/images/word2vec/cbow.png" alt="cbow模型" /></p>
 
 <p>在CBOW模型中，通过词$w_t$的前后词$w_{t-2},w_{t-1},w_{t+1},w_{t+2}$来预测当前词$w_t$。此处的窗口的大小 $window = 2$。</p>
 
@@ -346,65 +346,65 @@ for (a = b; a &lt; window * 2 + 1 - b; a++) if (a != window) {
 </code></pre></div></div>
 
 <p>当累加完窗口内的所有的词向量的之后，存储在映射层neu1中，并取平均，程序代码如下所示：</p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">neu1</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">/=</span> <span class="n">cw</span><span class="p">;</span><span class="c1">// 计算均值</span>
-</code></pre></div></div>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">neu1</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">/=</span> <span class="n">cw</span><span class="p">;</span><span class="c1">// 计算均值
+</span></code></pre></div></div>
 <p>当取得了映射层的结果后，此时就需要使用Hierarchical Softmax或者Negative Sampling对模型进行训练。</p>
 
 <h5 id="432hierarchical-softmax">4.3.2、Hierarchical Softmax</h5>
 
-<p><img src="http://localhost:4000/images/word2vec/hs.png" alt="hs模型的数学原理" /></p>
+<p><img src="/images/word2vec/hs.png" alt="hs模型的数学原理" /></p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="n">d</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="n">vocab</span><span class="p">[</span><span class="n">word</span><span class="p">].</span><span class="n">codelen</span><span class="p">;</span> <span class="n">d</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span><span class="c1">// word为当前词</span>
-    <span class="c1">// 计算输出层的输出</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">l2</span> <span class="o">=</span> <span class="n">vocab</span><span class="p">[</span><span class="n">word</span><span class="p">].</span><span class="n">point</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">*</span> <span class="n">layer1_size</span><span class="p">;</span><span class="c1">// 找到第d个词对应的权重</span>
-    <span class="c1">// Propagate hidden -&gt; output</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">f</span> <span class="o">+=</span> <span class="n">neu1</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">*</span> <span class="n">syn1</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l2</span><span class="p">];</span><span class="c1">// 映射层到输出层</span>
-
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="n">d</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="n">vocab</span><span class="p">[</span><span class="n">word</span><span class="p">].</span><span class="n">codelen</span><span class="p">;</span> <span class="n">d</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span><span class="c1">// word为当前词
+</span>    <span class="c1">// 计算输出层的输出
+</span>    <span class="n">f</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">l2</span> <span class="o">=</span> <span class="n">vocab</span><span class="p">[</span><span class="n">word</span><span class="p">].</span><span class="n">point</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">*</span> <span class="n">layer1_size</span><span class="p">;</span><span class="c1">// 找到第d个词对应的权重
+</span>    <span class="c1">// Propagate hidden -&gt; output
+</span>    <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">f</span> <span class="o">+=</span> <span class="n">neu1</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">*</span> <span class="n">syn1</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l2</span><span class="p">];</span><span class="c1">// 映射层到输出层
+</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">f</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="n">MAX_EXP</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
     <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">f</span> <span class="o">&gt;=</span> <span class="n">MAX_EXP</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-    <span class="k">else</span> <span class="n">f</span> <span class="o">=</span> <span class="n">expTable</span><span class="p">[(</span><span class="kt">int</span><span class="p">)((</span><span class="n">f</span> <span class="o">+</span> <span class="n">MAX_EXP</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">EXP_TABLE_SIZE</span> <span class="o">/</span> <span class="n">MAX_EXP</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))];</span><span class="c1">// Sigmoid结果</span>
-
-    <span class="c1">// 'g' is the gradient multiplied by the learning rate</span>
-    <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">vocab</span><span class="p">[</span><span class="n">word</span><span class="p">].</span><span class="n">code</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">-</span> <span class="n">f</span><span class="p">)</span> <span class="o">*</span> <span class="n">alpha</span><span class="p">;</span>
-    <span class="c1">// Propagate errors output -&gt; hidden</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">neu1e</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+=</span> <span class="n">g</span> <span class="o">*</span> <span class="n">syn1</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l2</span><span class="p">];</span><span class="c1">// 修改映射后的结果</span>
-    <span class="c1">// Learn weights hidden -&gt; output</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">syn1</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">g</span> <span class="o">*</span> <span class="n">neu1</span><span class="p">[</span><span class="n">c</span><span class="p">];</span><span class="c1">// 修改映射层到输出层之间的权重</span>
-<span class="p">}</span>
+    <span class="k">else</span> <span class="n">f</span> <span class="o">=</span> <span class="n">expTable</span><span class="p">[(</span><span class="kt">int</span><span class="p">)((</span><span class="n">f</span> <span class="o">+</span> <span class="n">MAX_EXP</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">EXP_TABLE_SIZE</span> <span class="o">/</span> <span class="n">MAX_EXP</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))];</span><span class="c1">// Sigmoid结果
+</span>
+    <span class="c1">// 'g' is the gradient multiplied by the learning rate
+</span>    <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">vocab</span><span class="p">[</span><span class="n">word</span><span class="p">].</span><span class="n">code</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">-</span> <span class="n">f</span><span class="p">)</span> <span class="o">*</span> <span class="n">alpha</span><span class="p">;</span>
+    <span class="c1">// Propagate errors output -&gt; hidden
+</span>    <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">neu1e</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+=</span> <span class="n">g</span> <span class="o">*</span> <span class="n">syn1</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l2</span><span class="p">];</span><span class="c1">// 修改映射后的结果
+</span>    <span class="c1">// Learn weights hidden -&gt; output
+</span>    <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">syn1</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">g</span> <span class="o">*</span> <span class="n">neu1</span><span class="p">[</span><span class="n">c</span><span class="p">];</span><span class="c1">// 修改映射层到输出层之间的权重
+</span><span class="p">}</span>
 </code></pre></div></div>
 
 <p>对于窗口内的词的向量的更新，则是利用窗口内的所有词的梯度之和$neu1e = \sum{\frac{\partial{L(w,j)}}{\partial{X_w}}}$ 来更新，如程序代码所示：</p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// hidden -&gt; in</span>
-<span class="c1">// 以上是从映射层到输出层的修改，现在返回修改每一个词向量</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">window</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span> <span class="n">a</span><span class="o">++</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">!=</span> <span class="n">window</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// hidden -&gt; in
+// 以上是从映射层到输出层的修改，现在返回修改每一个词向量
+</span><span class="k">for</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">window</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span> <span class="n">a</span><span class="o">++</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">!=</span> <span class="n">window</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">sentence_position</span> <span class="o">-</span> <span class="n">window</span> <span class="o">+</span> <span class="n">a</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">&gt;=</span> <span class="n">sentence_length</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
     <span class="n">last_word</span> <span class="o">=</span> <span class="n">sen</span><span class="p">[</span><span class="n">c</span><span class="p">];</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">last_word</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-    <span class="c1">// 利用窗口内的所有词向量的梯度之和来更新</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">syn0</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">last_word</span> <span class="o">*</span> <span class="n">layer1_size</span><span class="p">]</span> <span class="o">+=</span> <span class="n">neu1e</span><span class="p">[</span><span class="n">c</span><span class="p">];</span>
+    <span class="c1">// 利用窗口内的所有词向量的梯度之和来更新
+</span>    <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">syn0</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">last_word</span> <span class="o">*</span> <span class="n">layer1_size</span><span class="p">]</span> <span class="o">+=</span> <span class="n">neu1e</span><span class="p">[</span><span class="n">c</span><span class="p">];</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h5 id="433negative-sampling">4.3.3、Negative Sampling</h5>
 <p>与Hierarchical Softmax一致，Negative Sampling也是一种加速计算的方法，在Negative Sampling方法中使用的是随机的负采样，在CBOW模型中，已知词$w$的上下文$context(w)$，需要预测词$w$，对于给定的上下文$context(w)$，词$w$即为正样本，其他的样本为负样本，此时我们需要根据词频从剩下的词中挑选出最合适的负样本，实现的代码如下所示：</p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 标记target和label</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 正样本</span>
-    <span class="n">target</span> <span class="o">=</span> <span class="n">word</span><span class="p">;</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 标记target和label
+</span><span class="k">if</span> <span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span><span class="c1">// 正样本
+</span>    <span class="n">target</span> <span class="o">=</span> <span class="n">word</span><span class="p">;</span>
     <span class="n">label</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="c1">// 选择出负样本</span>
-    <span class="n">next_random</span> <span class="o">=</span> <span class="n">next_random</span> <span class="o">*</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="mi">25214903917</span> <span class="o">+</span> <span class="mi">11</span><span class="p">;</span>
-    <span class="n">target</span> <span class="o">=</span> <span class="n">table</span><span class="p">[(</span><span class="n">next_random</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">%</span> <span class="n">table_size</span><span class="p">];</span><span class="c1">// 从table表中选择出负样本</span>
-    <span class="c1">// 重新选择</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">target</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">target</span> <span class="o">=</span> <span class="n">next_random</span> <span class="o">%</span> <span class="p">(</span><span class="n">vocab_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="c1">// 选择出负样本
+</span>    <span class="n">next_random</span> <span class="o">=</span> <span class="n">next_random</span> <span class="o">*</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="mi">25214903917</span> <span class="o">+</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="n">table</span><span class="p">[(</span><span class="n">next_random</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">%</span> <span class="n">table_size</span><span class="p">];</span><span class="c1">// 从table表中选择出负样本
+</span>    <span class="c1">// 重新选择
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">target</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">target</span> <span class="o">=</span> <span class="n">next_random</span> <span class="o">%</span> <span class="p">(</span><span class="n">vocab_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">target</span> <span class="o">==</span> <span class="n">word</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
     <span class="n">label</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<p><img src="http://localhost:4000/images/word2vec/neg.png" alt="neg模型的数学原理" /></p>
+<p><img src="/images/word2vec/neg.png" alt="neg模型的数学原理" /></p>
 
 <p>代码更新为：</p>
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">f</span> <span class="o">&gt;</span> <span class="n">MAX_EXP</span><span class="p">)</span> <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">label</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">alpha</span><span class="p">;</span>
@@ -420,7 +420,7 @@ for (a = b; a &lt; window * 2 + 1 - b; a++) if (a != window) {
 
 <p>而Skip-gram模型与CBOW正好相反，在Skip-gram模型中，则是通过当前词$w_t$来预测其前后词$w_{t-2},w_{t-1},w_{t+1},w_{t+2}$，Skip-gram模型如下图所示：</p>
 
-<p><img src="http://localhost:4000/images/word2vec/skg.png" alt="skip-gram 模型" /></p>
+<p><img src="/images/word2vec/skg.png" alt="skip-gram 模型" /></p>
 
 <h5 id="431hierarchical-softmax">4.3.1、Hierarchical Softmax</h5>
 
@@ -436,28 +436,28 @@ for (a = b; a &lt; window * 2 + 1 - b; a++) if (a != window) {
 <span class="k">if</span> <span class="p">(</span><span class="n">last_word</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
 <span class="n">l1</span> <span class="o">=</span> <span class="n">last_word</span> <span class="o">*</span> <span class="n">layer1_size</span><span class="p">;</span>
 <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">neu1e</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="c1">// HIERARCHICAL SOFTMAX</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">hs</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">d</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="n">vocab</span><span class="p">[</span><span class="n">word</span><span class="p">].</span><span class="n">codelen</span><span class="p">;</span> <span class="n">d</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="c1">// HIERARCHICAL SOFTMAX
+</span><span class="k">if</span> <span class="p">(</span><span class="n">hs</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">d</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="n">vocab</span><span class="p">[</span><span class="n">word</span><span class="p">].</span><span class="n">codelen</span><span class="p">;</span> <span class="n">d</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">f</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="n">l2</span> <span class="o">=</span> <span class="n">vocab</span><span class="p">[</span><span class="n">word</span><span class="p">].</span><span class="n">point</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">*</span> <span class="n">layer1_size</span><span class="p">;</span>
-    <span class="c1">// Propagate hidden -&gt; output</span>
-    <span class="c1">// 映射层即为输入层</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">f</span> <span class="o">+=</span> <span class="n">syn0</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l1</span><span class="p">]</span> <span class="o">*</span> <span class="n">syn1</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l2</span><span class="p">];</span>
+    <span class="c1">// Propagate hidden -&gt; output
+</span>    <span class="c1">// 映射层即为输入层
+</span>    <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">f</span> <span class="o">+=</span> <span class="n">syn0</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l1</span><span class="p">]</span> <span class="o">*</span> <span class="n">syn1</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l2</span><span class="p">];</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="n">f</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="n">MAX_EXP</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
     <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">f</span> <span class="o">&gt;=</span> <span class="n">MAX_EXP</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
     <span class="k">else</span> <span class="n">f</span> <span class="o">=</span> <span class="n">expTable</span><span class="p">[(</span><span class="kt">int</span><span class="p">)((</span><span class="n">f</span> <span class="o">+</span> <span class="n">MAX_EXP</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">EXP_TABLE_SIZE</span> <span class="o">/</span> <span class="n">MAX_EXP</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))];</span>
 
-    <span class="c1">// 'g' is the gradient multiplied by the learning rate</span>
-    <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">vocab</span><span class="p">[</span><span class="n">word</span><span class="p">].</span><span class="n">code</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">-</span> <span class="n">f</span><span class="p">)</span> <span class="o">*</span> <span class="n">alpha</span><span class="p">;</span>
-    <span class="c1">// Propagate errors output -&gt; hidden</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">neu1e</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+=</span> <span class="n">g</span> <span class="o">*</span> <span class="n">syn1</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l2</span><span class="p">];</span>
-    <span class="c1">// Learn weights hidden -&gt; output</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">syn1</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">g</span> <span class="o">*</span> <span class="n">syn0</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l1</span><span class="p">];</span>
+    <span class="c1">// 'g' is the gradient multiplied by the learning rate
+</span>    <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">vocab</span><span class="p">[</span><span class="n">word</span><span class="p">].</span><span class="n">code</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">-</span> <span class="n">f</span><span class="p">)</span> <span class="o">*</span> <span class="n">alpha</span><span class="p">;</span>
+    <span class="c1">// Propagate errors output -&gt; hidden
+</span>    <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">neu1e</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+=</span> <span class="n">g</span> <span class="o">*</span> <span class="n">syn1</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l2</span><span class="p">];</span>
+    <span class="c1">// Learn weights hidden -&gt; output
+</span>    <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">syn1</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">g</span> <span class="o">*</span> <span class="n">syn0</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l1</span><span class="p">];</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Learn weights input -&gt; hidden</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">syn0</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">neu1e</span><span class="p">[</span><span class="n">c</span><span class="p">];</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Learn weights input -&gt; hidden
+</span><span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">layer1_size</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="n">syn0</span><span class="p">[</span><span class="n">c</span> <span class="o">+</span> <span class="n">l1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">neu1e</span><span class="p">[</span><span class="n">c</span><span class="p">];</span>
 </code></pre></div></div>
 
 <h5 id="432negative-sampling">4.3.2、Negative Sampling</h5>

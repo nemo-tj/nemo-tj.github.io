@@ -74,8 +74,8 @@
 
 <h3 id="1-在c11中创建新线程">1. 在C++11中创建新线程</h3>
 <h4 id="11-使用函数指针创建线程">1.1 使用函数指针创建线程：</h4>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//main.cpp</span>
-<span class="cp">#include &lt;iostream&gt;
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//main.cpp
+</span><span class="cp">#include &lt;iostream&gt;
 #include &lt;thread&gt;
 </span>
 <span class="kt">void</span> <span class="nf">thread_function</span><span class="p">()</span> <span class="p">{</span>
@@ -159,9 +159,9 @@ threadObj.join();
     <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
         <span class="n">threadList</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kr">thread</span><span class="p">(</span><span class="n">WorkerThread</span><span class="p">()));</span>
     <span class="p">}</span>
-    <span class="c1">// Now wait for all the worker thread to finish i.e.</span>
-    <span class="c1">// Call join() function on each of the std::thread object</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Wait for all the worker thread to finish"</span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// Now wait for all the worker thread to finish i.e.
+</span>    <span class="c1">// Call join() function on each of the std::thread object
+</span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Wait for all the worker thread to finish"</span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
     <span class="n">std</span><span class="o">::</span><span class="n">for_each</span><span class="p">(</span><span class="n">threadList</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">threadList</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">mem_fn</span><span class="p">(</span><span class="o">&amp;</span><span class="n">std</span><span class="o">::</span><span class="kr">thread</span><span class="o">::</span><span class="n">join</span><span class="p">));</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Exiting from Main Thread"</span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
@@ -405,10 +405,10 @@ Process finished with exit code 0</p>
     <span class="n">std</span><span class="o">::</span><span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lockGuard</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span>
 
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">mMoney</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">//如果在此处发生异常，lockGuadr的析构函数将会因为堆栈展开而被调用</span>
-      <span class="n">mMoney</span><span class="o">++</span><span class="p">;</span>
-      <span class="c1">//一旦函数退出，那么lockGuard对象的析构函数将被调用，在析构函数中mutex会被释放</span>
-    <span class="p">}</span>
+      <span class="c1">//如果在此处发生异常，lockGuadr的析构函数将会因为堆栈展开而被调用
+</span>      <span class="n">mMoney</span><span class="o">++</span><span class="p">;</span>
+      <span class="c1">//一旦函数退出，那么lockGuard对象的析构函数将被调用，在析构函数中mutex会被释放
+</span>    <span class="p">}</span>
 
   <span class="p">}</span>
 <span class="p">};</span> 
@@ -463,18 +463,18 @@ Process finished with exit code 0</p>
     <span class="p">}</span>
 
     <span class="kt">void</span> <span class="n">loadData</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">//使该线程sleep 1秒</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">1000</span><span class="p">));</span>
+        <span class="c1">//使该线程sleep 1秒
+</span>        <span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">1000</span><span class="p">));</span>
         <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Loading Data from XML"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-        <span class="c1">//锁定数据</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">guard</span><span class="p">(</span><span class="n">m_mutex</span><span class="p">);</span>
+        <span class="c1">//锁定数据
+</span>        <span class="n">std</span><span class="o">::</span><span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">guard</span><span class="p">(</span><span class="n">m_mutex</span><span class="p">);</span>
 
-        <span class="c1">//flag设为true，表明数据已加载</span>
-        <span class="n">m_bDataLoaded</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="c1">//flag设为true，表明数据已加载
+</span>        <span class="n">m_bDataLoaded</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 
-        <span class="c1">//通知条件变量</span>
-        <span class="n">m_condVar</span><span class="p">.</span><span class="n">notify_one</span><span class="p">();</span>
+        <span class="c1">//通知条件变量
+</span>        <span class="n">m_condVar</span><span class="p">.</span><span class="n">notify_one</span><span class="p">();</span>
     <span class="p">}</span>
 
     <span class="kt">bool</span> <span class="n">isDataLoaded</span><span class="p">()</span> <span class="p">{</span>
@@ -484,14 +484,14 @@ Process finished with exit code 0</p>
     <span class="kt">void</span> <span class="n">mainTask</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Do some handshaking"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-        <span class="c1">//获取锁</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">mlock</span><span class="p">(</span><span class="n">m_mutex</span><span class="p">);</span>
+        <span class="c1">//获取锁
+</span>        <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">mlock</span><span class="p">(</span><span class="n">m_mutex</span><span class="p">);</span>
 
-        <span class="c1">//开始等待条件变量得到信号</span>
-        <span class="c1">//wait()将在内部释放锁，并使线程阻塞</span>
-        <span class="c1">//一旦条件变量发出信号，则恢复线程并再次获取锁</span>
-        <span class="c1">//然后检测条件是否满足，如果条件满足，则继续，否则再次进入wait</span>
-        <span class="n">m_condVar</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">mlock</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span><span class="o">&amp;</span><span class="n">Application</span><span class="o">::</span><span class="n">isDataLoaded</span><span class="p">,</span> <span class="k">this</span><span class="p">));</span>
+        <span class="c1">//开始等待条件变量得到信号
+</span>        <span class="c1">//wait()将在内部释放锁，并使线程阻塞
+</span>        <span class="c1">//一旦条件变量发出信号，则恢复线程并再次获取锁
+</span>        <span class="c1">//然后检测条件是否满足，如果条件满足，则继续，否则再次进入wait
+</span>        <span class="n">m_condVar</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">mlock</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span><span class="o">&amp;</span><span class="n">Application</span><span class="o">::</span><span class="n">isDataLoaded</span><span class="p">,</span> <span class="k">this</span><span class="p">));</span>
         <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Do Processing On loaded Data"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">};</span>

@@ -924,7 +924,7 @@ Survived     233   109
 Dead          81   468
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/titanic_example/output_19_1.png" alt="png" /></p>
+<p><img src="/images/titanic_example/output_19_1.png" alt="png" /></p>
 
 <p>male is more easily dead.</p>
 
@@ -936,7 +936,7 @@ Survived  136  87  119
 Dead       80  97  372
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/titanic_example/output_21_1.png" alt="png" /></p>
+<p><img src="/images/titanic_example/output_21_1.png" alt="png" /></p>
 
 <p>low level class is easily dead.</p>
 
@@ -948,7 +948,7 @@ Survived  210.0  112.0  13.0   4.0   3.0  NaN  NaN
 Dead      398.0   97.0  15.0  12.0  15.0  5.0  7.0
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/titanic_example/output_23_1.png" alt="png" /></p>
+<p><img src="/images/titanic_example/output_23_1.png" alt="png" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bar_chart</span><span class="p">(</span><span class="s">'Parch'</span><span class="p">)</span>
 </code></pre></div></div>
@@ -958,7 +958,7 @@ Survived  233.0  65.0  40.0  3.0  NaN  1.0  NaN
 Dead      445.0  53.0  40.0  2.0  4.0  4.0  1.0
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/titanic_example/output_24_1.png" alt="png" /></p>
+<p><img src="/images/titanic_example/output_24_1.png" alt="png" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bar_chart</span><span class="p">(</span><span class="s">'Embarked'</span><span class="p">)</span>
 </code></pre></div></div>
@@ -968,7 +968,7 @@ Survived  217  93  30
 Dead      427  75  47
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/titanic_example/output_25_1.png" alt="png" /></p>
+<p><img src="/images/titanic_example/output_25_1.png" alt="png" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div></div>
@@ -1395,7 +1395,7 @@ Survived   81  127  99  23  12
 Dead      436   55  26  17  15
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/titanic_example/output_36_1.png" alt="png" /></p>
+<p><img src="/images/titanic_example/output_36_1.png" alt="png" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s">'Name'</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">test</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s">'Name'</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
@@ -1766,7 +1766,7 @@ Dead      436   55  26  17  15
   return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/titanic_example/output_43_1.png" alt="png" /></p>
+<p><img src="/images/titanic_example/output_43_1.png" alt="png" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">facet</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s">"Survived"</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">facet</span><span class="o">.</span><span class="nb">map</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">,</span><span class="s">'Age'</span><span class="p">,</span><span class="n">shade</span><span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
@@ -1785,7 +1785,7 @@ Dead      436   55  26  17  15
 (10, 50)
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/titanic_example/output_44_2.png" alt="png" /></p>
+<p><img src="/images/titanic_example/output_44_2.png" alt="png" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">train_test_data</span><span class="p">:</span>
     <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">dataset</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">16</span><span class="p">,</span> <span class="s">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
@@ -1814,7 +1814,7 @@ Survived  116   97   69   57    3
 Dead      220  158  112   47   12
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/titanic_example/output_47_1.png" alt="png" /></p>
+<p><img src="/images/titanic_example/output_47_1.png" alt="png" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Pclass1</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s">'Pclass'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="s">'Embarked'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 <span class="n">Pclass2</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s">'Pclass'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">][</span><span class="s">'Embarked'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -1826,7 +1826,7 @@ Dead      220  158  112   47   12
 <span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/titanic_example/output_48_0.png" alt="png" /></p>
+<p><img src="/images/titanic_example/output_48_0.png" alt="png" /></p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>             S   C   Q
 1st Class  127  85   2
@@ -1971,7 +1971,7 @@ Dead      220  158  112   47   12
   return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/titanic_example/output_52_1.png" alt="png" /></p>
+<p><img src="/images/titanic_example/output_52_1.png" alt="png" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">facet</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s">"Survived"</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">facet</span><span class="o">.</span><span class="nb">map</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">,</span><span class="s">'Fare'</span><span class="p">,</span><span class="n">shade</span><span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
@@ -1990,7 +1990,7 @@ Dead      220  158  112   47   12
 (0, 100)
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/titanic_example/output_53_2.png" alt="png" /></p>
+<p><img src="/images/titanic_example/output_53_2.png" alt="png" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">train_test_data</span><span class="p">:</span>
     <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dataset</span><span class="p">[</span><span class="s">'Fare'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">17</span><span class="p">,</span> <span class="s">'Fare'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
@@ -2017,7 +2017,7 @@ Dead      220  158  112   47   12
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1a24c1c240&gt;
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/titanic_example/output_57_1.png" alt="png" /></p>
+<p><img src="/images/titanic_example/output_57_1.png" alt="png" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cabin_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s">"A"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">"B"</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span> <span class="s">"C"</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s">"D"</span><span class="p">:</span> <span class="mf">1.2</span><span class="p">,</span> <span class="s">"E"</span><span class="p">:</span> <span class="mf">1.6</span><span class="p">,</span> <span class="s">"F"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"G"</span><span class="p">:</span> <span class="mf">2.4</span><span class="p">,</span> <span class="s">"T"</span><span class="p">:</span> <span class="mf">2.8</span><span class="p">}</span>
 <span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">train_test_data</span><span class="p">:</span>
@@ -2050,7 +2050,7 @@ Dead      220  158  112   47   12
 (0, 11.0)
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/titanic_example/output_61_2.png" alt="png" /></p>
+<p><img src="/images/titanic_example/output_61_2.png" alt="png" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">family_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mi">9</span><span class="p">:</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span> <span class="mf">3.6</span><span class="p">,</span> <span class="mi">11</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
 <span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">train_test_data</span><span class="p">:</span>

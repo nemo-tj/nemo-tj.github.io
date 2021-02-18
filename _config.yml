@@ -7,5 +7,6 @@ logo: false
 paginate: 15
 baseurl: /
 plugins: [jekyll-gist]
+gems: [jekyll-paginate]
 permalink: /:year/:month/:title.html
 # excerpt_separator: '<!-- more -->'

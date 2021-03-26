@@ -1,0 +1,152 @@
+<p>layout: post
+title: 机器学习:FTRL 
+modified: 2020-11-15
+tags: [online learning, machine learning, ftrl]</p>
+
+<h2 id="在线学习中两个问题online-learning-regret--sparsity">在线学习中两个问题{Online Learning: Regret + Sparsity}</h2>
+<p>在线学习 ( <code class="highlighter-rouge">Online Learning</code>  ) 代表了一系列机器学习算法，特点是每来一个样本就能训练，能够根据线上反馈数据，实时快速地进行模型调整，使得模型及时反映线上的变化，提高线上预测的准确率。相比之下，传统的批处理方式需要一次性收集所有数据，新数据到来时重新训练的代价也很大，因而更新周期较长，可扩展性不高。</p>
+
+<p>一般对于在线学习来说，我们致力于解决两个问题： 降低 <code class="highlighter-rouge">regret</code> 和提高 <code class="highlighter-rouge">sparsity</code>。其中 regret 的定义为:</p>
+
+<p><script type="math/tex">\begin{equation}
+    Regret = \sum\limits_{t=1}^T \ell_t({\bf{w_t}}) - \min_\bf{w}\sum\limits_{t=1}^T\ell_t(\bf{w}) 
+\end{equation}</script>
+其中 $𝑡$ 表示总共 $𝑇$ 轮中的第 $𝑡$ 轮迭代，$\ell_t$ 表示损失函数，$𝐰$ 表示要学习的参数。第二项 $\min\limits_\bf{w}\sum\limits_{t=1}^T\ell_t(\bf{w})$ 表示得到了所有样本后损失函数的最优解，因为在线学习一次只能根据少数几个样本更新参数，随机性较大，所以需要一种稳健的优化方式，而 <code class="highlighter-rouge">regret</code> 字面意思是 “后悔度”，意即更新完不后悔。</p>
+
+<p>在理论上可以证明，如果一个在线学习算法可以保证其 <code class="highlighter-rouge">regret</code> 是 $𝑡$ 的次线性函数，则：
+<script type="math/tex">\lim\limits_{t \to \infty}\frac{\text{Regret}(t)}{t} = 0</script>
+那么随着训练样本的增多，在线学习出来的模型无限接近于最优模型。而毫不意外的，<code class="highlighter-rouge">FTRL</code> 正是满足这一特性。</p>
+
+<p>另一方面，现实中对于 <code class="highlighter-rouge">sparsity</code> ，也就是模型的稀疏性也很看中。上亿的特征并不鲜见，模型越复杂，需要的存储、时间资源也随之升高，而稀疏的模型会大大减少预测时的内存和复杂度。另外稀疏的模型相对可解释性也较好，这也正是通常所说的 <code class="highlighter-rouge">L1</code> 正则化的优点。</p>
+
+<p>后文主要考察 <code class="highlighter-rouge">FTRL</code> 是如何实现降低 <code class="highlighter-rouge">regret</code> 和提高 <code class="highlighter-rouge">sparsity</code> 这两个目标的。</p>
+
+<h2 id="优化落脚点gradient-learning-learning-rate--regulation">优化落脚点{Gradient Learning: Learning Rate + Regulation}</h2>
+<p><code class="highlighter-rouge">OGD</code> ( <code class="highlighter-rouge">online gradient descent</code> ) 是传统梯度下降的 online 版本，参数更新公式为：</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\bf{w}_{t+1} = \bf{w}_t - \eta_t \bf{g}_t
+\end{equation}</script>
+
+<p><code class="highlighter-rouge">OGD</code> 在准确率上表现不错，即 <code class="highlighter-rouge">regret</code> 低，但在上文的另一个考量因素 <code class="highlighter-rouge">sparsity</code> 上则表现不佳，即使加上了 $L1$ 正则也很难使大量的参数变零。一个原因是浮点运算很难让最后的参数出现绝对零值；另一个原因是不同于批处理模式，<code class="highlighter-rouge">online</code> 场景下每次 $𝐰$ 的更新并不是沿着全局梯度进行下降，而是沿着某个样本的产生的梯度方向进行下降，整个寻优过程变得像是一个“随机” 查找的过程，这样 <code class="highlighter-rouge">online</code> 最优化求解即使采用 $L1$ 正则化的方式， 也很难产生稀疏解。正因为 <code class="highlighter-rouge">OGD</code> 存在这样的问题，FTRL 才致力于在准确率不降低的前提下提高稀疏性。</p>
+
+<p>其实，OGD的公式等价于
+<script type="math/tex">\bf{w}_{t+1} = \mathop{\text{argmin}}_\bf{w} \left(\bf{g}_t \cdot \bf{w} + \frac{1}{2\eta_t}||\bf{w} - \bf{w}_t||_2^2 \right) \tag{1.2}</script>
+对该式直接求导即可，
+<script type="math/tex">\bf{g}_t + \frac{1}{\eta_t}(\bf{w} - \bf{w}_t) = 0 \;\;\implies\;\; \bf{w} = \bf{w}_t - \eta_t \bf{g}_t</script>
+有了这个公式的基础，FTRL主要从两个方面进行优化</p>
+
+<ul>
+  <li>降低 <code class="highlighter-rouge">regret</code></li>
+  <li>提高 <code class="highlighter-rouge">sparsity</code> 。</li>
+</ul>
+
+<p>首先，为了降低 <code class="highlighter-rouge">regret，FTRL</code> 用 $𝐠_{1:𝑡}$ 代替 $g_t$ ，$𝐠_{1:𝑡}$ 为前 $1$ 到 $t$ 轮损失函数的累计梯度，即</p>
+
+<p><script type="math/tex">\bf{g}_{1:t} = \sum_{s=1}^t \bf{g}_s = \sum_{s=1}^t \nabla \ell_s(\bf{w_s})</script>
+由于在线学习随机性大的特点，累计梯度可避免由于某些维度样本局部抖动太大导致错误判断。这是从 <code class="highlighter-rouge">FTL ( Follow the Leader )</code> 那借鉴而来的，而 FTRL 的全称为 <code class="highlighter-rouge">Follow the Regularized Leader</code> ，从名字上看其实就是在 <code class="highlighter-rouge">FTL</code> 的基础上加上了正则化项，即 (1.2) 式中的</p>
+
+<p><script type="math/tex">||\bf{w} - \bf{w_t}||_2^2</script>
+这意味着每次更新时我们不希望新的 $𝐰$ 离之前的 $𝐰_𝑡$ 太远 (这也是有时其被称为 <code class="highlighter-rouge">FTRL-proximal</code> 的原因)，这同样是为了降低regret，在线学习噪音大，若一次更新错得太远后面难以收回来，没法轻易“后悔”。</p>
+
+<p>于是<code class="highlighter-rouge">FTRL</code>的公式在<code class="highlighter-rouge">OGD</code>的基础上被改造成这个样子:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}\begin{split}
+\bf{w}_{t+1}&=\mathop{\text{argmin}}\limits_{\bf{w}}\left(\bf{g}_{1:t} \cdot \bf{w} + \frac12 \sum\limits_{s=1}^t \sigma_s ||\bf{w} - \bf{w}_s||_2^2 + \lambda_1||\bf{w}||_1 + \frac12 \lambda_2||\bf{w}||_2^2\right) \\
+
+&=\mathop{\text{argmin}}_{\bf{w}} \left\{ \left(\bf{g}_{1:t} - \sum\limits_{s=1}^t\sigma_s\bf{w}_s \right) \cdot \bf{w} + \lambda_1||\bf{w}||_1 + \frac12 \left(\lambda_2 + \sum\limits_{s=1}^t \sigma_s \right) \cdot ||\bf{w}||_2^2 + \frac12 \sum\limits_{s=1}^t \sigma_s||\bf{w}_s||_2^2 \right\} 
+\end{split}\tag{1.3}\end{equation} %]]></script>
+
+<p>由于 
+<script type="math/tex">\frac{1}{2} \sum\limits_{s=1}^t \sigma_s || \bf{w_s} ||_2^2</script>
+相对于要优化的变量$\bf{w}$是一个常数，可以消去这一项。令 <script type="math/tex">\bf{z}_t = \bf{g}_{1:t} - \sum\limits_{s=1}^t \sigma_s\bf{w}_s</script>, 简化得到
+<script type="math/tex">\bf{w}_{t+1} = \mathop{\text{argmin}}_{\bf{w}} \left\{ \bf{z}_t \cdot \bf{w} + \lambda_1||\bf{w}||_1 + \frac12 \left(\lambda_2 + \sum\limits_{s=1}^t \sigma_s \right) \cdot ||\bf{w}||_2^2 \right\}</script></p>
+
+<p>将特征的各个维度拆开成独立的标量最小化问题，对于第 $i$ 个特征，对应的权重为</p>
+
+<p><script type="math/tex">w_{t+1,i} = \mathop{\text{argmin}}_{w_i \in \mathbb{R}} \left\{ z_{t,i} \, w + \lambda_1 |w_i| + \frac12 \left(\lambda_2 + \sum\limits_{s=1}^t \sigma_s \right) \cdot w_i^2 \right\} \tag{1.6}</script>
+这是一个无约束的非平滑参数优化问题，其中第二项</p>
+
+<script type="math/tex; mode=display">\lambda_1 |w_i|</script>
+
+<p>在 <script type="math/tex">𝑤_𝑖=0</script>处不可导, 因而常用的方法是使用次导数, 这里直接上结论： 定义 
+<script type="math/tex">\phi \in \partial |w_i^*|</script>为 <script type="math/tex">|𝑤_𝑖|</script> 在 <script type="math/tex">𝑤^∗_𝑖</script> 处的次导数，于是有：
+<script type="math/tex">% <![CDATA[
+\partial |w_i^*| =
+\begin{cases}
+\quad\quad\{1\} &\quad \text{if}\;\; w_i^* > 0 \\[1ex]
+-1 < \phi < 1  & \quad \text{if}\;\; w_i^* = 0 \\[1ex] 
+\quad\;\;\{-1\} &\quad \text{if}\;\; w_i^* < 0
+\end{cases} %]]></script></p>
+
+<p>从而对（1.6）求导并令其为零得：</p>
+
+<p><script type="math/tex">\begin{equation}
+    z_{t,i} + \lambda_1 \phi + \left(\lambda_2 + \sum\limits_{s=1}^t \sigma_s\right)\cdot w_i = 0  \tag{1.8}
+\end{equation}</script>
+在这个公式中，$\lambda_1 &gt; 0$ 和 $\left(\lambda_2 + \sum\limits_{s=1}^t \sigma_s\right) &gt; 0$，为了保证(1.8)成立，可以得到:
+<script type="math/tex">% <![CDATA[
+\begin{equation}
+ w_{t+1,i} = 
+\begin{cases}
+\qquad\qquad \large{0}   & \text{if}\;\; |z_{t,i}| < \lambda_1 \\[2ex]
+-\frac{1}{\lambda_2 + \sum_{s=1}^t\sigma_s} \left(z_{t,i} - \text{sgn}(z_{t,i})\cdot\lambda_1 \right) & \text{otherwise}  \tag{1.9}
+\end{cases}
+ \end{equation} %]]></script></p>
+
+<p>可以看到当 <script type="math/tex">% <![CDATA[
+\bf{z}_t = (\bf{g}_{1:t} - \sum\limits_{s=1}^t \sigma_s\bf{w}_s) <\lambda_1 %]]></script> 时，参数置为零，这就是 FTRL 稀疏性的由来。另外加入 L2 正则并没有影响模型的稀疏性，从 (1.9) 式看只是使得分母变大，进而 𝑤𝑖 更趋于零了，这在直觉上是符合正则化本身的定义的.</p>
+
+<p>观察 (1.9) 式还遗留一个问题，$\sigma_s$ 的值是什么呢？这牵涉到 FTRL 的学习率设置。当然严格意义上的学习率是 $\eta_t$ ，而 $\sigma_t = \frac{1}{\eta_t} - \frac{1}{\eta_{t-1}}$ ，论文中这样定义可能是为了推导和实现的方便。前文 (1.1) 式中 OGD 使用的是一个全局学习率 $\eta_t = \frac{1}{\sqrt{t}}$，会随着迭代轮数的增加而递减，但该方法的问题是所有特征维度都使用了一样的学习率。</p>
+
+<p>FTRL 采用的是 <code class="highlighter-rouge">Per-Coordinate Learning Rate</code>，即每个特征采用不同的学习率，这种方法考虑了训练样本本身在不同特征上分布的不均匀性。如果一个特征变化快，则对应的学习率也会下降得快，反之亦然。其实近年来随着深度学习的流行这种操作已经是很常见了，常用的 AdaGrad、Adam 等梯度下降的变种都蕴含着这类思想。FTRL 中第 $𝑡$ 轮第 $𝑖$ 个特征的学习率为：</p>
+
+<p><script type="math/tex">\begin{equation}
+ \eta_{t, i} = \frac{\alpha}{\beta + \sqrt{\sum_{s=1}^t g_{s, i}^2}}  \tag{1.10}
+ \end{equation}</script>
+于是 1.9 中$\sum_{s=1}^t \sigma_s$ 得这一项等于：</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}\begin{split}
+\sum\limits_{s=1}^t \sigma_s &= (\frac{1}{\eta_t} - \frac{1}{\eta_{t-1}}) + (\frac{1}{\eta_{t-1}} - \frac{1}{\eta_{t-2}}) + \cdots + (\frac{1}{\eta_1} - \frac{1}{\eta_0}) \\
+&=\;\; \frac{1}{\eta_t} \;\;=\;\; \frac{\beta + \sqrt{\sum_{s=1}^tg_{s,i}^2}}{\alpha}
+\end{split}\tag{1.11}\end{equation} %]]></script>
+
+<p>从而，$w_{i+1}$的数学公式上的表示为：</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+ w_{t+1,i} = 
+\begin{cases}
+\qquad\qquad \large{0}   & \quad\text{if}\;\; |z_{t,i}| < \lambda_1 \\[2ex]
+- \left(\lambda_2 + \frac{\beta + \sqrt{\sum_{s=1}^t g_{s,i}^2}}{\alpha} \right)^{-1} \left(z_{t,i} - \text{sgn}(z_{t,i})\cdot\lambda_1 \right) & \quad \text{otherwise}  
+\end{cases}\tag{1.12}
+ \end{equation} %]]></script>
+
+<h2 id="工程实现上的公式转换">工程实现上的公式转换</h2>
+
+<p>在代码实现上，考虑到 $t$ 到 $t+1$ 的迭代的特点，可以把中间的结果存起来，方便后续的计算:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}\begin{split}
+z_{t,i} &= g_{1:t, i} - \sum\limits_{s=1}^t \sigma_{s, i} w_{s,i} = \sum\limits_{s=1}^t g_{s,i} - \sum\limits_{s=1}^t \sigma_{s, i} w_{s,i} = z_{t-1,i} + (g_{t,i} - \sigma_{t,i}w_{t,i}) \\[1ex]
+&= z_{t-1,i} + g_{t,i} - \left(\frac{1}{\eta_{t,i}} - \frac{1}{\eta_{t-1, i}} \right) w_{t,i} \\
+&= z_{t-1,i} + g_{t,i} - \frac{\sqrt{\sum_{s=1}^t g_{s,i}^2} - \sqrt{\sum_{s=1}^{t-1} g_{s,i}^2}}{\alpha} w_{t,i}
+\end{split} \tag{3.1}\end{equation} %]]></script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+ \begin{aligned}
+ n_{t,i} &= \sum_{s=1}^t g_{s,i}^2 = \sum_{s=1}^{t-1} g_{s,i}^2 + g_{t,i}^2 \\
+        &= n_{t-1,i} + g_{t,i}^2
+ \end{aligned} 
+ \tag{3.2}
+\end{equation} %]]></script>
+
+<script type="math/tex; mode=display">\begin{equation}
+g_{t,i} = y_t (S(y_t f(\bf{x}_t)) - 1) x_i = y_t \left(\frac{1}{1 + e^{- y_t f(\bf{x}_t)}} - 1 \right) x_i  \tag{3.3}
+\end{equation}</script>
+
+<h2 id="参考资料">参考资料</h2>
+<p><a href="https://www.cnblogs.com/massquantity/p/12693314.html">在线优化算法 FTRL 的原理与实现</a></p>

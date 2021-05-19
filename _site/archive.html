@@ -98,19 +98,17 @@
     <div class="ui middle aligned selection list">
         <div class="item">
             <a class="header" href="/2020/11/FTRL.html">
-                Ftrl
+                机器学习:FTRL
                 <small class="small-date">
                     15 Nov 2020
                      
                 </small>
             </a>
-            layout: post
-title: 机器学习:FTRL 
-modified: 2020-11-15
-tags: [online learning, machine learning, ftrl]
+            在线学习中两个问题{Online Learning: Regret + Sparsity}
+在线学习 ( Online Learning  ) 代表了一系列机器学习算法，特点是每来一个样本就能训练，能够根据线上反馈数据，实时快速地进行模型调整，使得模型及时反映线上的变化，提高线上预测的准确率。相比之下，传统的批处理方式需要一次性收集所有数据，新数据到来时重新训练的代价也很大，因而更新周期较长，可扩展性不高。
 
 
-            <!-- layout: post title: 机器学习:FTRL modified: 2020-11-15 tags: [online learning, machine learning, ftrl] 在线学习中两个问题{Online Learning: Regret + Sparsity} 在线学习 ( Online Learning ) 代表了一系列机器学习算法，特点是每来一个样本就能训练，能够根据线上反馈数据，实时快速地进行模型调整，使得模型及时反映线上的变化，提高线上预测的准确率。相比之下，传统的批处理方式需要一次性收集所有数据，新数据到来时重新训练的代价也很大，因而更新周期较长，可扩展性不高。 一般对于在线学习来说，我们致力于解决两个问题： 降低 regret 和提高 sparsity。其中 regret 的定义为:... -->
+            <!-- 在线学习中两个问题{Online Learning: Regret + Sparsity} 在线学习 ( Online Learning ) 代表了一系列机器学习算法，特点是每来一个样本就能训练，能够根据线上反馈数据，实时快速地进行模型调整，使得模型及时反映线上的变化，提高线上预测的准确率。相比之下，传统的批处理方式需要一次性收集所有数据，新数据到来时重新训练的代价也很大，因而更新周期较长，可扩展性不高。 一般对于在线学习来说，我们致力于解决两个问题： 降低 regret 和提高 sparsity。其中 regret 的定义为: 其中 $𝑡$ 表示总共 $𝑇$ 轮中的第 $𝑡$ 轮迭代，$\ell_t$ 表示损失函数，$𝐰$ 表示要学习的参数。第二项 $\min\limits_\bf{w}\sum\limits_{t=1}^T\ell_t(\bf{w})$ 表示得到了所有样本后损失函数的最优解，因为在线学习一次只能根据少数几个样本更新参数，随机性较大，所以需要一种稳健的优化方式，而 regret... -->
         </div>
     </div>
 

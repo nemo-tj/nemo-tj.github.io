@@ -5,8 +5,8 @@
     <description>用心设计未来</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Mar 2021 09:00:12 +0800</pubDate>
-    <lastBuildDate>Fri, 26 Mar 2021 09:00:12 +0800</lastBuildDate>
+    <pubDate>Wed, 19 May 2021 22:53:52 +0800</pubDate>
+    <lastBuildDate>Wed, 19 May 2021 22:53:52 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -131,13 +131,8 @@
       </item>
     
       <item>
-        <title>Ftrl</title>
-        <description>&lt;p&gt;layout: post
-title: 机器学习:FTRL 
-modified: 2020-11-15
-tags: [online learning, machine learning, ftrl]&lt;/p&gt;
-
-&lt;h2 id=&quot;在线学习中两个问题online-learning-regret--sparsity&quot;&gt;在线学习中两个问题{Online Learning: Regret + Sparsity}&lt;/h2&gt;
+        <title>机器学习:FTRL</title>
+        <description>&lt;h2 id=&quot;在线学习中两个问题online-learning-regret--sparsity&quot;&gt;在线学习中两个问题{Online Learning: Regret + Sparsity}&lt;/h2&gt;
 &lt;p&gt;在线学习 ( &lt;code class=&quot;highlighter-rouge&quot;&gt;Online Learning&lt;/code&gt;  ) 代表了一系列机器学习算法，特点是每来一个样本就能训练，能够根据线上反馈数据，实时快速地进行模型调整，使得模型及时反映线上的变化，提高线上预测的准确率。相比之下，传统的批处理方式需要一次性收集所有数据，新数据到来时重新训练的代价也很大，因而更新周期较长，可扩展性不高。&lt;/p&gt;
 
 &lt;p&gt;一般对于在线学习来说，我们致力于解决两个问题： 降低 &lt;code class=&quot;highlighter-rouge&quot;&gt;regret&lt;/code&gt; 和提高 &lt;code class=&quot;highlighter-rouge&quot;&gt;sparsity&lt;/code&gt;。其中 regret 的定义为:&lt;/p&gt;
@@ -288,6 +283,12 @@ g_{t,i} = y_t (S(y_t f(\bf{x}_t)) - 1) x_i = y_t \left(\frac{1}{1 + e^{- y_t f(\
         <pubDate>Sun, 15 Nov 2020 00:00:00 +0800</pubDate>
         <link>http://localhost:4000//2020/11/FTRL.html</link>
         <guid isPermaLink="true">http://localhost:4000//2020/11/FTRL.html</guid>
+        
+        <category>online learning</category>
+        
+        <category>machine learning</category>
+        
+        <category>ftrl</category>
         
         
       </item>

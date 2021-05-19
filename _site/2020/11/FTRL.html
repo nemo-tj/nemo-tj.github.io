@@ -1,9 +1,74 @@
-<p>layout: post
-title: 机器学习:FTRL 
-modified: 2020-11-15
-tags: [online learning, machine learning, ftrl]</p>
+<!DOCTYPE html>
+<html lang="en-us">
 
-<h2 id="在线学习中两个问题online-learning-regret--sparsity">在线学习中两个问题{Online Learning: Regret + Sparsity}</h2>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Wall-E</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/mobile.css">
+    <link rel="stylesheet" href="/assets/css/vendor/syntax.css">
+    <link rel="stylesheet" href="/assets/css/vendor/semantic.min.css"/>
+
+    <link rel="shortcut icon" type="image/png" href="/assets/img/logo.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+</head>
+
+<body>
+    
+    <div class="page-wrap">
+        <div class="header-wrapper">
+    <header>
+        <!-- logo and description -->
+        
+        <nav class="site-nav">
+            <div class="left-nav">
+                <!-- add titles to all buttons -->
+                <div class="ui secondary menu inverted">
+                    <a class="item" href="/">
+                        Home
+                    </a>
+                    <a class="item" href="/about.html">
+                        About
+                    </a>
+                    <a class="item" href="/archive.html">
+                        Archive
+                    </a>
+                    <div class="right menu">
+                        <div id="head-search" class="ui category search item">
+                            <div class="ui transparent icon input">
+                                <input placeholder="Search..." type="text" id="search-input" onkeypress="handleKeyPress()">
+                                <i class="search link icon" onclick="handleSubmit()"></i>
+                            </div>
+                        </div>
+
+                        <a class="item" href="http://stallman.org/facebook.html">
+                            <i class="wechat link icon"></i>
+                        </a>
+                        <a class="item" href="https://github.com/nemo-tj">
+                            <i class="github link icon"></i>
+                        </a>
+                        <a class="item" href="/feed.xml">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-nav"></div>
+        </nav>
+    </header>
+</div>
+        <main>
+            <div class="post-container">
+    <center>
+        <span class="date">
+            15 Nov 2020 
+             
+        </span>
+        <h1 class="post-title">机器学习:FTRL</h1>
+    </center>
+    <div class="ui divider"></div>
+    <h2 id="在线学习中两个问题online-learning-regret--sparsity">在线学习中两个问题{Online Learning: Regret + Sparsity}</h2>
 <p>在线学习 ( <code class="highlighter-rouge">Online Learning</code>  ) 代表了一系列机器学习算法，特点是每来一个样本就能训练，能够根据线上反馈数据，实时快速地进行模型调整，使得模型及时反映线上的变化，提高线上预测的准确率。相比之下，传统的批处理方式需要一次性收集所有数据，新数据到来时重新训练的代价也很大，因而更新周期较长，可扩展性不高。</p>
 
 <p>一般对于在线学习来说，我们致力于解决两个问题： 降低 <code class="highlighter-rouge">regret</code> 和提高 <code class="highlighter-rouge">sparsity</code>。其中 regret 的定义为:</p>
@@ -150,3 +215,78 @@ g_{t,i} = y_t (S(y_t f(\bf{x}_t)) - 1) x_i = y_t \left(\frac{1}{1 + e^{- y_t f(\
 
 <h2 id="参考资料">参考资料</h2>
 <p><a href="https://www.cnblogs.com/massquantity/p/12693314.html">在线优化算法 FTRL 的原理与实现</a></p>
+
+    <div class="ui horizontal divider">
+        Thank You For Reading
+    </div>
+    <!-- author box -->
+<div class="ui segment">
+    <div class="ui items">
+        <div class="item">
+            <a class="ui circular tiny image">
+                <img src="/assets/img/profile.jpg">
+            </a>
+            <div class="content">
+                <a class="header">晋戈</a>
+                <div class="description">
+                    <p>同理心温暖世界，认真设计未来</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_shortname = 'nagekar'; 
+        var disqus_developer = 0; // developer mode is on
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+</div>
+        </main>
+    </div>
+    
+    <footer>
+    <div class="footer-wrapper">
+        <div class="ui secondary menu inverted">
+            <p class="item">Wall-E &copy; 2017</p>
+            <div class="right menu">
+                <a class="item" href="/archive.html">
+                    Latest Posts
+                </a>
+                <a class="item" href="https://twitter.com/fsf">
+                    Twitter
+                </a>
+                <a class="item" href="https://github.com/nemo-tj">
+                    Github
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" src="/assets/js/main.js"></script>
+<script type="text/javascript" src="/assets/js/vendor/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/js/vendor/semantic.min.js"></script>
+
+    <script src="/assets/js/vendor/jquery.min.js"></script>
+    <script src="/assets/js/vendor/semantic.min.js"></script>
+    <script type="/assets/js/main.js"></script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+    
+</body>
+
+</html>

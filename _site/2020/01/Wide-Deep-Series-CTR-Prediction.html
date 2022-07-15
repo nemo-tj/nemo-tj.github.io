@@ -77,12 +77,15 @@ The system computes the ID space for all the string features
 that occurred more than a minimum number of times. Continuous real-valued features are normalized to $[0, 1]$ by mapping a feature value x to its cumulative distribution function
 $P(X \leq x)$, divided into $n_q$ quantiles. The normalized value
 is $\frac{i−1}{n_q-1}$ for values in the i-th quantiles. 
-<img src="http://localhost:4000/images/paper/deepxxxx/wide-deep.png" alt="wide&amp;deep" /></li>
+<img src="http://localhost:4000/images/paper/deepxxxx/deep-wide.png" alt="deep&amp;wide" /></li>
 </ul>
 
 <h3 id="deepfm-a-factorization-machine-based-neural-network-for-ctr-prediction">DeepFM: A Factorization-Machine based Neural Network for CTR Prediction</h3>
 <ul>
-  <li>这个是 wide_deep 的升级版本，主要贡献在于引入 FM 解决稀疏特征的二阶交叉的问题，减少特征工程的工作量。而且FM的时间复杂度是 $O(nk)$, $k$ 是超参数，一般很小。</li>
+  <li>
+    <p>这个是 wide_deep 的升级版本，主要贡献在于引入 FM 解决稀疏特征的二阶交叉的问题，减少特征工程的工作量。而且FM的时间复杂度是 $O(nk)$, $k$ 是超参数，一般很小。
+<img src="http://localhost:4000/images/paper/deepxxxx/deep-FM.png" alt="deep&amp;fm" /></p>
+  </li>
   <li>引入 embedding layer, 使用joint learning 的方式进行训练，实现end-to-end</li>
   <li>缺点：
     <ul>
@@ -93,10 +96,10 @@ is $\frac{i−1}{n_q-1}$ for values in the i-th quantiles.
   </li>
 </ul>
 
-<p>###</p>
+<h3 id="deep--cross-network-for-ad-click-predictions">Deep &amp; Cross Network for Ad Click Predictions</h3>
 <ul>
-  <li>通过和一阶项进行逐步交叉，得到多阶项。同时避免高阶项之间的交叉，从而控制了参数数量。</li>
-  <li><img src="http://localhost:4000/images/paper/deepxxxx/wide-cross.png" alt="wide&amp;deep" /></li>
+  <li>通过和一阶项进行逐步交叉，得到多阶项。同时避免高阶项之间的交叉，从而控制了参数数量。
+<img src="http://localhost:4000/images/paper/deepxxxx/deep-cross.png" alt="deep&amp;cross" /></li>
 </ul>
 
 

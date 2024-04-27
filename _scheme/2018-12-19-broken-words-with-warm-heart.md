@@ -6,6 +6,8 @@ tags: [Think and Want]
 author: 晋戈
 ---
 
+37. 20240316,上海,美团; 只有妈妈才会关心你是否开心.
+
 36. To be a scientist is to be naive. We are so focused on our search for truth, we fail to consider how few actually want us to find it. But it is always there, whether we choose to or not. The truth doesn't care about our needs or wants. It doesn't care about our governments, our ideologies, our religions. It will lie in wait for all time. And this last gift was Chernobyl. Where I once would fear the cost of truth, now I only ask: What is the cost of lies?
 
 35. 别把世界让给那些你看不上的人，勇敢点，别输了。

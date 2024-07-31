@@ -97,10 +97,7 @@
 
 <p>其实，OGD的公式等价于
 <script type="math/tex">\bf{w}_{t+1} = \mathop{\text{argmin}}_\bf{w} \left(\bf{g}_t \cdot \bf{w} + \frac{1}{2\eta_t}||\bf{w} - \bf{w}_t||_2^2 \right) \tag{1.2}</script>
-对该式直接求导即可，
-<script type="math/tex">\bf{g}_t + \frac{1}{\eta_t}(\bf{w} - \bf{w}_t) = 0 \;\;\implies\;\; \bf{w} = \bf{w}_t - \eta_t \bf{g}_t</script>
-有了这个公式的基础，FTRL主要从两个方面进行优化</p>
-
+对该式直接求导即可，<script type="math/tex">\bf{g}_t + \frac{1}{\eta_t}(\bf{w} - \bf{w}_t) = 0 \;\;\implies\;\; \bf{w} = \bf{w}_t - \eta_t \bf{g}_t</script> 。有了这个公式的基础，FTRL主要从两个方面进行优化</p>
 <ul>
   <li>降低 <code class="highlighter-rouge">regret</code></li>
   <li>提高 <code class="highlighter-rouge">sparsity</code> 。</li>
